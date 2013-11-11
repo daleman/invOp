@@ -72,8 +72,8 @@ execute_cpp: $(CPP_EX)
 
 conj: conj.o
 	$(CCC) $(CCFLAGS) conj.o -o conj $(CCLNFLAGS)
-conj.o: $(EXSRCCPP)/conj.cpp
-	$(CCC) -c $(CCFLAGS) $(EXSRCCPP)/conj.cpp -o conj.o
+conj.o: $(EXSRCCPP)/conjCplex.cpp
+	$(CCC) -c $(CCFLAGS) $(EXSRCCPP)/conjCplex.cpp -o conj.o
 
 clean:
 	rm conj.o
