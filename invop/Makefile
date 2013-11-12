@@ -78,3 +78,5 @@ conj.o: $(EXSRCCPP)/conjCplex.cpp
 clean:
 	rm conj.o
 	rm conj
+	rm conjunto.lp
+	rm conjunto.sol

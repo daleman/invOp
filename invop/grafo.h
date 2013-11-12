@@ -292,22 +292,9 @@ class grafo{
 			
 			for(int i = 0; i < this->cantNodos; ++i){
 				if(this->lista_global[i].size() != 0){
-					
-					bool esDelCliqueI = (esDelClique( i+1, clique));
-					
 					for(int j = 0; j < (this->lista_global[i]).size(); ++j){
 						if(yaVistas[i][(this->lista_global[i])[j]] == false || yaVistas[(this->lista_global[i])[j]][i] == false ){
-							graph << i+1 << " -- "  << (this->lista_global[i])[j]+1;
-							
-							bool esDelCliqueJ = (esDelClique( (this->lista_global[i])[j]+1, clique));
-							
-							if (esDelCliqueI && esDelCliqueJ){
-								 graph << "[penwidth=3 color=red]";
-							}else if ((esDelCliqueI && !esDelCliqueJ) || (!esDelCliqueI && esDelCliqueJ)) {
-								 graph << "[color=blue]";
-							}
-							graph << "\n";
-							
+							graph << i+1 << " -- "  << (this->lista_global[i])[j]+1 << "\n";
 							yaVistas[i][(this->lista_global[i])[j]] = true;
 							yaVistas[(this->lista_global[i])[j]][i] = true;
 						}
@@ -316,7 +303,7 @@ class grafo{
 					graph << i+1 << ";\n";
 				}
 			}
-			
+
 			graph << "}\n";
 			graph.close();
 			system("dot -Tpng grafo.dot -o grafo.png");

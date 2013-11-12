@@ -57,7 +57,7 @@ int main(){
     xctype[i] = 'I'; // 'C' es continua, 'B' binaria, 'I' Entera. Para LP (no enteros), este parametro tiene que pasarse como NULL. No lo vamos a usar por ahora..
     // Nombre de la variable.
     stringstream name;
-    name << "x_" << i;
+    name << "x_" << i+1;
     string namestr(name.str());
     int len = strlen(namestr.c_str());
     colnames[i] = new char[len+1];
@@ -94,8 +94,8 @@ int main(){
   // zero = 0. En realidad, esto reemplaza al parametro rmatbeg ya que se agrega una unica restriccion. Si se agregaran
   // de a mas de una, rmatbeg (ver documentacion de CPXaddrows) deberia tener la posicion en la que comienza cada 
   // restriccion.
- 
-    for (int j = 1; j <= g.cantNodos; j++){
+  
+    for (int i = 1; i <= g.cantNodos; i++){
          int ccnt = 0, zero = 0, nzcnt = 0, rcnt = 1;
          char sense = 'L'; // Sentido de la desigualdad. 'G' es mayor o igual y 'E' para igualdad.
          double rhs = 1; // termino independiente. En nuestro caso 1.
@@ -106,25 +106,27 @@ int main(){
     // nzcnt que le pasemos.
     
         nzcnt = 0;
-        for (int i = j+1; i <= g.cantNodos ; i++){
+        for (int j = i+1; j <= g.cantNodos ; j++){
+                 
             if (g.hayArista(i,j))
                 {
-                  cutind[nzcnt] = i;
+                  cutind[nzcnt] = i-1;
+                  cutval[nzcnt] = 1;
+                  nzcnt++;
+                  cutind[nzcnt] = j-1;
                   cutval[nzcnt] = 1;
                   nzcnt++;
                   if (nzcnt == 2){
+                    // Esta rutina agrega la restriccion al lp.
                     status = CPXaddrows(env, lp, ccnt, rcnt, nzcnt, &rhs, &sense, &zero, cutind, cutval, NULL, NULL);
-                        break;
+                    nzcnt = 0;
                    } 
                 }
-            // Esta rutina agrega la restriccion al lp.
             
         }
     }
-
-    
   
-
+  
   if (status) {
     cerr << "Problema agregando restriccion de capacidad." << endl;
     exit(1);
@@ -205,14 +207,16 @@ int main(){
     
   // Solo escribimos las variables distintas de cero (tolerancia, 1E-05).
   solfile << "Status de la solucion: " << statstr << endl;
+  std::vector<int> vec;
   for (int i = 0; i < n; i++) {
     if (sol[i] > TOL) {
-      solfile << "x_" << i << " = " << sol[i] << endl;
+      solfile << "x_" << i+1 << " = " << sol[i] << endl;
+      vec.push_back(i+1);
     }
   }
 
   delete [] sol;
   solfile.close();
-
+  g.draw(vec);
 	return 0;
 }
