@@ -8,7 +8,10 @@
 #include <cmath>				//time
 #include <stdio.h>
 #include <fstream>
+#include <set>
 
+
+#define tr(c,i) for(typeof((c).begin() i = (c).begin(); i != (c).end(); i++)
 
 using namespace std;
 typedef pair <vector<bool>, int> Solucion;
@@ -89,6 +92,7 @@ class grafo{
 			}
 		}
 
+		
 		int grado(int nodo) const{
 			nodo--;
 			return this->lista_global[nodo].size();
@@ -164,7 +168,67 @@ class grafo{
 			}
 			return true;
 		}
+		
+		/*
+		int nodoSiguienteCliqueMaximal (vector <int> clique, vector <bool> estanEnClique){
+			
+			int maximo_aporte = 0;
+			int elQueMasAporta = -1;
+			
+			for (int i = 0 ; i < cantNodos; ++i){				
+				if ( se_conecta_con_clique(i, clique) && !estanEnClique[i] ){
+					int aporta = grado(i+1);
+					if (aporta > maximo_aporte){
+						elQueMasAporta = i+1;
+					}
+				}
+			}
+			
+		}
+		*/
+		
+		
+		vector<int> generarCliqueMaximal(){
+		
+			vector<int> clique;
+			set <int> seConectanConCliqueActual;
+			
+			int nodoMax = nodoDeGradoMaximo();
+					for (int j = 0; j < (this->lista_global[nodoMax]).size(); ++j){
+					//cout  << (*this->lista_global[n])[i] << " ";
+					seConectanConCliqueActual.insert((this->lista_global[nodoMax])[j]);
+				}
+			
+			clique.push_back(nodoMax);
+			
+			int maximo_aporte = 0;
+			
+			while( !seConectanConCliqueActual.empty() ){		//mientras no es vacio, voy agregando nodos y reduciendo el set
+				
+				int elQueMasAporta;
+				// agrego al que mas aporta dentro del set que se conectan con la clique
+				
+				
+				for (set<int>::iterator it= seConectanConCliqueActual.begin(); it!=seConectanConCliqueActual.end(); ++it){				
+					int aporta = grado(*it);
+						if (aporta > maximo_aporte){
+							elQueMasAporta = *it+1;
+						}
+				}
+				
+				clique.push_back(elQueMasAporta);
+				
+				// saco a todos los que no son adyacentes al nodo que acabo de agregar
+				for (set<int>::iterator it= seConectanConCliqueActual.begin(); it!=seConectanConCliqueActual.end(); ++it){				
+					if ( !hayArista(*it, elQueMasAporta)){
+						seConectanConCliqueActual.erase(*it);
+					}
+				}
 
+			}
+			return clique;
+		}
+		
 		// Determina cuanto varía la frontera de la clique 'clique'
 			// al agregar el nodo 'nodo'
 		int cuanto_aporta(int nodo, vector<int> clique){

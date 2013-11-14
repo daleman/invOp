@@ -10,6 +10,31 @@ using namespace std;
 
 ILOSTLBEGIN
 
+/* The following structure will hold the information we need to 
+   pass to the cut callback function */
+
+struct cutinfo {
+   CPXLPptr lp;
+   int      numcols;
+   int      num;
+   double   *x;
+   int      *beg;
+   int      *ind; 
+   double   *val;
+   double   *rhs;
+};
+typedef struct cutinfo CUTINFO, *CUTINFOptr;
+
+
+
+static int CPXPUBLIC
+   mycutcallback      (CPXCENVptr env, void *cbdata, int wherefrom,
+                       void *cbhandle, int *useraction_p);
+
+static int
+   makeusercuts       (CPXENVptr env, CPXLPptr lp, CUTINFOptr cutinfo);
+
+
 int main(){
 
   // Datos de la instancia de conjunto independiente.
@@ -24,6 +49,15 @@ int main(){
    
   // Creo el entorno.
   env = CPXopenCPLEX(&status);
+
+	// Creo la variable usecutinfo para guardarme informacion para el callback
+	CUTINFO usercutinfo;
+   
+   usercutinfo.x   = NULL;
+   usercutinfo.beg = NULL;
+   usercutinfo.ind = NULL; 
+   usercutinfo.val = NULL;
+   usercutinfo.rhs = NULL;
 
     
   if (env == NULL) {
@@ -54,7 +88,7 @@ int main(){
     ub[i] = 1.0;
     lb[i] = 0.0;
     objfun[i] = 1;//pj[i];
-    xctype[i] = 'I'; // 'C' es continua, 'B' binaria, 'I' Entera. Para LP (no enteros), este parametro tiene que pasarse como NULL. No lo vamos a usar por ahora..
+    xctype[i] = 'B'; // 'C' es continua, 'B' binaria, 'I' Entera. Para LP (no enteros), este parametro tiene que pasarse como NULL. No lo vamos a usar por ahora..
     // Nombre de la variable.
     stringstream name;
     name << "x_" << i+1;
@@ -64,8 +98,9 @@ int main(){
     strcpy(colnames[i], namestr.c_str());
   }
   
+  
   // Agrego las columnas.
-  status = CPXnewcols(env, lp, n, objfun, lb, ub, NULL, colnames);    //hay que ver lo de LA FUNCION OBJETIVO
+  status = CPXnewcols(env, lp, n, objfun, lb, ub, xctype, colnames);    //hay que ver lo de LA FUNCION OBJETIVO
   
   if (status) {
     cerr << "Problema agregando las variables CPXnewcols" << endl;
@@ -157,13 +192,46 @@ int main(){
     cerr << "Problema escribiendo modelo" << endl;
     exit(1);
   }
+
+
+	/* Turn on traditional search for use with control callbacks */
+
+   status = CPXsetintparam (env, CPX_PARAM_MIPSEARCH, CPX_MIPSEARCH_TRADITIONAL);
+   if (status) {
+    cerr << "Problema seteando traditional search" << endl;
+    exit(1);
+  }
+   /* Let MIP callbacks work on the original model */
+
+   status = CPXsetintparam (env, CPX_PARAM_MIPCBREDLP, CPX_OFF);
+   if ( status ){
+		cerr << "Problema seteando para que acepte callback" << endl;
+		exit(1);
+	}
+   /* Create user cuts for noswot problem */
+
+   status = makeusercuts (env, lp, &usercutinfo);
+   if ( status ){
+		cerr << "Problema haciendo el mekeusercuts" << endl;
+		exit(1);
+	}
+
+	/* Seteo el callback */
+	
+	status = CPXsetusercutcallbackfunc (env, mycutcallback, &usercutinfo);	// tercer parametro info
+	if ( status ){
+		cerr << "Problema haciendo el callback" << endl;
+		exit(1);
+	}  
+ 
+    
     
   // Tomamos el tiempo de resolucion utilizando CPXgettime.
   double inittime, endtime;
   status = CPXgettime(env, &inittime);
 
   // Optimizamos el problema.
-  status = CPXlpopt(env, lp);
+  status = CPXmipopt(env, lp);
 
   status = CPXgettime(env, &endtime);
 
@@ -220,3 +288,203 @@ int main(){
   g.draw(vec);
 	return 0;
 }
+
+
+
+static int CPXPUBLIC 
+mycutcallback (CPXCENVptr env,
+               void       *cbdata,
+               int        wherefrom,
+               void       *cbhandle,
+               int        *useraction_p)
+{
+   int status = 0;
+
+   CUTINFOptr cutinfo = (CUTINFOptr) cbhandle;
+
+   int      numcols  = cutinfo->numcols;
+   int      numcuts  = cutinfo->num;
+   double   *x       = cutinfo->x;
+   int      *beg     = cutinfo->beg;
+   int      *ind     = cutinfo->ind;
+   double   *val     = cutinfo->val;
+   double   *rhs     = cutinfo->rhs;
+   int      *cutind  = NULL;
+   double   *cutval  = NULL;
+   double   cutvio;
+   int      addcuts = 0;
+   int      i, j, k, cutnz;
+
+   *useraction_p = CPX_CALLBACK_DEFAULT; 
+
+   status = CPXgetcallbacknodex (env, cbdata, wherefrom, x,
+                                 0, numcols-1); 
+   if ( status ) {
+      fprintf(stderr, "Failed to get node solution.\n");
+      goto TERMINATE;
+   }
+
+   for (i = 0; i < numcuts; i++) {
+      cutvio = -rhs[i];
+      k = beg[i];
+      cutnz = beg[i+1] - k;
+      cutind = ind + k;
+      cutval = val + k;
+      for (j = 0; j < cutnz; j++) {
+         cutvio += x[cutind[j]] * cutval[j];
+      }
+
+      /* Use a cut violation tolerance of 0.01 */
+
+      if ( cutvio > 0.01 ) { 
+         status = CPXcutcallbackadd (env, cbdata, wherefrom,
+                                     cutnz, rhs[i], 'L',
+                                     cutind, cutval, 1);
+         if ( status ) {
+            fprintf (stderr, "Failed to add cut.\n");
+            goto TERMINATE;
+         }
+         addcuts++;
+      }
+   }
+
+   /* Tell CPLEX that cuts have been created */ 
+   if ( addcuts > 0 ) {
+      *useraction_p = CPX_CALLBACK_SET; 
+   }
+
+TERMINATE:
+
+   return (status);
+
+} /* END mycutcallback */
+
+
+/* Valid cuts for noswot 
+   cut1: X21 - X22 <= 0
+   cut2: X22 - X23 <= 0
+   cut3: X23 - X24 <= 0
+   cut4: 2.08 X11 + 2.98 X21 + 3.47 X31 + 2.24 X41 + 2.08 X51 
+         + 0.25 W11 + 0.25 W21 + 0.25 W31 + 0.25 W41 + 0.25 W51
+         <= 20.25
+   cut5: 2.08 X12 + 2.98 X22 + 3.47 X32 + 2.24 X42 + 2.08 X52
+         + 0.25 W12 + 0.25 W22 + 0.25 W32 + 0.25 W42 + 0.25 W52
+         <= 20.25
+   cut6: 2.08 X13 + 2.98 X23 + 3.4722 X33 + 2.24 X43 + 2.08 X53
+         + 0.25 W13 + 0.25 W23 + 0.25 W33 + 0.25 W43 + 0.25 W53
+         <= 20.25
+   cut7: 2.08 X14 + 2.98 X24 + 3.47 X34 + 2.24 X44 + 2.08 X54
+         + 0.25 W14 + 0.25 W24 + 0.25 W34 + 0.25 W44 + 0.25 W54
+         <= 20.25
+   cut8: 2.08 X15 + 2.98 X25 + 3.47 X35 + 2.24 X45 + 2.08 X55
+         + 0.25 W15 + 0.25 W25 + 0.25 W35 + 0.25 W45 + 0.25 W55
+         <= 16.25
+*/
+
+static int
+makeusercuts (CPXENVptr  env,
+              CPXLPptr   lp,
+              CUTINFOptr usercutinfo)
+{
+   int status = 0;
+
+   int beg[] = {0, 2, 4, 6, 16, 26, 36, 46, 56};
+
+   double val[] = 
+   {1, -1, 
+    1, -1, 
+    1, -1, 
+    2.08, 2.98, 3.47, 2.24, 2.08, 0.25, 0.25, 0.25, 0.25, 0.25,
+    2.08, 2.98, 3.47, 2.24, 2.08, 0.25, 0.25, 0.25, 0.25, 0.25,
+    2.08, 2.98, 3.47, 2.24, 2.08, 0.25, 0.25, 0.25, 0.25, 0.25,
+    2.08, 2.98, 3.47, 2.24, 2.08, 0.25, 0.25, 0.25, 0.25, 0.25,
+    2.08, 2.98, 3.47, 2.24, 2.08, 0.25, 0.25, 0.25, 0.25, 0.25};
+
+   char *varname[] = 
+   {"X21", "X22", 
+    "X22", "X23", 
+    "X23", "X24",
+    "X11", "X21", "X31", "X41", "X51",
+    "W11", "W21", "W31", "W41", "W51",
+    "X12", "X22", "X32", "X42", "X52",
+    "W12", "W22", "W32", "W42", "W52",
+    "X13", "X23", "X33", "X43", "X53",
+    "W13", "W23", "W33", "W43", "W53",
+    "X14", "X24", "X34", "X44", "X54",
+    "W14", "W24", "W34", "W44", "W54",
+    "X15", "X25", "X35", "X45", "X55",
+    "W15", "W25", "W35", "W45", "W55"};
+
+   double rhs[] = {0, 0, 0, 20.25, 20.25, 20.25, 20.25, 16.25};
+
+   int    *cutbeg = NULL;
+   int    *cutind = NULL;
+   double *cutval = NULL;
+   double *cutrhs = NULL; 
+
+   int i, varind;
+   int nz   = 56;
+   int cuts = 8;
+
+   int cur_numcols = CPXgetnumcols (env, lp);
+
+   usercutinfo->lp = lp;
+   usercutinfo->numcols = cur_numcols;
+
+   usercutinfo->x = (double *) malloc (cur_numcols * sizeof (double));
+   if ( usercutinfo->x == NULL ) {
+      fprintf (stderr, "No memory for solution values.\n");
+      goto TERMINATE;
+   }
+
+   cutbeg = new int[cuts+1];
+   cutind = new int[nz];
+   cutval = new double[nz];
+   cutrhs = new double[cuts];
+
+   if ( cutbeg == NULL ||
+        cutind == NULL ||
+        cutval == NULL ||
+        cutrhs == NULL   ) {
+      fprintf (stderr, "No memory.\n");
+      status = CPXERR_NO_MEMORY;
+      goto TERMINATE;
+   } 
+      
+   for (i = 0; i < nz; i++) {
+      status = CPXgetcolindex (env, lp, varname[i], &varind);
+      if ( status )  {
+         fprintf (stderr,
+                  "Failed to get index from variable name.\n");
+         goto TERMINATE;
+      }
+      cutind[i] = varind;
+      cutval[i] = val[i];
+   }
+
+   for (i = 0; i < cuts; i++) {
+      cutbeg[i] = beg[i];
+      cutrhs[i] = rhs[i];
+   }
+   cutbeg[cuts] = beg[cuts];
+
+   usercutinfo->num      = cuts;
+   usercutinfo->beg      = cutbeg;
+   usercutinfo->ind      = cutind;
+   usercutinfo->val      = cutval;
+   usercutinfo->rhs      = cutrhs;
+
+TERMINATE:
+
+   if ( status ) {
+      delete ((char **) &cutbeg);
+      delete ((char **) &cutind);
+      delete ((char **) &cutval);
+      delete ((char **) &cutrhs);
+   }
+ 
+   return (status);
+
+} /* END makeusercuts */
+
+

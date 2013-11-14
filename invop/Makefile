@@ -1,4 +1,3 @@
-
 SYSTEM     = x86-64_sles10_4.1
 LIBFORMAT  = static_pic
 
@@ -63,20 +62,37 @@ CCFLAGS = $(CCOPT) -I$(CPLEXINCDIR) -I$(CONCERTINCDIR)
 #------------------------------------------------------------
 
 
-CPP_EX = conj
+CPP_EX = conj conj2
 
 all_cpp: $(CPP_EX)
 
 execute_cpp: $(CPP_EX)
 	 ./conj
+	 ./conj2
+	 ./parseo
 
 conj: conj.o
 	$(CCC) $(CCFLAGS) conj.o -o conj $(CCLNFLAGS)
 conj.o: $(EXSRCCPP)/conjCplex.cpp
 	$(CCC) -c $(CCFLAGS) $(EXSRCCPP)/conjCplex.cpp -o conj.o
 
+conj2: conj2.o
+	$(CCC) $(CCFLAGS) conj2.o -o conj2 $(CCLNFLAGS)
+conj2.o: $(EXSRCCPP)/conj2.cpp
+	$(CCC) -c $(CCFLAGS) $(EXSRCCPP)/conj2.cpp -o conj2.o
+
+parseo: parseo.o
+	$(CCC) $(CCFLAGS) parseo.o -o parseo $(CCLNFLAGS)
+parseo.o: $(EXSRCCPP)/parseo.cpp
+	$(CCC) -c $(CCFLAGS) $(EXSRCCPP)/parseo.cpp -o parseo.o
+
+
 clean:
 	rm conj.o
 	rm conj
 	rm conjunto.lp
 	rm conjunto.sol
+	rm conj2.o
+	rm conj2
+	rm parseo
+	rm parseo.o
