@@ -126,9 +126,10 @@ class grafo{
 		int nodoDeGradoMaximo(){
 			int nodoMax = -1;
 			int gradoMax = -1;
-			for (int i = 0; i < cantNodos; ++i ){
+			for (int i = 0; i < cantNodos; i++ ){
 				if (grado(i+1) > gradoMax){
 					nodoMax = i;
+					gradoMax = grado(i+1);
 				}
 			}
 			return nodoMax;
@@ -187,21 +188,48 @@ class grafo{
 		}
 		*/
 		
+	int generarCliquesMaximales(){	
 		
-		vector<int> generarCliqueMaximal(){
+		vector<int> vec;
+		set<int> setPuestos;
+	 
+		for (int i = 0; i < cantNodos; i++)
+			setPuestos.insert(i+1);
+	 
+		while( !setPuestos.empty() ){
+		
+		std::set<int>::iterator it=setPuestos.begin();
+		
+		//cout << "empiezo con " << *it << endl;
+		vec = generarCliqueMaximal(*it, setPuestos);
+
+		cout << endl ;
+		//cout << "Nueva clique" << endl;
+		
+		for (int i = 0; i < vec.size(); i++)
+			cout << vec[i] << " " ;
+			
+		cout << endl;
+		
+		}
+	}
+		
+		vector<int> generarCliqueMaximal(int nodo, set<int> &setPuestos){
 		
 			vector<int> clique;
 			set <int> seConectanConCliqueActual;
 			
-			int nodoMax = nodoDeGradoMaximo();
-					for (int j = 0; j < (this->lista_global[nodoMax]).size(); ++j){
-					//cout  << (*this->lista_global[n])[i] << " ";
-					seConectanConCliqueActual.insert((this->lista_global[nodoMax])[j]);
+			nodo = nodo -1;
+					for (int j = 0; j < (this->lista_global[nodo]).size(); ++j){
+					//cout  << "los vecinos de " <<(this->lista_global[nodo])[j] << " ";
+					seConectanConCliqueActual.insert((this->lista_global[nodo])[j] +1 );
 				}
 			
-			clique.push_back(nodoMax);
-			
-			int maximo_aporte = 0;
+			clique.push_back(nodo+1);
+			setPuestos.erase(nodo+1);
+			//cout << "agrego el " << nodoMax + 1 << endl;
+			//seConectanConCliqueActual.erase(nodoMax+1);
+				
 			
 			while( !seConectanConCliqueActual.empty() ){		//mientras no es vacio, voy agregando nodos y reduciendo el set
 				
@@ -209,14 +237,21 @@ class grafo{
 				// agrego al que mas aporta dentro del set que se conectan con la clique
 				
 				
+				int maximo_aporte = 0;
+				
 				for (set<int>::iterator it= seConectanConCliqueActual.begin(); it!=seConectanConCliqueActual.end(); ++it){				
 					int aporta = grado(*it);
+						//cout << "esta el" << *it << endl;
 						if (aporta > maximo_aporte){
-							elQueMasAporta = *it+1;
+							elQueMasAporta = *it;
+							maximo_aporte = aporta;
 						}
 				}
 				
 				clique.push_back(elQueMasAporta);
+				setPuestos.erase(elQueMasAporta);
+				seConectanConCliqueActual.erase(elQueMasAporta);
+			
 				
 				// saco a todos los que no son adyacentes al nodo que acabo de agregar
 				for (set<int>::iterator it= seConectanConCliqueActual.begin(); it!=seConectanConCliqueActual.end(); ++it){				
