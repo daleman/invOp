@@ -187,8 +187,80 @@ class grafo{
 			
 		}
 		*/
+	
+	
+	/* agarro un nodo que lo paso por parametro
+	 visito a todos sus vecinos
+	 y a los que no estan marcados, los visito recursivamente y los marco
+	*/
+	// empiezo con contador en uno, cuando es impar encontre un ciclo impar
+	
+	void devolverCicloImpar(int nodoInicial, int nodo, int nodoFinal,const vector<int> predecesor, vector < vector <int> > &elvec){
+	
+	vector<int> vec;
+	
+	
+	int temp =  nodo;
+	//cout << endl;
+	
+	//cout << nodo << " " ;
+	int contador =0;
+	while(predecesor[temp] != -2 ){
+			//cout << temp+1 << " ";
+			vec.push_back(temp+1);
+			temp = predecesor[temp];
+			if (contador++ > cantNodos){
+				cout << "HAY ALGO MAL ACA " << contador << " " << cantNodos <<  endl;
+				break;
+				}
+	}
+	//cout << temp +1 << endl;
+	vec.push_back(temp+1);
+	
+	elvec.push_back(vec);
+	}
+	
+	
+	int dfsRecur(int nodoInicial, int nodo, vector <int> &predecesor, int contador, vector< vector <int> > & vec2vec){
+	
+	//cout << "me llaman con el nodo " << nodo +1<< endl;
+	for (int i = 0; i < vecinos(nodo).size(); i++)
+	{
+		int elvecino = vecinos(nodo)[i]; 
 		
-	int generarCliquesMaximales(){	
+		if(predecesor[elvecino] == -1){
+			//cout << elvecino +1 << endl;
+			predecesor[elvecino] = nodo;
+			dfsRecur(nodo, elvecino,predecesor, contador + 1, vec2vec);
+			
+		}else{
+			if(contador % 2 == 1 && contador > 1){		// encontre un ciclo impar
+				devolverCicloImpar(nodoInicial, nodo, elvecino , predecesor, vec2vec);
+				return 0;
+			} 
+		
+		}
+		
+	}
+	
+	return 0;
+	
+	}
+	
+	
+	void dfs(int nodo, vector< vector <int> > & vec2vec){
+	
+	vector<int> predecesor(cantNodos,-1);
+	predecesor[nodo] = -2;
+	int contador = 1;
+	dfsRecur(nodo, nodo, predecesor, contador, vec2vec);
+		
+	}
+	
+	
+		
+	int generarCliquesMaximales(vector< vector<int> > &vec2vec){	
+		
 		
 		vector<int> vec;
 		set<int> setPuestos;
@@ -202,17 +274,21 @@ class grafo{
 		
 		//cout << "empiezo con " << *it << endl;
 		vec = generarCliqueMaximal(*it, setPuestos);
-
-		cout << endl ;
+		
+		vec2vec.push_back(vec);
 		//cout << "Nueva clique" << endl;
 		
+		/*
 		for (int i = 0; i < vec.size(); i++)
 			cout << vec[i] << " " ;
 			
 		cout << endl;
-		
+		*/
 		}
 	}
+	
+	
+	
 		
 		vector<int> generarCliqueMaximal(int nodo, set<int> &setPuestos){
 		
