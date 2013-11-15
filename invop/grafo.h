@@ -223,6 +223,7 @@ class grafo{
 	elvec.push_back(vec);
 	}
 	
+	// probar con marcado pasado por referencia y sin. y con  esa restriccion del predecesor en el if y sin
 	
 	int dfsRecur(int nodoInicial, int nodo, vector <int> &predecesor, int contador, vector< vector <int> > & vec2vec, vector<bool> &marcado){
 	
@@ -236,13 +237,15 @@ class grafo{
 			
 			//cout << elvecino +1 << endl;
 			predecesor[elvecino] = nodo;
+			//contador++;
 			dfsRecur(nodoInicial, elvecino,predecesor, contador + 1, vec2vec, marcado);
 			predecesor[elvecino] = -1;
 			
 			
 			
 		}else{
-			if(contador % 2 == 1){		// encontre un ciclo impar
+			if((contador % 2) == 1 && elvecino != predecesor[nodo]){		// encontre un ciclo impar
+				//cout << "el " << elvecino + 1 << " el predecor de " << nodo + 1  << " es " << predecesor[nodo] + 1 << " " <<  contador << endl;
 				devolverCicloImpar(nodoInicial, nodo, elvecino , predecesor, vec2vec, marcado);
 				return 0;
 			} 
