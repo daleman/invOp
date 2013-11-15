@@ -30,10 +30,13 @@ int main(){
  */
  
  vector< vector<int> > elvec;
+ vector<bool> marcado(g.cantNodos,false);
+	
  for (int k = 0; k < g.cantNodos; k++)
  {
-	g.dfs(k, elvec);
+	g.dfs(k, elvec, marcado);
 	}
+	
 	std::sort (elvec.begin(), elvec.end(), funcionSort); 
 	
 	
@@ -46,10 +49,10 @@ int main(){
 		cout << endl;
 	}
 	
-	cout << "me dio " << elvec.size() << "ciclos impares" << endl;
+	cout << "me dio " << elvec.size() << "ciclos impares. El mas grande es de " << elvec[0].size() << endl;
 
 
- 
+	
 	//g.draw();
  
 }

@@ -195,47 +195,55 @@ class grafo{
 	*/
 	// empiezo con contador en uno, cuando es impar encontre un ciclo impar
 	
-	void devolverCicloImpar(int nodoInicial, int nodo, int nodoFinal,const vector<int> predecesor, vector < vector <int> > &elvec){
+	void devolverCicloImpar(int nodoInicial, int nodo, int nodoFinal,const vector<int> &predecesor, vector < vector <int> > &elvec, vector<bool> &marcado){
 	
 	vector<int> vec;
-	
 	
 	int temp =  nodo;
 	//cout << endl;
 	
-	//cout << nodo << " " ;
+	//cout << nodoFinal + 1 << " " ;
+	vec.push_back(nodoFinal + 1 );
+	marcado[nodoFinal] = true;
+			
 	int contador =0;
-	while(predecesor[temp] != -2 ){
+	while(temp != nodoFinal ){
 			//cout << temp+1 << " ";
 			vec.push_back(temp+1);
+			marcado[temp] = true;
 			temp = predecesor[temp];
 			if (contador++ > cantNodos){
 				cout << "HAY ALGO MAL ACA " << contador << " " << cantNodos <<  endl;
 				break;
 				}
 	}
-	//cout << temp +1 << endl;
-	vec.push_back(temp+1);
+	//cout << nodoFinal + 1 << endl;
+	vec.push_back(nodoFinal + 1);
 	
 	elvec.push_back(vec);
 	}
 	
 	
-	int dfsRecur(int nodoInicial, int nodo, vector <int> &predecesor, int contador, vector< vector <int> > & vec2vec){
+	int dfsRecur(int nodoInicial, int nodo, vector <int> &predecesor, int contador, vector< vector <int> > & vec2vec, vector<bool> &marcado){
 	
 	//cout << "me llaman con el nodo " << nodo +1<< endl;
 	for (int i = 0; i < vecinos(nodo).size(); i++)
 	{
 		int elvecino = vecinos(nodo)[i]; 
-		
+		if (marcado[elvecino]) continue;
+			
 		if(predecesor[elvecino] == -1){
+			
 			//cout << elvecino +1 << endl;
 			predecesor[elvecino] = nodo;
-			dfsRecur(nodo, elvecino,predecesor, contador + 1, vec2vec);
+			dfsRecur(nodoInicial, elvecino,predecesor, contador + 1, vec2vec, marcado);
+			predecesor[elvecino] = -1;
+			
+			
 			
 		}else{
-			if(contador % 2 == 1 && contador > 1){		// encontre un ciclo impar
-				devolverCicloImpar(nodoInicial, nodo, elvecino , predecesor, vec2vec);
+			if(contador % 2 == 1){		// encontre un ciclo impar
+				devolverCicloImpar(nodoInicial, nodo, elvecino , predecesor, vec2vec, marcado);
 				return 0;
 			} 
 		
@@ -248,12 +256,12 @@ class grafo{
 	}
 	
 	
-	void dfs(int nodo, vector< vector <int> > & vec2vec){
+	void dfs(int nodo, vector< vector <int> > & vec2vec, vector<bool> &marcado){
 	
 	vector<int> predecesor(cantNodos,-1);
 	predecesor[nodo] = -2;
 	int contador = 1;
-	dfsRecur(nodo, nodo, predecesor, contador, vec2vec);
+	dfsRecur(nodo, nodo, predecesor, contador, vec2vec, marcado);
 		
 	}
 	
