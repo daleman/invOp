@@ -291,6 +291,19 @@ int main(){
 
 
 
+/* This simple routine frees up the pointer *ptr, and sets *ptr
+   to NULL */
+
+static void
+free_and_null (char **ptr)
+{
+   if ( *ptr != NULL ) {
+      free (*ptr);
+      *ptr = NULL;
+   }
+} /* END free_and_null */ 
+
+
 static int CPXPUBLIC 
 mycutcallback (CPXCENVptr env,
                void       *cbdata,
@@ -388,19 +401,28 @@ makeusercuts (CPXENVptr  env,
 {
    int status = 0;
 
-   int beg[] = {0, 2, 4, 6, 16, 26, 36, 46, 56};
+   int beg[] = {0, 2, 4, 6, 16, 26, 36, 46, 56};	// ponemos los inicios de cada restriccion, que seran el inicio de la anterior mas
+													// el tamano del vector de cada restriccion agregada
 
-   double val[] = 
-   {1, -1, 
-    1, -1, 
-    1, -1, 
-    2.08, 2.98, 3.47, 2.24, 2.08, 0.25, 0.25, 0.25, 0.25, 0.25,
-    2.08, 2.98, 3.47, 2.24, 2.08, 0.25, 0.25, 0.25, 0.25, 0.25,
-    2.08, 2.98, 3.47, 2.24, 2.08, 0.25, 0.25, 0.25, 0.25, 0.25,
-    2.08, 2.98, 3.47, 2.24, 2.08, 0.25, 0.25, 0.25, 0.25, 0.25,
-    2.08, 2.98, 3.47, 2.24, 2.08, 0.25, 0.25, 0.25, 0.25, 0.25};
 
-   char *varname[] = 
+	int cantidadRestricciones = bla;
+	// ponemos los valores de los coeficientes, todos 1, tantos como variables de restricciones
+   double val[cantidadVariables];
+	int count = 0;
+	for (int i = 0; i < cantidadRestricciones; i++)
+	{
+		for (int j = 0; j < restriccion[i].size(); j++)
+		{
+			val[count] = 1;
+			count++;
+		}
+		
+		
+	}
+	 
+   char *varname[] = 					
+	 									// ponemos en orden los nombres de las variables
+   
    {"X21", "X22", 
     "X22", "X23", 
     "X23", "X24",
@@ -415,16 +437,25 @@ makeusercuts (CPXENVptr  env,
     "X15", "X25", "X35", "X45", "X55",
     "W15", "W25", "W35", "W45", "W55"};
 
-   double rhs[] = {0, 0, 0, 20.25, 20.25, 20.25, 20.25, 16.25};
 
+	// ponemos el termino independiente
+	// en el caso de la clique 1
+	//en el caso de ciclo impar, tamano de ciclo (impar -1) / 2
+	
+   double rhs[cantidadRestricciones];
+   for (int i = 0; i < cantidadRestricciones ; i++)
+   {
+	   rhs[i] = 1;	// para cliques
+   }
+   	
    int    *cutbeg = NULL;
    int    *cutind = NULL;
    double *cutval = NULL;
    double *cutrhs = NULL; 
 
    int i, varind;
-   int nz   = 56;
-   int cuts = 8;
+   int nz   = cantidadVariables;		// cantidad de variables que no son cero
+   int cuts = cantidadRestricciones;	// cantidad de cortes
 
    int cur_numcols = CPXgetnumcols (env, lp);
 
@@ -437,10 +468,10 @@ makeusercuts (CPXENVptr  env,
       goto TERMINATE;
    }
 
-   cutbeg = new int[cuts+1];
-   cutind = new int[nz];
-   cutval = new double[nz];
-   cutrhs = new double[cuts];
+   cutbeg = (int *)    malloc ((cuts+1) * sizeof (int));
+   cutind = (int *)    malloc (nz * sizeof (int));
+   cutval = (double *) malloc (nz * sizeof (double));
+   cutrhs = (double *) malloc (cuts * sizeof (double));
 
    if ( cutbeg == NULL ||
         cutind == NULL ||
@@ -477,14 +508,17 @@ makeusercuts (CPXENVptr  env,
 TERMINATE:
 
    if ( status ) {
-      delete ((char **) &cutbeg);
-      delete ((char **) &cutind);
-      delete ((char **) &cutval);
-      delete ((char **) &cutrhs);
+      free_and_null ((char **) &cutbeg);
+      free_and_null ((char **) &cutind);
+      free_and_null ((char **) &cutval);
+      free_and_null ((char **) &cutrhs);
    }
  
    return (status);
 
 } /* END makeusercuts */
 
+/* A constraint that cuts off the optimal solution of noswot:
+   W11 + W12 + W13 + W14 + W15 <= 3
+ */
 
