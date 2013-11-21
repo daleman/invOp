@@ -10,9 +10,15 @@
 #define CLIQUES 1
 #define CICLOS_IMPARES 2
 
+
+
 using namespace std;
 
+
+
 ILOSTLBEGIN
+
+int corte = 0;
 
 /* The following structure will hold the information we need to 
    pass to the cut callback function */
@@ -36,7 +42,7 @@ mycutcallback      (CPXCENVptr env, void *cbdata, int wherefrom,
 	void *cbhandle, int *useraction_p);
 
 static int
-makeusercuts       (CPXENVptr env, CPXLPptr lp, CUTINFOptr cutinfo, vector< vector<int> > vectorRestricciones, int tipoCorte);
+makeusercuts       (CPXENVptr env, CPXLPptr lp, CUTINFOptr cutinfo, vector< vector<int> > vectorRestricciones, vector< vector<int> > vectorRestricciones2);
 
 string convertInt(int n)
 {
@@ -52,14 +58,16 @@ int main(){
     g.inicializar();    //inicializo en grafo por entrada standard
     int n = g.cantNodos;    // cuantos vertices hay en el grafo
 	
+	//g.heuristica();
 	// encuentro las cliques y los ciclos impares
 
-	vector <vector <int> > vectorRestricciones;
+	vector <vector <int> > vectorRestriccionesCliques;
+	vector <vector <int> > vectorRestriccionesCiclos;
 	
-	g.cliques(vectorRestricciones);
-	//g.ciclosImpares(vectorRestricciones);
-
-    // Genero el problema de cplex.
+	g.cliques(vectorRestriccionesCliques);
+	g.ciclosImpares(vectorRestriccionesCiclos);
+	
+	// Genero el problema de cplex.
     int status;
     CPXENVptr env; // Puntero al entorno.
     CPXLPptr lp; // Puntero al LP
@@ -147,7 +155,7 @@ int main(){
     // de a mas de una, rmatbeg (ver documentacion de CPXaddrows) deberia tener la posicion en la que comienza cada 
     // restriccion.
 
-    for (int i = 1; i <= g.cantNodos; i++){
+    for (int i = 0; i < g.cantNodos; i++){
 	int ccnt = 0, zero = 0, nzcnt = 0, rcnt = 1;
 	char sense = 'L'; // Sentido de la desigualdad. 'G' es mayor o igual y 'E' para igualdad.
 	double rhs = 1; // termino independiente. En nuestro caso 1.
@@ -158,14 +166,16 @@ int main(){
 	// nzcnt que le pasemos.
 
 	nzcnt = 0;
-	for (int j = i+1; j <= g.cantNodos ; j++){
+	
+	
+	for (int j = i+1; j < g.cantNodos ; j++){
 
 	    if (g.hayArista(i,j))
 	    {
-		cutind[nzcnt] = i-1;
+		cutind[nzcnt] = i;
 		cutval[nzcnt] = 1;
 		nzcnt++;
-		cutind[nzcnt] = j-1;
+		cutind[nzcnt] = j;
 		cutval[nzcnt] = 1;
 		nzcnt++;
 		if (nzcnt == 2){
@@ -249,7 +259,7 @@ int main(){
 	CPXsetintparam(env, CPX_PARAM_MIPSEARCH, 1);
 	
 	// seteo la estrategia de seleccion de nodos
-	CPXsetintparam(env, CPX_PARAM_NODESEL, CPX_NODESEL_DFS);	// dfs
+	//CPXsetintparam(env, CPX_PARAM_NODESEL, CPX_NODESEL_DFS);	// dfs
 	//CPXsetintparam(env, CPX_PARAM_NODESEL, CPX_NODESEL_BESTEST); 
 	
 	// seteo la estrategia de branching
@@ -257,10 +267,14 @@ int main(){
 	
 	status = CPXsetintparam(env, CPX_PARAM_VARSEL, -1);
     
+    //cut and branch:
+    //status = CPXgetcallbacknodeinfo(env, cbdata, CPX_CALLBACK_MIP_NODE,
+    //                 0, CPX_CALLBACK_INFO_NODE_DEPTH, &numiinf);
+    
     /* Create user cuts for noswot problem */
 
-    //status = makeusercuts (env, lp, &usercutinfo, vectorRestricciones, CLIQUES);
-    status = makeusercuts (env, lp, &usercutinfo, vectorRestricciones, CICLOS_IMPARES);
+    //status = makeusercuts (env, lp, &usercutinfo, vectorRestriccionesCliques, CLIQUES);
+    status = makeusercuts (env, lp, &usercutinfo,vectorRestriccionesCliques, vectorRestriccionesCiclos);
     if ( status ){
 	cerr << "Problema haciendo el mekeusercuts" << endl;
 	exit(1);
@@ -363,7 +377,7 @@ mycutcallback (CPXCENVptr env,
 {
     int status = 0;
 
-    CUTINFOptr cutinfo = (CUTINFOptr) cbhandle;
+	CUTINFOptr cutinfo = (CUTINFOptr) cbhandle;
 
     int      numcols  = cutinfo->numcols;
     int      numcuts  = cutinfo->num;
@@ -417,33 +431,11 @@ mycutcallback (CPXCENVptr env,
 		return (status);
 	    }
 	    addcuts++;
-	    return status;
+	   // return status;
 	}
 	
     }
-    /*
-    int indiceMax = -1;
-    double diferMax = -1;
-    for (int j = 0; j < numcuts; j++){
-		if(vectorDif[j] > diferMax){
-				diferMax = vectorDif[j];
-				indiceMax = j;
-		}
-	}
-	
-	
-	if ( diferMax > 0.01 ) { 
-	    cout << "bem" << endl;
-	    status = CPXcutcallbackadd (env, cbdata, wherefrom,
-		    cutnz, rhs[indiceMax], 'L',
-		    vectorCutind[indiceMax], vectorCutval[indiceMax], 1);
-	    if ( status ) {
-		fprintf (stderr, "Failed to add cut.\n");
-		return (status);
-		}
-	    addcuts++;
-	}
-	*/
+    
     /* Tell CPLEX that cuts have been created */ 
     if ( addcuts > 0 ) {
 	*useraction_p = CPX_CALLBACK_SET; 
@@ -479,10 +471,10 @@ cut8: 2.08 X15 + 2.98 X25 + 3.47 X35 + 2.24 X45 + 2.08 X55
 makeusercuts (CPXENVptr  env,
 	CPXLPptr   lp,
 	CUTINFOptr usercutinfo, vector< vector<int> > vectorRestricciones,
-	int tipoCorte)
+	vector< vector<int> > vectorRestriccionesCiclos)
 {
     int status = 0;
-
+	
     // ponemos el termino independiente
     // en el caso de la clique 1
     //en el caso de ciclo impar, tamano de ciclo (impar -1) / 2
@@ -498,8 +490,12 @@ makeusercuts (CPXENVptr  env,
 	cantidadVariables += vectorRestricciones[i].size();
     }
     
+    for(int i = 0; i < vectorRestriccionesCiclos.size(); i++){
+	cantidadVariables += vectorRestriccionesCiclos[i].size();
+    }
+    
     int nz   = cantidadVariables;		// cantidad de variables que no son cero
-    int cuts = vectorRestricciones.size();	// cantidad de cortes
+    int cuts = vectorRestricciones.size() + vectorRestriccionesCiclos.size();	// cantidad de cortes
 
     int cur_numcols = CPXgetnumcols (env, lp);
 
@@ -534,12 +530,11 @@ makeusercuts (CPXENVptr  env,
 		for ( int j = 0; j < vectorRestricciones[i].size(); j++ ){  // itera por cada restriccion
 			
 			strcpy(varname,"x_");
-			sprintf(buffer, "%d",vectorRestricciones[i] [j]); 
+			sprintf(buffer, "%d",vectorRestricciones[i] [j] +1); 
 			strcat(varname,buffer) ; // el nombre de la i-esima variable 
 			status = CPXgetcolindex (env, lp, varname, &varind);	// varname tiene que ser un puntero
 			if ( status )  {
-			fprintf (stderr,
-				"Failed to get index from variable name.\n");
+			fprintf (stderr, "Failed to get index from variable name.\n");
 		//	goto TERMINATE;
 			}
 
@@ -555,14 +550,17 @@ makeusercuts (CPXENVptr  env,
 
     int contador = 0;
     for (i = 0; i < cuts; i++) {
-	cutbeg[i] = contador;
-	contador += vectorRestricciones[i].size();  // le sumo la cantidad de variables distintas de 0 que tenia la iesima restriccion
-		if( tipoCorte == CLIQUES){
-			cutrhs[i] = 1;	    // si es clique
-		}else{
-			cutrhs[i] = (vectorRestricciones[i].size() - 1) / 2;	    // si es ciclo impar
+		if (i < vectorRestricciones.size()){
+			cutbeg[i] = contador;
+			contador += vectorRestricciones[i].size();  // le sumo la cantidad de variables distintas de 0 que tenia la iesima restriccion
+				cutrhs[i] = 1;	    // si es clique
 		}
-	
+		else{
+		cutbeg[i] = contador;
+		contador += vectorRestriccionesCiclos[i-vectorRestricciones.size()].size();  // le sumo la cantidad de variables distintas de 0 que tenia la iesima restriccion
+			
+		cutrhs[i] = (vectorRestricciones[i].size() - 1) / 2;	    // si es ciclo impar
+		}
 	}
     
     cutbeg[cuts] = contador; //beg[cuts];	// ????????????

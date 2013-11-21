@@ -66,15 +66,16 @@ class grafo{
             srand(time(NULL));
             for(int i = 0; i < this->cantNodos; ++i)
                 for(int j = i; j < this->cantNodos; ++j)
-                    if(rand()%2 == 0) asociar(i+1, j+1);
+                    if(rand()%2 == 0) asociar(i, j);
         }
 
         void asociar(int nodo1, int nodo2){
+            
             nodo1 = nodo1-1;
             nodo2 = nodo2-1;
-
+            
             if(nodo1 != nodo2){
-                //cout << "asociar(" << nodo1+1 << "," << nodo2+1 << ")" << endl;
+                //cout << "asociar(" << nodo1 << "," << nodo2 << ")" << endl;
 
                 /* Agrego la arista faltante  */
                 this->aristas.push_back(arista(nodo1,nodo2));
@@ -91,12 +92,11 @@ class grafo{
 
 
         int grado(int nodo) const{
-            nodo--;
             return this->lista_global[nodo].size();
         }
 
         bool hayArista(int nodo1, int nodo2) const{
-            return (matriz_ady[nodo2-1][nodo1-1] == 1);
+            return (matriz_ady[nodo2][nodo1] == 1);
         }
 
         // Devuelve un vector de int con los vecinos del nodo 'n'
@@ -115,9 +115,9 @@ class grafo{
             int nodoMax = -1;
             int gradoMax = -1;
             for (int i = 0; i < cantNodos; i++ ){
-                if (grado(i+1) > gradoMax){
+                if (grado(i) > gradoMax){
                     nodoMax = i;
-                    gradoMax = grado(i+1);
+                    gradoMax = grado(i);
                 }
             }
             return nodoMax;
@@ -136,7 +136,6 @@ class grafo{
         // Devuelve si el nodo 'nodo' se conecta con la clique 'clique'
         bool seConectaConCliqueActual(int nodo, vector <int> clique){
             for (int i = 0; i < clique.size();++i){
-                //TODO: Revisar, creo que hayArista toma 1..n pero acá se pasan 0..n-1
                 if ( !(hayArista(clique[i], nodo)) ){
                     return false;
                 }
@@ -172,14 +171,14 @@ class grafo{
             int temp =  nodo;
             //cout << endl;
 
-            //cout << nodoFinal + 1 << " " ;
-            vec.push_back(nodoFinal + 1 );
+            //cout << nodoFinal+1 << " " ;
+            vec.push_back(nodoFinal );
             marcado[nodoFinal] = true;
 
             int contador =0;
             while(temp != nodoFinal ){
-                //cout << temp+1 << " ";
-                vec.push_back(temp+1);
+              //  cout << temp+1 << " ";
+                vec.push_back(temp);
                 marcado[temp] = true;
                 temp = predecesor[temp];
                 if (contador++ > cantNodos){
@@ -187,10 +186,26 @@ class grafo{
                     break;
                 }
             }
-            //cout << nodoFinal + 1 << endl;
-            vec.push_back(nodoFinal + 1);
-
+            
+            //cout << endl;
+            
             elvec.push_back(vec);
+            
+            for (int i = 0; i < vec.size(); i++)
+			{
+				if (i != vec.size() -1){
+					if( !hayArista(vec[i], vec[i+1]) )
+					{
+						cout << "TA TODO MAL no hay arista entre " << vec[i]+1 << " y " << vec[i+1]  << endl;
+					}
+				}else{
+					if( !hayArista(vec[0], vec[vec.size()-1]) )
+					{
+						cout << "TA TODO MAL ultimo no hay arista entre " << vec[i]+1 << " y " << vec[i+1]  << endl;
+					}
+				}
+			}
+			
         }
 
         // probar con marcado pasado por referencia y sin. y con  esa restriccion del predecesor en el if y sin
@@ -247,7 +262,7 @@ class grafo{
             set<int> setPuestos;
 
             for (int i = 0; i < cantNodos; i++)
-                setPuestos.insert(i+1);
+                setPuestos.insert(i);
 
             while( !setPuestos.empty() ){
 
@@ -274,20 +289,23 @@ class grafo{
 
         vector<int> generarCliqueMaximal(int nodo, set<int> &setPuestos){
 
+			
             vector<int> clique;
             set <int> seConectanConCliqueActual;
 
-            nodo = nodo -1;
-            for (int j = 0; j < (this->lista_global[nodo]).size(); ++j){
+			
+            for (int j = 0; j < (this->lista_global[nodo]).size(); j++){
                 //cout  << "los vecinos de " <<(this->lista_global[nodo])[j] << " ";
-                seConectanConCliqueActual.insert((this->lista_global[nodo])[j] +1 );
+                seConectanConCliqueActual.insert((this->lista_global[nodo])[j] );
+                //cout << "agrego al nodo " << (this->lista_global[nodo])[j] +1<< endl;
+                
             }
 
-            clique.push_back(nodo+1);
-            setPuestos.erase(nodo+1);
-            //cout << "agrego el " << nodoMax + 1 << endl;
-            //seConectanConCliqueActual.erase(nodoMax+1);
 
+			
+            clique.push_back(nodo);
+            setPuestos.erase(nodo);
+            
 
             while( !seConectanConCliqueActual.empty() ){		//mientras no es vacio, voy agregando nodos y reduciendo el set
 
@@ -297,28 +315,50 @@ class grafo{
 
                 int maximo_aporte = 0;
 
-                for (set<int>::iterator it= seConectanConCliqueActual.begin(); it!=seConectanConCliqueActual.end(); ++it){				
-                    int aporta = grado(*it);
+                for (set<int>::iterator it2= seConectanConCliqueActual.begin(); it2!=seConectanConCliqueActual.end(); ++it2){				
+                    int aporta = grado(*it2);
                     //cout << "esta el" << *it << endl;
                     if (aporta > maximo_aporte){
-                        elQueMasAporta = *it;
+                        elQueMasAporta = *it2;
                         maximo_aporte = aporta;
                     }
                 }
 
                 clique.push_back(elQueMasAporta);
+                //cout << "Agrego al nodo " << elQueMasAporta +1 << endl;
                 setPuestos.erase(elQueMasAporta);
-                seConectanConCliqueActual.erase(elQueMasAporta);
-
-
+             
+				
+				set<int>::iterator temp;
                 // saco a todos los que no son adyacentes al nodo que acabo de agregar
-                for (set<int>::iterator it= seConectanConCliqueActual.begin(); it!=seConectanConCliqueActual.end(); ++it){				
+                for (set<int>::iterator it= seConectanConCliqueActual.begin(); it!=seConectanConCliqueActual.end();){				
+                    //cout << "aparece el nodo " << *it +1 << endl;
+                        
                     if ( !hayArista(*it, elQueMasAporta)){
-                        seConectanConCliqueActual.erase(*it);
-                    }
+                       // cout << "borro el nodo " << *it+1 << " pq no se conecta con " << elQueMasAporta +1 << endl;
+                        temp = it;
+                        ++it;
+                        seConectanConCliqueActual.erase(temp);
+                        
+                    }else{
+						//cout << "NO borro el nodo " << *it+1 << " pq se conecta con " << elQueMasAporta +1 << endl;
+						++it;
+					}
                 }
 
             }
+            
+				for (int i = 0; i < clique.size(); i++)
+				{
+					for (int j = i+1; j < clique.size(); j++)
+					{
+						if(!hayArista(clique[i],clique[j])){
+						cout << "TA TODO MAL" << " el nodo " << clique[i] +1 << " no incide con el nodo " << clique[j] +1 << endl;
+						return clique;
+					}
+				}
+				}
+		
             return clique;
         }
 
@@ -334,7 +374,7 @@ class grafo{
 				cout << endl;
 			}
 			
-			cout << "me dio " << vec.size() << "cliques" << endl;
+			cout << "me dio " << vec.size() << " cliques o ciclos con el mas grande de " << vec[0].size() << endl;
 		}
 
 		void cliques( vector< vector<int> > &elvec){
@@ -347,19 +387,67 @@ class grafo{
 			
 			for (int i = 0; i < elvec.size(); i++)
 			{
-				if (elvec[i].size() > 4){
+				//if (elvec[i].size() > 10){
 				temp.push_back(elvec[i]);
-				}
+				//}
 			}
 			
 			elvec = temp;
 			
-			imprimirVectorRestricciones(elvec);
+			//imprimirVectorRestricciones(elvec);
 		 
 			//draw();
 		 
 		}
 
+		vector <int> heuristica(){
+		
+		vector< vector<int> > elvec;
+		
+		//genero el grafo complemento
+		grafo gComplemento = grafo(0) ;
+		
+		gComplemento.constructor(cantNodos);
+		
+		for (int i = 0; i < cantNodos; i++)
+		{
+			for (int j = i+1; j < cantNodos; j++)
+			{
+				if(!hayArista(i,j)){
+					gComplemento.asociar(i+1,j+1);
+				}
+			}
+		}
+		
+		gComplemento.cliques(elvec);
+		
+		vector<int> res;
+		cout << endl << "el conjunto independiente: " << endl;
+		for (int i = 0; i < elvec[0].size(); i++)
+		{
+			res.push_back(elvec[0][i]);
+			cout << elvec[0][i] << endl;
+		}
+		
+		cout << "en total tiene " << res.size() <<" nodos." << endl;
+		
+		// me fijo si es un conjunto independiente
+		
+		for (int i = 0; i < res.size(); i++)
+		{
+			for (int j = i+1; j < res.size(); j++)
+			{
+				if(hayArista(res[i],res[j])){
+					cout << "TA TODO MAL" << " el nodo " << res[i] << " incide con el nodo " << res[j] << endl;
+					return res;
+				}
+			}
+		}
+		
+		cout << "TA TODO BIEN" << endl;
+		
+		return res;
+		}
 
 		void ciclosImpares( vector< vector<int> > &elvec){
 		 
@@ -372,14 +460,13 @@ class grafo{
 			
 			vector < vector<int> > temp;
 			
-			
-			
-			
 			sort (elvec.begin(), elvec.end(), funcionSort); 
 			
-			for (int k = 0; k < 100; k++)
+			for (int k = 0; k < elvec.size(); k++)
 			{
+				//if (elvec[k].size() > 4 ){
 				temp.push_back(elvec[k]);
+				//}
 			}
 			
 			elvec = temp;
