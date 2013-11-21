@@ -225,7 +225,7 @@ int main(){
 	cerr << "Problema seteando para que acepte callback" << endl;
 	exit(1);
     }
-    
+		
     CPXsetintparam (env, CPX_PARAM_MIPCBREDLP, CPX_OFF);
 	CPXsetintparam(env, CPX_PARAM_PREIND, 0);
 	CPXsetintparam(env, CPX_PARAM_PRELINEAR, 0);
@@ -247,11 +247,20 @@ int main(){
 	CPXsetintparam(env, CPX_PARAM_CLIQUES, -1);
 	CPXsetintparam(env, CPX_PARAM_THREADS, 1);
 	CPXsetintparam(env, CPX_PARAM_MIPSEARCH, 1);
-
+	
+	// seteo la estrategia de seleccion de nodos
+	CPXsetintparam(env, CPX_PARAM_NODESEL, CPX_NODESEL_DFS);	// dfs
+	//CPXsetintparam(env, CPX_PARAM_NODESEL, CPX_NODESEL_BESTEST); 
+	
+	// seteo la estrategia de branching
+	CPXsetintparam(env, CPX_PARAM_BRDIR , 1);
+	
+	status = CPXsetintparam(env, CPX_PARAM_VARSEL, -1);
+    
     /* Create user cuts for noswot problem */
 
-    status = makeusercuts (env, lp, &usercutinfo, vectorRestricciones, CLIQUES);
-    //status = makeusercuts (env, lp, &usercutinfo, vectorRestricciones, CICLOS_IMPARES);
+    //status = makeusercuts (env, lp, &usercutinfo, vectorRestricciones, CLIQUES);
+    status = makeusercuts (env, lp, &usercutinfo, vectorRestricciones, CICLOS_IMPARES);
     if ( status ){
 	cerr << "Problema haciendo el mekeusercuts" << endl;
 	exit(1);
@@ -375,8 +384,12 @@ mycutcallback (CPXCENVptr env,
 	    0, numcols-1); 
     if ( status ) {
 	fprintf(stderr, "Failed to get node solution.\n");
-	goto TERMINATE;
-    }
+	return (status);
+}
+
+	vector <double> vectorDif;
+	vector <int*> vectorCutind;
+	vector <double*> vectorCutval;
 
     for (i = 0; i < numcuts; i++) {
 	cutvio = -rhs[i];
@@ -388,26 +401,53 @@ mycutcallback (CPXCENVptr env,
 	    cutvio += x[cutind[j]] * cutval[j];
 	}
 
+	vectorDif.push_back(cutvio);
+	vectorCutind.push_back(cutind);
+	vectorCutval.push_back(cutval);
 	/* Use a cut violation tolerance of 0.01 */
 
+	
 	if ( cutvio > 0.01 ) { 
+	    cout << "agrego el corte " << i <<endl;
 	    status = CPXcutcallbackadd (env, cbdata, wherefrom,
 		    cutnz, rhs[i], 'L',
 		    cutind, cutval, 1);
 	    if ( status ) {
 		fprintf (stderr, "Failed to add cut.\n");
-		goto TERMINATE;
+		return (status);
 	    }
 	    addcuts++;
+	    return status;
 	}
+	
     }
-
+    /*
+    int indiceMax = -1;
+    double diferMax = -1;
+    for (int j = 0; j < numcuts; j++){
+		if(vectorDif[j] > diferMax){
+				diferMax = vectorDif[j];
+				indiceMax = j;
+		}
+	}
+	
+	
+	if ( diferMax > 0.01 ) { 
+	    cout << "bem" << endl;
+	    status = CPXcutcallbackadd (env, cbdata, wherefrom,
+		    cutnz, rhs[indiceMax], 'L',
+		    vectorCutind[indiceMax], vectorCutval[indiceMax], 1);
+	    if ( status ) {
+		fprintf (stderr, "Failed to add cut.\n");
+		return (status);
+		}
+	    addcuts++;
+	}
+	*/
     /* Tell CPLEX that cuts have been created */ 
     if ( addcuts > 0 ) {
 	*useraction_p = CPX_CALLBACK_SET; 
     }
-
-TERMINATE:
 
     return (status);
 
@@ -517,11 +557,11 @@ makeusercuts (CPXENVptr  env,
     for (i = 0; i < cuts; i++) {
 	cutbeg[i] = contador;
 	contador += vectorRestricciones[i].size();  // le sumo la cantidad de variables distintas de 0 que tenia la iesima restriccion
-	if( tipoCorte == CLIQUES){
-		cutrhs[i] = 1;	    // si es clique
-	}else{
-		cutrhs[i] = (vectorRestricciones[i].size() - 1) / 2;	    // si es ciclo impar
-	}
+		if( tipoCorte == CLIQUES){
+			cutrhs[i] = 1;	    // si es clique
+		}else{
+			cutrhs[i] = (vectorRestricciones[i].size() - 1) / 2;	    // si es ciclo impar
+		}
 	
 	}
     

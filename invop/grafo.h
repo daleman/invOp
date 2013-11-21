@@ -214,7 +214,7 @@ class grafo{
 
 
                 }else{
-                    if((contador % 2) == 1 && elvecino != predecesor[nodo]){		// encontre un ciclo impar
+                    if((contador % 2) == 1 ){//&& elvecino != predecesor[nodo]){		// encontre un ciclo impar
                         //cout << "el " << elvecino + 1 << " el predecor de " << nodo + 1  << " es " << predecesor[nodo] + 1 << " " <<  contador << endl;
                         devolverCicloImpar(nodoInicial, nodo, elvecino , predecesor, vec2vec, marcado);
                         return 0;
@@ -254,9 +254,12 @@ class grafo{
                 std::set<int>::iterator it=setPuestos.begin();
 
                 //cout << "empiezo con " << *it << endl;
-                vec = generarCliqueMaximal(*it, setPuestos);
+                
+               // if( setPuestos.find(*it) != setPuestos.end()){
+					vec = generarCliqueMaximal(*it, setPuestos);
+					vec2vec.push_back(vec);
+				//}
 
-                vec2vec.push_back(vec);
                 //cout << "Nueva clique" << endl;
 
                 /*
@@ -342,14 +345,16 @@ class grafo{
 			
 			vector < vector<int> > temp;
 			
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < elvec.size(); i++)
 			{
+				if (elvec[i].size() > 4){
 				temp.push_back(elvec[i]);
+				}
 			}
 			
 			elvec = temp;
 			
-			imprimirVectorRestricciones(temp);
+			imprimirVectorRestricciones(elvec);
 		 
 			//draw();
 		 
@@ -365,8 +370,19 @@ class grafo{
 				dfs(k, elvec, marcado);
 			}
 			
+			vector < vector<int> > temp;
+			
+			
+			
+			
 			sort (elvec.begin(), elvec.end(), funcionSort); 
 			
+			for (int k = 0; k < 100; k++)
+			{
+				temp.push_back(elvec[k]);
+			}
+			
+			elvec = temp;
 			//imprimirVectorRestricciones(elvec);
 			
 			//draw();
