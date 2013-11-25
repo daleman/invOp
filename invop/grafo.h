@@ -382,18 +382,6 @@ class grafo{
 			generarCliquesMaximales(elvec);
 			
 			sort (elvec.begin(), elvec.end(), funcionSort); 
-			
-			vector < vector<int> > temp;
-			
-			for (int i = 0; i < elvec.size(); i++)
-			{
-				//if (elvec[i].size() > 10){
-				temp.push_back(elvec[i]);
-				//}
-			}
-			
-			elvec = temp;
-			
 			//imprimirVectorRestricciones(elvec);
 		 
 			//draw();
@@ -464,9 +452,9 @@ class grafo{
 			
 			for (int k = 0; k < elvec.size(); k++)
 			{
-				//if (elvec[k].size() > 4 ){
+				if (elvec[k].size() > 4 ){
 				temp.push_back(elvec[k]);
-				//}
+				}
 			}
 			
 			elvec = temp;

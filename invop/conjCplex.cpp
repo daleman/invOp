@@ -18,7 +18,6 @@ using namespace std;
 
 ILOSTLBEGIN
 
-int corte = 0;
 
 /* The following structure will hold the information we need to 
    pass to the cut callback function */
@@ -39,10 +38,12 @@ typedef struct cutinfo CUTINFO, *CUTINFOptr;
 
 static int CPXPUBLIC
 mycutcallback      (CPXCENVptr env, void *cbdata, int wherefrom,
-	void *cbhandle, int *useraction_p);
+						void *cbhandle, int *useraction_p);
 
 static int
-makeusercuts       (CPXENVptr env, CPXLPptr lp, CUTINFOptr cutinfo, vector< vector<int> > vectorRestricciones, vector< vector<int> > vectorRestricciones2);
+makeusercuts       (CPXENVptr env, CPXLPptr lp, CUTINFOptr cutinfo,
+						vector< vector<int> > vectorRestricciones,
+						vector< vector<int> > vectorRestricciones2);
 
 string convertInt(int n)
 {
@@ -51,26 +52,35 @@ string convertInt(int n)
     return ss.str();//return a string with the contents of the stream
 }
 
+bool funcionComparar (pair < double, int > i,
+					  pair < double, int > j)
+{
+	return ( i.first > j.first );
+}
+
+
 int main(){
 
     // Datos de la instancia de conjunto independiente.
     grafo g = grafo(0);
-    g.inicializar();    //inicializo en grafo por entrada standard
+    g.inicializar();    	//inicializo en grafo por entrada standard
     int n = g.cantNodos;    // cuantos vertices hay en el grafo
 	
 	//g.heuristica();
 	// encuentro las cliques y los ciclos impares
 
-	vector <vector <int> > vectorRestriccionesCliques;
-	vector <vector <int> > vectorRestriccionesCiclos;
-	
+	vector < vector <int> > vectorRestriccionesCliques;
+	vector < vector <int> > vectorRestriccionesCiclos;
 	g.cliques(vectorRestriccionesCliques);
 	g.ciclosImpares(vectorRestriccionesCiclos);
 	
+	int cantCortes = vectorRestriccionesCliques.size() +
+						vectorRestriccionesCiclos.size();
+	
 	// Genero el problema de cplex.
     int status;
-    CPXENVptr env; // Puntero al entorno.
-    CPXLPptr lp; // Puntero al LP
+    CPXENVptr env; 	// Puntero al entorno.
+    CPXLPptr lp; 	// Puntero al LP
 
     // Creo el entorno.
     env = CPXopenCPLEX(&status);
@@ -84,7 +94,6 @@ int main(){
     usercutinfo.val = NULL;
     usercutinfo.rhs = NULL;
 
-
     if (env == NULL) {
 	cerr << "Error creando el entorno" << endl;
 	exit(1);
@@ -93,14 +102,13 @@ int main(){
     // Creo el LP.
     lp = CPXcreateprob(env, &status, "Conjunto independiente");
 
-
     if (lp == NULL) {
 	cerr << "Error creando el LP" << endl;
 	exit(1);
     }
 
-
-    // Definimos las variables. No es obligatorio pasar los nombres de las variables, pero facilita el debug. La info es la siguiente:
+    // Definimos las variables. No es obligatorio pasar los nombres
+    // de las variables, pero facilita el debug. La info es la siguiente:
     double *ub, *lb, *objfun; // Cota superior, cota inferior, coeficiente de la funcion objetivo.
     char *xctype, **colnames; // tipo de la variable (por ahora son siempre continuas), string con el nombre de la variable.
     ub = new double[n]; 
@@ -113,7 +121,7 @@ int main(){
 	ub[i] = 1.0;
 	lb[i] = 0.0;
 	objfun[i] = 1;//pj[i];
-	xctype[i] = 'B'; // 'C' es continua, 'B' binaria, 'I' Entera. Para LP (no enteros), este parametro tiene que pasarse como NULL. No lo vamos a usar por ahora..
+	xctype[i] = 'B'; // 'C' es continua, 'B' binaria, 'I' Entera. 
 	// Nombre de la variable.
 	stringstream name;
 	name << "x_" << i+1;
@@ -125,7 +133,7 @@ int main(){
 
 
     // Agrego las columnas.
-    status = CPXnewcols(env, lp, n, objfun, lb, ub, xctype, colnames);    //hay que ver lo de LA FUNCION OBJETIVO
+    status = CPXnewcols(env, lp, n, objfun, lb, ub, xctype, colnames);
 
     if (status) {
 	cerr << "Problema agregando las variables CPXnewcols" << endl;
@@ -168,25 +176,25 @@ int main(){
 	nzcnt = 0;
 	
 	
-	for (int j = i+1; j < g.cantNodos ; j++){
+		for (int j = i+1; j < g.cantNodos ; j++){
 
-	    if (g.hayArista(i,j))
-	    {
-		cutind[nzcnt] = i;
-		cutval[nzcnt] = 1;
-		nzcnt++;
-		cutind[nzcnt] = j;
-		cutval[nzcnt] = 1;
-		nzcnt++;
-		if (nzcnt == 2){
-		    // Esta rutina agrega la restriccion al lp.
-		    status = CPXaddrows(env, lp, ccnt, rcnt, nzcnt, &rhs, &sense, &zero, cutind, cutval, NULL, NULL);
-		    nzcnt = 0;
-		} 
-	    }
+			if (g.hayArista(i,j))
+			{
+			cutind[nzcnt] = i;
+			cutval[nzcnt] = 1;
+			nzcnt++;
+			cutind[nzcnt] = j;
+			cutval[nzcnt] = 1;
+			nzcnt++;
+				if (nzcnt == 2){
+					// Esta rutina agrega la restriccion al lp.
+					status = CPXaddrows(env, lp, ccnt, rcnt, nzcnt, &rhs, &sense, &zero, cutind, cutval, NULL, NULL);
+					nzcnt = 0;
+				} 
+			}
 
+		}
 	}
-    }
 
 
     if (status) {
@@ -236,6 +244,8 @@ int main(){
 	exit(1);
     }
 		
+		
+	// saco las optimizaciones de CPLEX
     CPXsetintparam (env, CPX_PARAM_MIPCBREDLP, CPX_OFF);
 	CPXsetintparam(env, CPX_PARAM_PREIND, 0);
 	CPXsetintparam(env, CPX_PARAM_PRELINEAR, 0);
@@ -259,13 +269,13 @@ int main(){
 	CPXsetintparam(env, CPX_PARAM_MIPSEARCH, 1);
 	
 	// seteo la estrategia de seleccion de nodos
-	//CPXsetintparam(env, CPX_PARAM_NODESEL, CPX_NODESEL_DFS);	// dfs
+	CPXsetintparam(env, CPX_PARAM_NODESEL, CPX_NODESEL_DFS);	// dfs
 	//CPXsetintparam(env, CPX_PARAM_NODESEL, CPX_NODESEL_BESTEST); 
 	
 	// seteo la estrategia de branching
 	CPXsetintparam(env, CPX_PARAM_BRDIR , 1);
 	
-	status = CPXsetintparam(env, CPX_PARAM_VARSEL, -1);
+	//status = CPXsetintparam(env, CPX_PARAM_VARSEL, -1);
     
     //cut and branch:
     //status = CPXgetcallbacknodeinfo(env, cbdata, CPX_CALLBACK_MIP_NODE,
@@ -273,7 +283,6 @@ int main(){
     
     /* Create user cuts for noswot problem */
 
-    //status = makeusercuts (env, lp, &usercutinfo, vectorRestriccionesCliques, CLIQUES);
     status = makeusercuts (env, lp, &usercutinfo,vectorRestriccionesCliques, vectorRestriccionesCiclos);
     if ( status ){
 	cerr << "Problema haciendo el mekeusercuts" << endl;
@@ -287,8 +296,6 @@ int main(){
 	cerr << "Problema haciendo el callback" << endl;
 	exit(1);
     }  
-
-
 
     // Tomamos el tiempo de resolucion utilizando CPXgettime.
     double inittime, endtime;
@@ -349,7 +356,7 @@ int main(){
 
     delete [] sol;
     solfile.close();
-    g.draw(vec);
+    //g.draw(vec);
     return 0;
 }
 
@@ -401,40 +408,53 @@ mycutcallback (CPXCENVptr env,
 	return (status);
 }
 
-	vector <double> vectorDif;
+	vector < pair <double, int> >  cutvios;
 	vector <int*> vectorCutind;
 	vector <double*> vectorCutval;
-
+	vector<int> vectorCutnz;
+	
     for (i = 0; i < numcuts; i++) {
 	cutvio = -rhs[i];
+	//cout << "este es el corte " << i << endl;
+	
+	//cout << "cutvio es " << cutvio << endl;
 	k = beg[i];
 	cutnz = beg[i+1] - k;
 	cutind = ind + k;
 	cutval = val + k;
 	for (j = 0; j < cutnz; j++) {
+	    //cout << "j es " << j << " y el otro indice es " << cutind[j] << endl;
 	    cutvio += x[cutind[j]] * cutval[j];
+	    
 	}
-
-	vectorDif.push_back(cutvio);
+	pair < double, int > parCutvio = make_pair(cutvio,i);
+	cutvios.push_back( parCutvio );
 	vectorCutind.push_back(cutind);
 	vectorCutval.push_back(cutval);
-	/* Use a cut violation tolerance of 0.01 */
-
-	
-	if ( cutvio > 0.01 ) { 
-	    cout << "agrego el corte " << i <<endl;
-	    status = CPXcutcallbackadd (env, cbdata, wherefrom,
-		    cutnz, rhs[i], 'L',
-		    cutind, cutval, 1);
-	    if ( status ) {
-		fprintf (stderr, "Failed to add cut.\n");
-		return (status);
-	    }
-	    addcuts++;
-	   // return status;
-	}
+	vectorCutnz.push_back(cutnz);
 	
     }
+    
+    // seteo la cantidad maxima de cortes por iteracion
+    int cantMaxCortesPorIteracion = 4;
+    
+    sort(cutvios.begin(), cutvios.end(), funcionComparar);
+    
+		for ( int i = 0 ; i < cantMaxCortesPorIteracion; i++) {
+			int elcorte = cutvios[i].second;
+			if(cutvios[i].first > 0.01){ 
+				cout << "agrego el corte " << elcorte  <<endl;
+				status = CPXcutcallbackadd (env, cbdata, wherefrom,
+				vectorCutnz[elcorte], rhs[elcorte], 'L',
+				vectorCutind[elcorte], vectorCutval[elcorte], 1);
+					if ( status ) {
+						fprintf (stderr, "Failed to add cut.\n");
+						return (status);
+					}
+			addcuts++;
+			}
+		}
+	
     
     /* Tell CPLEX that cuts have been created */ 
     if ( addcuts > 0 ) {
@@ -446,31 +466,11 @@ mycutcallback (CPXCENVptr env,
 } /* END mycutcallback */
 
 
-/* Valid cuts for noswot 
-cut1: X21 - X22 <= 0
-cut2: X22 - X23 <= 0
-cut3: X23 - X24 <= 0
-cut4: 2.08 X11 + 2.98 X21 + 3.47 X31 + 2.24 X41 + 2.08 X51 
-+ 0.25 W11 + 0.25 W21 + 0.25 W31 + 0.25 W41 + 0.25 W51
-<= 20.25
-cut5: 2.08 X12 + 2.98 X22 + 3.47 X32 + 2.24 X42 + 2.08 X52
-+ 0.25 W12 + 0.25 W22 + 0.25 W32 + 0.25 W42 + 0.25 W52
-<= 20.25
-cut6: 2.08 X13 + 2.98 X23 + 3.4722 X33 + 2.24 X43 + 2.08 X53
-+ 0.25 W13 + 0.25 W23 + 0.25 W33 + 0.25 W43 + 0.25 W53
-<= 20.25
-cut7: 2.08 X14 + 2.98 X24 + 3.47 X34 + 2.24 X44 + 2.08 X54
-+ 0.25 W14 + 0.25 W24 + 0.25 W34 + 0.25 W44 + 0.25 W54
-<= 20.25
-cut8: 2.08 X15 + 2.98 X25 + 3.47 X35 + 2.24 X45 + 2.08 X55
-+ 0.25 W15 + 0.25 W25 + 0.25 W35 + 0.25 W45 + 0.25 W55
-<= 16.25
-*/
-
     static int
 makeusercuts (CPXENVptr  env,
 	CPXLPptr   lp,
-	CUTINFOptr usercutinfo, vector< vector<int> > vectorRestricciones,
+	CUTINFOptr usercutinfo,
+	vector< vector<int> > vectorRestricciones,
 	vector< vector<int> > vectorRestriccionesCiclos)
 {
     int status = 0;
@@ -483,19 +483,23 @@ makeusercuts (CPXENVptr  env,
     int    *cutind = NULL;
     double *cutval = NULL;
     double *cutrhs = NULL; 
+    bool *cutMarcados = NULL; 
 
     int i, varind;
     int cantidadVariables = 0;
     for(int i = 0; i < vectorRestricciones.size(); i++){
-	cantidadVariables += vectorRestricciones[i].size();
+		cantidadVariables += vectorRestricciones[i].size();
     }
     
     for(int i = 0; i < vectorRestriccionesCiclos.size(); i++){
-	cantidadVariables += vectorRestriccionesCiclos[i].size();
+		cantidadVariables += vectorRestriccionesCiclos[i].size();
     }
     
     int nz   = cantidadVariables;		// cantidad de variables que no son cero
     int cuts = vectorRestricciones.size() + vectorRestriccionesCiclos.size();	// cantidad de cortes
+
+	cout << "son " << vectorRestricciones.size() << " cliques y " << vectorRestriccionesCiclos.size() << " ciclos" << endl;
+		
 
     int cur_numcols = CPXgetnumcols (env, lp);
 
@@ -512,11 +516,13 @@ makeusercuts (CPXENVptr  env,
     cutind = (int *)    malloc (nz * sizeof (int));
     cutval = (double *) malloc (nz * sizeof (double));
     cutrhs = (double *) malloc (cuts * sizeof (double));
-
+	cutMarcados = (bool *) malloc (cuts * sizeof (bool));
+	
     if ( cutbeg == NULL ||
 	    cutind == NULL ||
 	    cutval == NULL ||
-	    cutrhs == NULL   ) {
+	    cutrhs == NULL  ||
+	    cutMarcados == NULL ) {
 	fprintf (stderr, "No memory.\n");
 	status = CPXERR_NO_MEMORY;
 //	goto TERMINATE;
@@ -525,8 +531,9 @@ makeusercuts (CPXENVptr  env,
     char varname[256];
     char buffer[256];
     int contadorVariableNZ = 0;
-	for (i = 0; i < vectorRestricciones.size(); i++) {	    // itera por la cantidad de restricciones
+	for (i = 0; i < cuts; i++) {	    // itera por la cantidad de restricciones
 	
+		if (i < vectorRestricciones.size() ){
 		for ( int j = 0; j < vectorRestricciones[i].size(); j++ ){  // itera por cada restriccion
 			
 			strcpy(varname,"x_");
@@ -542,6 +549,26 @@ makeusercuts (CPXENVptr  env,
 		cutval[contadorVariableNZ] = 1;	// el coeficiente de cada variables
 		contadorVariableNZ++;			// por cada restriccion incremento el contador, para que agregue todas las variables
 		}
+		
+		}else{
+			for ( int j = 0; j < vectorRestriccionesCiclos[i - vectorRestricciones.size()].size(); j++ ){  // itera por cada restriccion
+			
+			strcpy(varname,"x_");
+			sprintf(buffer, "%d",vectorRestriccionesCiclos[i - vectorRestricciones.size()] [j] +1); 
+			strcat(varname,buffer) ; // el nombre de la i-esima variable 
+			status = CPXgetcolindex (env, lp, varname, &varind);	// varname tiene que ser un puntero
+			if ( status )  {
+			fprintf (stderr, "Failed to get index from variable name.\n");
+		//	goto TERMINATE;
+			}
+
+			cutind[contadorVariableNZ] = varind;
+			cutval[contadorVariableNZ] = 1;	// el coeficiente de cada variables
+			contadorVariableNZ++;			// por cada restriccion incremento el contador, para que agregue todas las variables
+		}
+
+		}
+		
     }
    
     if (contadorVariableNZ-1 == cantidadVariables){
@@ -552,14 +579,17 @@ makeusercuts (CPXENVptr  env,
     for (i = 0; i < cuts; i++) {
 		if (i < vectorRestricciones.size()){
 			cutbeg[i] = contador;
+			//cout << "el corte " << i << " empieza en " << contador << endl;
 			contador += vectorRestricciones[i].size();  // le sumo la cantidad de variables distintas de 0 que tenia la iesima restriccion
 				cutrhs[i] = 1;	    // si es clique
 		}
 		else{
 		cutbeg[i] = contador;
+		//cout << "el corte " << i << " empieza en " << contador << endl;
 		contador += vectorRestriccionesCiclos[i-vectorRestricciones.size()].size();  // le sumo la cantidad de variables distintas de 0 que tenia la iesima restriccion
 			
-		cutrhs[i] = (vectorRestricciones[i].size() - 1) / 2;	    // si es ciclo impar
+		cutrhs[i] = (vectorRestriccionesCiclos[i-vectorRestricciones.size()].size() - 1) / 2;	    // si es ciclo impar
+		//cout << "el rhs es " << cutrhs[i] << endl;
 		}
 	}
     
@@ -570,6 +600,9 @@ makeusercuts (CPXENVptr  env,
     usercutinfo->ind      = cutind;
     usercutinfo->val      = cutval;
     usercutinfo->rhs      = cutrhs;
+    
+	cout << "creo todos los cortes" << endl;
+		
 
 TERMINATE:
 
@@ -578,6 +611,7 @@ TERMINATE:
 	free_and_null ((char **) &cutind);
 	free_and_null ((char **) &cutval);
 	free_and_null ((char **) &cutrhs);
+	free_and_null ((char **) &cutMarcados);
     }
 
     return (status);
