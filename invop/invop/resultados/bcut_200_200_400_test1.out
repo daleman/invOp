@@ -1,0 +1,35 @@
+el algoritmo 2
+limiteCortesClique 200
+limiteCortesCiclo 200
+limiteCortesIter 400
+la cantidad de cortes que pasaron por parametros es mayor a la cantidad total de cliques que encontre
+hago 450 cliques
+
+el conjunto independiente: 
+175
+114
+210
+287
+318
+396
+313
+199
+126
+376
+183
+55
+435
+257
+284
+37
+245
+4
+362
+238
+345
+408
+146
+66
+en total tiene 24 nodos.
+TA TODO BIEN
+hago 200 cliques

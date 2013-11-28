@@ -1,0 +1,119 @@
+Para los algoritmos de branch and cut y de cut and branch, se necesitar\'an planos de corte, que tengan desigualdades v\'alidas. En este trabajo se realizar\'an los cortes clique y los cortes de ciclo impar.
+
+\section{Generador de Cliques}
+
+\par{Para generar los los cliques, se implemento una heuristica que genera cliques Maximales,
+(no necesariamente \'optimos). La heur\'istica consiste en:
+Teniendo un conjunto de nodos tales que se pueden conectar con la clique actual (que se inicializa con todos los nodos adyacentes a un nodo), se van agregando nodos que pertenecen a este conjunto y se elimina del conjunto a los nodos no adyacentes al reci\'en agregado. Asi obtenenmos una clique, ya que todos los nodos son adyacentes de a pares, que es maximal (ya que dejo de agregar nodos cuando el conjunto de seConectanConCliqueActual es vacio).
+
+Los cortes clique son muy utiles a la hora de agregar desigualdades al problema debido a que restringen m\'as a las posibles soluciones del problema generando as\'i podas en el arbol de soluciones.
+
+Debido a que en una clique todos los nodos son adyacentes de a pares, si alguno de los nodos de esa clique, 
+pertenece a un conjunto independiente de G, luego ningun nodo de esa clique pertenece a ese conjunto independiente, es decir:
+
+\begin{equation*}
+    \forall K \sum_{i \in K} x_i \leq 1 \\
+\end{equation*}
+con K una clique de G.
+
+\section{Generador de Ciclos Impares}
+
+\par{Otro tipo de cortes que se generaron en este trabajo son los cortes de Ciclos Impares.
+En el grafo se encontraron ciclos impares haciendo dfs (depth first search) y cada vez que encuentro un ciclo, me fijo si es impar. Como se recorre el grafo en profundidad, es probable que los ciclos que encuentre sean de muchos nodos.
+
+El corte del ciclo impar se modela de la siguiente manera:
+
+\begin{equation*}
+    \forall C \sum_{i \in C} x_i \leq \frac{\left\vert{C}\right\vert -1}{2}  \\
+\end{equation*}
+con C un ciclo impar de G.
+
+
+}
+
+\newpage
+\subsection{Experimentación}
+
+Se generaron tres tipos de algoritmos:
+\begin{itemize}
+\item Un algoritmo branch and bound.
+\item Un algoritmo branch and cut.
+\item Un algoritmo cut and branch.
+\end{itemize} 
+
+Es preciso aclarar que para los tres algoritmos se deshabilitaron todos los tipos de corte y preprocesamiento
+proporcionado por CPLEX.\\
+
+\textbf{Algoritmo Branch and Bound:} Este algoritmo resuelve el problema aplicando sucesivamente
+el algoritmo simplex en la relajaci\'on lineal del modelo. Luego elige una variable $x_j$ que no es entera y 
+llama a la funcion recursiva para seguir resolviendo de dos maneras, con $\left \lceil{x_j}\right \rceil$ y 
+con 
+$\left \lfloor{x_j}\right \rfloor$ hasta que la soluci\'on de la relajaci\'on lineal sea entera.\\
+
+
+\textbf{Algoritmo Branch and Cut:} Este algoritmo resuelve el problema aplicando sucesivamente
+el algoritmo simplex en la relajaci\'on lineal del modelo. Luego evalua los cortes proporcionados
+(los cortes clique y los de ciclo impar) y si hay alg\'una desigualdad violada se agrega a las restricciones.
+Por como est\'a implementado se pude agregar solo algunas restricciones por cada iteracio\'on, en especial 
+se agregan las que violan la desigualdad con mayor diferencia.
+Posteriormente como en branch and bound, se elige una variable $x_j$ que no es entera y llama 
+a la funci\'on recursiva para seguir resolviendo de dos maneras, con $\left \lceil{x_j}\right \rceil$ y con 
+$\left \lfloor{x_j}\right \rfloor$ hasta que la soluci\'on de la relajaci\'on lineal sea entera.\\
+
+\textbf{Algoritmo Cut and Branch:}
+Se basa en aplicar los cortes unicamente en el nodo raiz y luego ejecutar un branch and bound.\\
+
+
+\subsubsection{Resultados}
+
+En la proxima tabla se muestra los resultados sobre la instancia frb30-15-1.mis \footnote{grafo de
+http://www.nlsde.buaa.edu.cn/~kexu/benchmarks/graph-benchmarks.htm}.
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Algoritmo & Parametros & Gap nodo Raiz & Gap Nodo FInal & Solucion & #nodos\\ \hline
+Branch and Bound & × & 971 & 800 & 25 & 865148\\ \hline
+Branch and Cut & 100 100 10 & 643 & 548 & 27 & 71162\\ \hline
+Branch and Cut & 100 100 200 & 681 & 606 & 25 & 58921\\ \hline
+Branch and Cut & 450 12 460 & 741 & 505 & 25 & 49559\\ \hline
+Branch and Cut & 100 100 5 & 938 & 667 & 23 & 54314\\ \hline
+Cut and branch & 500 12 512 & 741 & 505 & 25 & 49559\\ \hline
+Cut and branch & 200 12 212 & 751 & 394 & 25 & 1233045\\ \hline
+\end{tabular}
+\end{center}
+
+En la proxima tabla se muestra los resultados sobre la instancia dsjc_250_5.in \footnote{grafo de dsjc\_250\_5 
+de http://www.info.univ-angers.fr/pub/porumbel/graphs/} .
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Algoritmo & Parametros & Gap Nodo Final & Solucion\\ \hline
+Branch and Bound & × & 638 & 12\\ \hline
+Branch and Cut & 100 100 10 & 418 & 12\\ \hline
+Branch and Cut & 100 100 200 & 0(fin en 3128s) & 12\\ \hline
+Branch and Cut & 100 100 5 & 364 & 12\\ \hline
+Cut and branch & 500 2000 2500 & 0(termina en 2176) & 12\\ \hline
+Cut and branch & 200 2000 2200 & 0(fin 2216s) & 12\\ \hline
+\end{tabular}
+\end{center}
+
+
+\subsubsection{An\'alisis de resultados}
+
+
+\par{
+En primer lugar se puede observar la diferencia entre Branch and Bound y Cut and Branch.\\
+
+Si bien en en Cut and Branch solamente se aplican los cortes en el nodo raiz, 
+en el test random se observa que es m\'as eficiente y por lo general el gap en el \'ultimo nodo (cuando no termina
+el agoritmo) es mucho menor en comparaci\'on con branch and bound.\\
+
+Comparando Branch and Bound con Cut and Branch, se ve (en el test random) que el Cut and Branch es m\'as 
+eficiente, teniendo por lo general un gap mas chico en el nodo final. Igualmente la diferencia no es tan
+grande como con branch and bound.
+
+
+}
+

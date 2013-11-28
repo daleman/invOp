@@ -1,0 +1,64 @@
+\section{Introducción}
+\par{El presente informe apunta a documentar el proceso de desarrollo del Trabajo
+Práctico de la materia Investigaci\'on Operativa, cursada
+correspondiente al segundo cuatrimestre del año 2013.}\\
+
+\par{Este trabajo práctico consiste en el análisis de diferentes algoritmos
+para problemas de programcion lineal entera, para encontrar el conjunto independiente maximo de
+un grafo y evaluar los resultados de los distintos algoritmos sobre instancias de benchmark utilizadas en la literatura e instancias generadas aleatoriamente.
+
+ Dado un grafo $G=(V,E)$, un conjunto independiente de $G$ es un subconjunto $K$
+de los nodos de $V$ tal que para todo par de nodos de $K$, no existe una arista
+en $E$ que los une. Es decir,}
+\[
+sea\ G = (V,E),\ K \subseteq V\ es\ conjunto\ independiente\ de\ G \Leftrightarrow (v,w)
+\notin E\ \forall\ v,w \in K
+\]
+
+Para el desarrollo de los algoritmos se utilizar\'an las librer\'ias que provee el paquete CPLEX,
+en particulae la Callable Library.
+Los algoritmos Cut and Branch y Branch and Cut requieren el desarrollo de algoritmos de
+planos de corte, que incluyen las siguientes desigualdades v\'alidas:
+
+\begin{itemize}
+\item Cortes Clique
+\item Cortes Ciclo impar
+\end{itemize}
+%\par{Exhibimos un ejemplo del problema en la siguiente figura:}
+
+%\textbf{GRAFICO$\_$COPADO.PNG}
+
+%\par{Podemos ver como los vértices coloreados con negro corresponden a la
+%clique que tiene la frontera mas grande del grafo, mientras que los coloreados
+%con gris corresponden a su frontera.}\\
+
+\par{Para resolver este problema se pide implementar:}
+\begin{itemize}
+\item Un algoritmo branch and bound.
+\item Un algoritmo branch and cut.
+\item Un algoritmo cut and branch.
+\end{itemize} 
+
+\par{Luego de haber terminado con la programación de los algoritmos ,
+se realizar\'a' una experimentación con el objetivo de verificar y comparar
+tanto el gap como los resultados de los programas extrayendo
+así conclusiones sobre la performance y la optimalidad de los diferentes
+métodos propuestos en este trabajo práctico.}\\
+
+\par{Para comenzar se describir\'a el modelo de un conjunto independiente que se eligi\'o para 
+las implementaciones:
+
+$$ \begin{array}{lll}
+    \textbf{max} & \displaystyle \sum_{j=1}^{n} x_j \\
+    \textbf{s.a} & \displaystyle x_i + x_j \leq 1 & \forall i,j \in E(G) \\
+                 & \displaystyle x_j\geq 0 & j\in [1..n]
+\end{array}$$ 
+
+
+
+
+
+
+
+
+}

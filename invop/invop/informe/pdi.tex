@@ -1,0 +1,73 @@
+\section{Pautas de Implementación}
+\par{Al igual que en trabajos prácticos anteriores, desarrollaremos
+nuestras soluciones en \texttt{C++} y recurriremos a la
+\texttt{STL} del mismo de ser necesario. Al igual que en el trabajo práctico
+anterior, usaremos una clase grafo propia que representa un grafo mediante
+listas de adyacencia y matriz de adyacencia simultáneamente. En el caso de
+precisar implementar alguna otra estructura de datos específica vamos a
+documentar las características de sus operaciones y adjuntar el código de estas
+en el apéndice del código de este informe. Los programas desarrollados se
+encuentran en el directorio \texttt{/codigo} dentro del archivo
+\texttt{entregable.tar.gz}, los cuales son:}
+
+\begin{itemize}
+\item \texttt{exacto/exacto.h} - Contiene la implementación del algoritmo exacto (II).
+\item \texttt{goloso/goloso.h} - Contiene la implementación de la heurística golosa (III).
+\item \texttt{local/local.h} - Contiene la implementación de la heurística de búsqueda local (IV).
+\item \texttt{tabu/tabu.h} - Contiene la implementación de la metaehurística de búsqueda tabú (V).
+\item \texttt{timer.h} - Contiene funciones para medir performance.
+\item \texttt{grafo.h} - Contiene la clase grafo utilizada en todos los algoritmos.
+\end{itemize}
+
+\par{En este directorio también tenemos un \texttt{Makefile} que permite
+compilar separadamente cada implementación. De esta manera, si quisiera correr
+el algoritmo exacto con los casos de prueba del archivo \texttt{tests.in},
+debría compilarlo mediante \texttt{make EXACTO} y luego correrlo escribiendo\\
+\texttt{./exacto <  tests.in}.}\\
+
+\par{Para testear los tiempos de ejecución de las
+implementaciones contamos con los programas
+$test\_exacto$, $test\_goloso$, $test\_local$ y $test\_tabu$ cada uno
+en su respectiva carpeta. Cada uno se ejecuta con los parámetros
+$N$, $t$ y $s$. Para cada $n$ = $k*s$ ($k$ entero) menor o igual a
+$N$, se generan $t$ instancias del problema de tamaño $n$ y se
+ejecutan las soluciones implementadas con esas instancias. Luego
+se devuelven los resultados obtenidos y los tiempos de ejecución
+promedio en función de $n$.}\\
+
+\par{Para testear la optimalidad de las implementaciones contamos con los
+programas $opt\_goloso$, $opt\_local$ y $opt\_tabu$ cada uno en su respectiva
+carpeta. Estos se ejecutan con los mismos parámetros que sus versiones $test$
+asociadas, pero en lugar de devolver los timepos de ejecución, devuelven
+lo que llamamos el índice de optimalidad, que nos dice que tan cerca estuvo
+el resultado devuelto por la heurística del resultado óptimo. El índice de
+optimalidad es un número menor o igual a cero que se calcula como $f$-$O$
+con $f$ el valor de la solución devuelta por la heurística y $O$ el valor
+de la solución óptima\footnote{A último momento se modificó el índice
+de optimalidad para que sea un porcentaje respecto al óptimo en lugar
+de ser sólo la diferencia con él.}.}\\
+
+\par{Una instancia del problema de $CMF$ es un grafo cualquiera. La clase
+grafo cuenta con 2 constructores: uno sin parámetros que genera un grafo
+vacío y otro con un único parámetro $n$ que genera un grafo de $n$ nodos
+sin aristas. La función $inicializar$ de la clase $grafo$ toma un grafo vacío
+y lo reconstruye a partir de la entrada estándar. La función
+$generar\_aristas\_aleatorias$ toma un grafo de $n$ nodos y, por cada posible
+arista del grafo (es decir, por cada par de nodos) decide aleatoriamente
+si agregarla al grafo o no. La función $generar\_m\_aristas\_aleatorias$
+funciona igual pero genera un grafo con exactamente $m$ aristas ($m$ parámetro).}\\
+
+\par{Una solución al problema de $CMF$ es un subconjunto de nodos del
+grafo entrada. Para representar una solución utilizaremos una dupla
+de un entero y un vector de $n$ booleanos (con $n$ la cantidad de nodos
+del grafo). El i-ésimo booleano del vector indica si el i-ésimo nodo del
+grafo pertenece a la clique representada por la solución. El entero de la
+tupla corresponde al tamaño de la frontera de la solución representada. Notar
+que no toda solución representada de esta forma es una solución válida, ya
+que no necesariamente representa una clique. A las soluciones que no sean
+cliques se les asigna como segundo elemento de la dupla el valor de la
+frontera de su subconjunto de nodos\footnote{La frontera no sólo está
+definido para cliques sino que lo está para cualquier subconjunto de nodos
+de un grafo.}
+multiplicado por -$1$, así las soluciones inválidas tendrán
+valor de frontera negativo.}

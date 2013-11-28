@@ -1,0 +1,1407 @@
+el algoritmo 3
+limiteCortesClique 500
+limiteCortesCiclo 2000
+limiteCortesIter 2500
+la cantidad de cortes que pasaron por parametros es mayor a la cantidad total de cliques que encontre
+hago 450 cliques
+
+el conjunto independiente: 
+315
+29
+232
+397
+51
+143
+218
+430
+60
+377
+262
+127
+277
+94
+190
+405
+114
+346
+330
+442
+36
+309
+299
+77
+en total tiene 24 nodos.
+TA TODO BIEN
+la cantidad de cortes que pasaron por parametros es mayor a la cantidad total de cliques que encontre
+hago 450 cliques
+34 33 31  el contador 3
+62 45 43 41 39 37 35 31 34  el contador 9
+66 64 61 68 43 41 39 37 35 31 34 62 29 27 25 23 21 19 18  el contador 19
+80 78 76  el contador 3
+121 124 119 117 115 112 110 108 107  el contador 9
+154 153 151  el contador 3
+174 173 170 168 166  el contador 5
+214 213 211  el contador 3
+228 226 235 225 223 221 219 217 215 211 214 209 207 205 203 201 199 198 194 192 190 188 186 183 181 185 179 177 170 168 166 174 150 148 146 144 142 140 138 136 176 165 163 161 159 157 155 151 154  el contador 49
+272 271 285 255 253 251 249 247 245 243 241  el contador 11
+270 274 273 285 255 253 251 249 247 245 243 241 272  el contador 13
+286 289 319 283 281 279 277 275 273 285 255 253 251 249 247 245 243 241 272 270 268 266 264 262 260 258 257  el contador 27
+323 320 316  el contador 3
+340 338 336 333 331  el contador 5
+353 352 350 348 346  el contador 5
+415 413 411 408 406  el contador 5
+420 448 447 443 441 446 390 388 386 384 382 380 378 376 440  el contador 15
+424 423 421  el contador 3
+la cantidad de cortes que pasaron por parametros es mayor a la cantidad total de ciclos que encontre
+los limites por iteracion es menor a la cantidad de cortes, cambio
+Default row names c1, c2 ... being created.
+son 450 cliques y 18 ciclos
+el corte 450 empieza en 3271
+el rhs es 49
+el corte 451 empieza en 3320
+el rhs es 27
+el corte 452 empieza en 3347
+el rhs es 19
+el corte 453 empieza en 3366
+el rhs es 15
+el corte 454 empieza en 3381
+el rhs es 13
+el corte 455 empieza en 3394
+el rhs es 11
+el corte 456 empieza en 3405
+el rhs es 9
+el corte 457 empieza en 3414
+el rhs es 9
+el corte 458 empieza en 3423
+el rhs es 5
+el corte 459 empieza en 3428
+el rhs es 5
+el corte 460 empieza en 3433
+el rhs es 5
+el corte 461 empieza en 3438
+el rhs es 5
+el corte 462 empieza en 3443
+el rhs es 3
+el corte 463 empieza en 3446
+el rhs es 3
+el corte 464 empieza en 3449
+el rhs es 3
+el corte 465 empieza en 3452
+el rhs es 3
+el corte 466 empieza en 3455
+el rhs es 3
+el corte 467 empieza en 3458
+el rhs es 3
+creo todos los cortes
+Clique table members: 17874.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: traditional branch-and-cut.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time =    0.10 sec.
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      225.0000   450                    225.0000      699         
+el nodo en que voy a cortar es 0 agrego el corte 20
+el nodo en que voy a cortar es 0 agrego el corte 0
+el nodo en que voy a cortar es 0 agrego el corte 26
+el nodo en que voy a cortar es 0 agrego el corte 25
+el nodo en que voy a cortar es 0 agrego el corte 24
+el nodo en que voy a cortar es 0 agrego el corte 23
+el nodo en que voy a cortar es 0 agrego el corte 22
+el nodo en que voy a cortar es 0 agrego el corte 21
+el nodo en que voy a cortar es 0 agrego el corte 19
+el nodo en que voy a cortar es 0 agrego el corte 18
+el nodo en que voy a cortar es 0 agrego el corte 17
+el nodo en que voy a cortar es 0 agrego el corte 16
+el nodo en que voy a cortar es 0 agrego el corte 15
+el nodo en que voy a cortar es 0 agrego el corte 14
+el nodo en que voy a cortar es 0 agrego el corte 10
+el nodo en que voy a cortar es 0 agrego el corte 4
+el nodo en que voy a cortar es 0 agrego el corte 5
+el nodo en que voy a cortar es 0 agrego el corte 6
+el nodo en que voy a cortar es 0 agrego el corte 1
+el nodo en que voy a cortar es 0 agrego el corte 7
+el nodo en que voy a cortar es 0 agrego el corte 9
+el nodo en que voy a cortar es 0 agrego el corte 12
+el nodo en que voy a cortar es 0 agrego el corte 8
+el nodo en que voy a cortar es 0 agrego el corte 3
+el nodo en que voy a cortar es 0 agrego el corte 13
+el nodo en que voy a cortar es 0 agrego el corte 2
+el nodo en que voy a cortar es 0 agrego el corte 11
+el nodo en que voy a cortar es 0 agrego el corte 29
+el nodo en que voy a cortar es 0 agrego el corte 30
+el nodo en que voy a cortar es 0 agrego el corte 31
+el nodo en que voy a cortar es 0 agrego el corte 32
+el nodo en que voy a cortar es 0 agrego el corte 33
+el nodo en que voy a cortar es 0 agrego el corte 34
+el nodo en que voy a cortar es 0 agrego el corte 35
+el nodo en que voy a cortar es 0 agrego el corte 36
+el nodo en que voy a cortar es 0 agrego el corte 37
+el nodo en que voy a cortar es 0 agrego el corte 38
+el nodo en que voy a cortar es 0 agrego el corte 27
+el nodo en que voy a cortar es 0 agrego el corte 28
+el nodo en que voy a cortar es 0 agrego el corte 48
+el nodo en que voy a cortar es 0 agrego el corte 50
+el nodo en que voy a cortar es 0 agrego el corte 49
+el nodo en que voy a cortar es 0 agrego el corte 52
+el nodo en que voy a cortar es 0 agrego el corte 51
+el nodo en que voy a cortar es 0 agrego el corte 53
+el nodo en que voy a cortar es 0 agrego el corte 54
+el nodo en que voy a cortar es 0 agrego el corte 55
+el nodo en que voy a cortar es 0 agrego el corte 47
+el nodo en que voy a cortar es 0 agrego el corte 39
+el nodo en que voy a cortar es 0 agrego el corte 40
+el nodo en que voy a cortar es 0 agrego el corte 41
+el nodo en que voy a cortar es 0 agrego el corte 42
+el nodo en que voy a cortar es 0 agrego el corte 46
+el nodo en que voy a cortar es 0 agrego el corte 43
+el nodo en que voy a cortar es 0 agrego el corte 45
+el nodo en que voy a cortar es 0 agrego el corte 44
+el nodo en que voy a cortar es 0 agrego el corte 60
+el nodo en que voy a cortar es 0 agrego el corte 68
+el nodo en que voy a cortar es 0 agrego el corte 70
+el nodo en que voy a cortar es 0 agrego el corte 72
+el nodo en que voy a cortar es 0 agrego el corte 56
+el nodo en que voy a cortar es 0 agrego el corte 62
+el nodo en que voy a cortar es 0 agrego el corte 74
+el nodo en que voy a cortar es 0 agrego el corte 67
+el nodo en que voy a cortar es 0 agrego el corte 59
+el nodo en que voy a cortar es 0 agrego el corte 69
+el nodo en que voy a cortar es 0 agrego el corte 76
+el nodo en que voy a cortar es 0 agrego el corte 71
+el nodo en que voy a cortar es 0 agrego el corte 61
+el nodo en que voy a cortar es 0 agrego el corte 73
+el nodo en que voy a cortar es 0 agrego el corte 64
+el nodo en que voy a cortar es 0 agrego el corte 77
+el nodo en que voy a cortar es 0 agrego el corte 75
+el nodo en que voy a cortar es 0 agrego el corte 63
+el nodo en que voy a cortar es 0 agrego el corte 57
+el nodo en que voy a cortar es 0 agrego el corte 65
+el nodo en que voy a cortar es 0 agrego el corte 58
+el nodo en que voy a cortar es 0 agrego el corte 66
+el nodo en que voy a cortar es 0 agrego el corte 97
+el nodo en que voy a cortar es 0 agrego el corte 92
+el nodo en que voy a cortar es 0 agrego el corte 96
+el nodo en que voy a cortar es 0 agrego el corte 95
+el nodo en que voy a cortar es 0 agrego el corte 94
+el nodo en que voy a cortar es 0 agrego el corte 93
+el nodo en que voy a cortar es 0 agrego el corte 78
+el nodo en que voy a cortar es 0 agrego el corte 98
+el nodo en que voy a cortar es 0 agrego el corte 99
+el nodo en que voy a cortar es 0 agrego el corte 100
+el nodo en que voy a cortar es 0 agrego el corte 101
+el nodo en que voy a cortar es 0 agrego el corte 102
+el nodo en que voy a cortar es 0 agrego el corte 103
+el nodo en que voy a cortar es 0 agrego el corte 91
+el nodo en que voy a cortar es 0 agrego el corte 90
+el nodo en que voy a cortar es 0 agrego el corte 89
+el nodo en que voy a cortar es 0 agrego el corte 88
+el nodo en que voy a cortar es 0 agrego el corte 87
+el nodo en que voy a cortar es 0 agrego el corte 86
+el nodo en que voy a cortar es 0 agrego el corte 85
+el nodo en que voy a cortar es 0 agrego el corte 84
+el nodo en que voy a cortar es 0 agrego el corte 83
+el nodo en que voy a cortar es 0 agrego el corte 82
+el nodo en que voy a cortar es 0 agrego el corte 81
+el nodo en que voy a cortar es 0 agrego el corte 80
+el nodo en que voy a cortar es 0 agrego el corte 79
+el nodo en que voy a cortar es 0 agrego el corte 136
+el nodo en que voy a cortar es 0 agrego el corte 138
+el nodo en que voy a cortar es 0 agrego el corte 137
+el nodo en que voy a cortar es 0 agrego el corte 141
+el nodo en que voy a cortar es 0 agrego el corte 139
+el nodo en que voy a cortar es 0 agrego el corte 140
+el nodo en que voy a cortar es 0 agrego el corte 130
+el nodo en que voy a cortar es 0 agrego el corte 135
+el nodo en que voy a cortar es 0 agrego el corte 134
+el nodo en que voy a cortar es 0 agrego el corte 133
+el nodo en que voy a cortar es 0 agrego el corte 132
+el nodo en que voy a cortar es 0 agrego el corte 131
+el nodo en que voy a cortar es 0 agrego el corte 114
+el nodo en que voy a cortar es 0 agrego el corte 142
+el nodo en que voy a cortar es 0 agrego el corte 143
+el nodo en que voy a cortar es 0 agrego el corte 144
+el nodo en que voy a cortar es 0 agrego el corte 145
+el nodo en que voy a cortar es 0 agrego el corte 146
+el nodo en que voy a cortar es 0 agrego el corte 147
+el nodo en que voy a cortar es 0 agrego el corte 148
+el nodo en que voy a cortar es 0 agrego el corte 149
+el nodo en que voy a cortar es 0 agrego el corte 150
+el nodo en que voy a cortar es 0 agrego el corte 151
+el nodo en que voy a cortar es 0 agrego el corte 152
+el nodo en que voy a cortar es 0 agrego el corte 153
+el nodo en que voy a cortar es 0 agrego el corte 129
+el nodo en que voy a cortar es 0 agrego el corte 104
+el nodo en que voy a cortar es 0 agrego el corte 105
+el nodo en que voy a cortar es 0 agrego el corte 106
+el nodo en que voy a cortar es 0 agrego el corte 107
+el nodo en que voy a cortar es 0 agrego el corte 108
+el nodo en que voy a cortar es 0 agrego el corte 109
+el nodo en que voy a cortar es 0 agrego el corte 110
+el nodo en que voy a cortar es 0 agrego el corte 111
+el nodo en que voy a cortar es 0 agrego el corte 112
+el nodo en que voy a cortar es 0 agrego el corte 113
+el nodo en que voy a cortar es 0 agrego el corte 115
+el nodo en que voy a cortar es 0 agrego el corte 116
+el nodo en que voy a cortar es 0 agrego el corte 117
+el nodo en que voy a cortar es 0 agrego el corte 128
+el nodo en que voy a cortar es 0 agrego el corte 127
+el nodo en que voy a cortar es 0 agrego el corte 126
+el nodo en que voy a cortar es 0 agrego el corte 125
+el nodo en que voy a cortar es 0 agrego el corte 124
+el nodo en que voy a cortar es 0 agrego el corte 123
+el nodo en que voy a cortar es 0 agrego el corte 122
+el nodo en que voy a cortar es 0 agrego el corte 118
+el nodo en que voy a cortar es 0 agrego el corte 119
+el nodo en que voy a cortar es 0 agrego el corte 120
+el nodo en que voy a cortar es 0 agrego el corte 121
+el nodo en que voy a cortar es 0 agrego el corte 199
+el nodo en que voy a cortar es 0 agrego el corte 207
+el nodo en que voy a cortar es 0 agrego el corte 206
+el nodo en que voy a cortar es 0 agrego el corte 205
+el nodo en que voy a cortar es 0 agrego el corte 204
+el nodo en que voy a cortar es 0 agrego el corte 203
+el nodo en que voy a cortar es 0 agrego el corte 202
+el nodo en que voy a cortar es 0 agrego el corte 201
+el nodo en que voy a cortar es 0 agrego el corte 200
+el nodo en que voy a cortar es 0 agrego el corte 208
+el nodo en que voy a cortar es 0 agrego el corte 198
+el nodo en que voy a cortar es 0 agrego el corte 197
+el nodo en que voy a cortar es 0 agrego el corte 196
+el nodo en que voy a cortar es 0 agrego el corte 195
+el nodo en que voy a cortar es 0 agrego el corte 194
+el nodo en que voy a cortar es 0 agrego el corte 193
+el nodo en que voy a cortar es 0 agrego el corte 192
+el nodo en que voy a cortar es 0 agrego el corte 191
+el nodo en que voy a cortar es 0 agrego el corte 217
+el nodo en que voy a cortar es 0 agrego el corte 225
+el nodo en que voy a cortar es 0 agrego el corte 224
+el nodo en que voy a cortar es 0 agrego el corte 223
+el nodo en que voy a cortar es 0 agrego el corte 222
+el nodo en que voy a cortar es 0 agrego el corte 221
+el nodo en que voy a cortar es 0 agrego el corte 220
+el nodo en que voy a cortar es 0 agrego el corte 219
+el nodo en que voy a cortar es 0 agrego el corte 218
+el nodo en que voy a cortar es 0 agrego el corte 154
+el nodo en que voy a cortar es 0 agrego el corte 216
+el nodo en que voy a cortar es 0 agrego el corte 215
+el nodo en que voy a cortar es 0 agrego el corte 214
+el nodo en que voy a cortar es 0 agrego el corte 213
+el nodo en que voy a cortar es 0 agrego el corte 212
+el nodo en que voy a cortar es 0 agrego el corte 211
+el nodo en que voy a cortar es 0 agrego el corte 210
+el nodo en que voy a cortar es 0 agrego el corte 209
+el nodo en que voy a cortar es 0 agrego el corte 163
+el nodo en que voy a cortar es 0 agrego el corte 171
+el nodo en que voy a cortar es 0 agrego el corte 170
+el nodo en que voy a cortar es 0 agrego el corte 169
+el nodo en que voy a cortar es 0 agrego el corte 168
+el nodo en que voy a cortar es 0 agrego el corte 167
+el nodo en que voy a cortar es 0 agrego el corte 166
+el nodo en que voy a cortar es 0 agrego el corte 165
+el nodo en que voy a cortar es 0 agrego el corte 164
+el nodo en que voy a cortar es 0 agrego el corte 190
+el nodo en que voy a cortar es 0 agrego el corte 162
+el nodo en que voy a cortar es 0 agrego el corte 161
+el nodo en que voy a cortar es 0 agrego el corte 160
+el nodo en que voy a cortar es 0 agrego el corte 159
+el nodo en que voy a cortar es 0 agrego el corte 158
+el nodo en que voy a cortar es 0 agrego el corte 157
+el nodo en que voy a cortar es 0 agrego el corte 156
+el nodo en que voy a cortar es 0 agrego el corte 155
+el nodo en que voy a cortar es 0 agrego el corte 172
+el nodo en que voy a cortar es 0 agrego el corte 189
+el nodo en que voy a cortar es 0 agrego el corte 188
+el nodo en que voy a cortar es 0 agrego el corte 187
+el nodo en que voy a cortar es 0 agrego el corte 186
+el nodo en que voy a cortar es 0 agrego el corte 185
+el nodo en que voy a cortar es 0 agrego el corte 184
+el nodo en que voy a cortar es 0 agrego el corte 183
+el nodo en que voy a cortar es 0 agrego el corte 182
+el nodo en que voy a cortar es 0 agrego el corte 181
+el nodo en que voy a cortar es 0 agrego el corte 180
+el nodo en que voy a cortar es 0 agrego el corte 179
+el nodo en que voy a cortar es 0 agrego el corte 178
+el nodo en que voy a cortar es 0 agrego el corte 177
+el nodo en que voy a cortar es 0 agrego el corte 176
+el nodo en que voy a cortar es 0 agrego el corte 175
+el nodo en que voy a cortar es 0 agrego el corte 174
+el nodo en que voy a cortar es 0 agrego el corte 173
+el nodo en que voy a cortar es 0 agrego el corte 287
+el nodo en que voy a cortar es 0 agrego el corte 290
+el nodo en que voy a cortar es 0 agrego el corte 291
+el nodo en que voy a cortar es 0 agrego el corte 289
+el nodo en que voy a cortar es 0 agrego el corte 288
+el nodo en que voy a cortar es 0 agrego el corte 297
+el nodo en que voy a cortar es 0 agrego el corte 292
+el nodo en que voy a cortar es 0 agrego el corte 293
+el nodo en que voy a cortar es 0 agrego el corte 294
+el nodo en que voy a cortar es 0 agrego el corte 295
+el nodo en que voy a cortar es 0 agrego el corte 296
+el nodo en que voy a cortar es 0 agrego el corte 275
+el nodo en que voy a cortar es 0 agrego el corte 286
+el nodo en que voy a cortar es 0 agrego el corte 285
+el nodo en que voy a cortar es 0 agrego el corte 284
+el nodo en que voy a cortar es 0 agrego el corte 283
+el nodo en que voy a cortar es 0 agrego el corte 282
+el nodo en que voy a cortar es 0 agrego el corte 281
+el nodo en que voy a cortar es 0 agrego el corte 280
+el nodo en que voy a cortar es 0 agrego el corte 279
+el nodo en que voy a cortar es 0 agrego el corte 278
+el nodo en que voy a cortar es 0 agrego el corte 277
+el nodo en que voy a cortar es 0 agrego el corte 276
+el nodo en que voy a cortar es 0 agrego el corte 234
+el nodo en que voy a cortar es 0 agrego el corte 310
+el nodo en que voy a cortar es 0 agrego el corte 321
+el nodo en que voy a cortar es 0 agrego el corte 320
+el nodo en que voy a cortar es 0 agrego el corte 319
+el nodo en que voy a cortar es 0 agrego el corte 318
+el nodo en que voy a cortar es 0 agrego el corte 317
+el nodo en que voy a cortar es 0 agrego el corte 316
+el nodo en que voy a cortar es 0 agrego el corte 315
+el nodo en que voy a cortar es 0 agrego el corte 314
+el nodo en que voy a cortar es 0 agrego el corte 313
+el nodo en que voy a cortar es 0 agrego el corte 312
+el nodo en que voy a cortar es 0 agrego el corte 311
+el nodo en que voy a cortar es 0 agrego el corte 298
+el nodo en que voy a cortar es 0 agrego el corte 309
+el nodo en que voy a cortar es 0 agrego el corte 308
+el nodo en que voy a cortar es 0 agrego el corte 307
+el nodo en que voy a cortar es 0 agrego el corte 306
+el nodo en que voy a cortar es 0 agrego el corte 305
+el nodo en que voy a cortar es 0 agrego el corte 304
+el nodo en que voy a cortar es 0 agrego el corte 303
+el nodo en que voy a cortar es 0 agrego el corte 302
+el nodo en que voy a cortar es 0 agrego el corte 301
+el nodo en que voy a cortar es 0 agrego el corte 300
+el nodo en que voy a cortar es 0 agrego el corte 299
+el nodo en que voy a cortar es 0 agrego el corte 237
+el nodo en que voy a cortar es 0 agrego el corte 248
+el nodo en que voy a cortar es 0 agrego el corte 247
+el nodo en que voy a cortar es 0 agrego el corte 246
+el nodo en que voy a cortar es 0 agrego el corte 245
+el nodo en que voy a cortar es 0 agrego el corte 244
+el nodo en que voy a cortar es 0 agrego el corte 243
+el nodo en que voy a cortar es 0 agrego el corte 242
+el nodo en que voy a cortar es 0 agrego el corte 241
+el nodo en que voy a cortar es 0 agrego el corte 240
+el nodo en que voy a cortar es 0 agrego el corte 239
+el nodo en que voy a cortar es 0 agrego el corte 238
+el nodo en que voy a cortar es 0 agrego el corte 249
+el nodo en que voy a cortar es 0 agrego el corte 236
+el nodo en que voy a cortar es 0 agrego el corte 235
+el nodo en que voy a cortar es 0 agrego el corte 233
+el nodo en que voy a cortar es 0 agrego el corte 232
+el nodo en que voy a cortar es 0 agrego el corte 231
+el nodo en que voy a cortar es 0 agrego el corte 230
+el nodo en que voy a cortar es 0 agrego el corte 229
+el nodo en que voy a cortar es 0 agrego el corte 228
+el nodo en que voy a cortar es 0 agrego el corte 227
+el nodo en que voy a cortar es 0 agrego el corte 226
+el nodo en que voy a cortar es 0 agrego el corte 274
+el nodo en que voy a cortar es 0 agrego el corte 262
+el nodo en que voy a cortar es 0 agrego el corte 273
+el nodo en que voy a cortar es 0 agrego el corte 272
+el nodo en que voy a cortar es 0 agrego el corte 271
+el nodo en que voy a cortar es 0 agrego el corte 270
+el nodo en que voy a cortar es 0 agrego el corte 269
+el nodo en que voy a cortar es 0 agrego el corte 268
+el nodo en que voy a cortar es 0 agrego el corte 267
+el nodo en que voy a cortar es 0 agrego el corte 266
+el nodo en que voy a cortar es 0 agrego el corte 265
+el nodo en que voy a cortar es 0 agrego el corte 264
+el nodo en que voy a cortar es 0 agrego el corte 263
+el nodo en que voy a cortar es 0 agrego el corte 250
+el nodo en que voy a cortar es 0 agrego el corte 261
+el nodo en que voy a cortar es 0 agrego el corte 260
+el nodo en que voy a cortar es 0 agrego el corte 259
+el nodo en que voy a cortar es 0 agrego el corte 258
+el nodo en que voy a cortar es 0 agrego el corte 257
+el nodo en que voy a cortar es 0 agrego el corte 256
+el nodo en que voy a cortar es 0 agrego el corte 255
+el nodo en que voy a cortar es 0 agrego el corte 254
+el nodo en que voy a cortar es 0 agrego el corte 253
+el nodo en que voy a cortar es 0 agrego el corte 252
+el nodo en que voy a cortar es 0 agrego el corte 251
+el nodo en que voy a cortar es 0 agrego el corte 383
+el nodo en que voy a cortar es 0 agrego el corte 382
+el nodo en que voy a cortar es 0 agrego el corte 379
+el nodo en que voy a cortar es 0 agrego el corte 381
+el nodo en que voy a cortar es 0 agrego el corte 380
+el nodo en que voy a cortar es 0 agrego el corte 388
+el nodo en que voy a cortar es 0 agrego el corte 384
+el nodo en que voy a cortar es 0 agrego el corte 385
+el nodo en que voy a cortar es 0 agrego el corte 386
+el nodo en que voy a cortar es 0 agrego el corte 387
+el nodo en que voy a cortar es 0 agrego el corte 367
+el nodo en que voy a cortar es 0 agrego el corte 378
+el nodo en que voy a cortar es 0 agrego el corte 377
+el nodo en que voy a cortar es 0 agrego el corte 376
+el nodo en que voy a cortar es 0 agrego el corte 375
+el nodo en que voy a cortar es 0 agrego el corte 374
+el nodo en que voy a cortar es 0 agrego el corte 373
+el nodo en que voy a cortar es 0 agrego el corte 372
+el nodo en que voy a cortar es 0 agrego el corte 370
+el nodo en que voy a cortar es 0 agrego el corte 369
+el nodo en que voy a cortar es 0 agrego el corte 368
+el nodo en que voy a cortar es 0 agrego el corte 371
+el nodo en que voy a cortar es 0 agrego el corte 400
+el nodo en que voy a cortar es 0 agrego el corte 411
+el nodo en que voy a cortar es 0 agrego el corte 410
+el nodo en que voy a cortar es 0 agrego el corte 409
+el nodo en que voy a cortar es 0 agrego el corte 408
+el nodo en que voy a cortar es 0 agrego el corte 407
+el nodo en que voy a cortar es 0 agrego el corte 406
+el nodo en que voy a cortar es 0 agrego el corte 405
+el nodo en que voy a cortar es 0 agrego el corte 404
+el nodo en que voy a cortar es 0 agrego el corte 403
+el nodo en que voy a cortar es 0 agrego el corte 402
+el nodo en que voy a cortar es 0 agrego el corte 401
+el nodo en que voy a cortar es 0 agrego el corte 389
+el nodo en que voy a cortar es 0 agrego el corte 399
+el nodo en que voy a cortar es 0 agrego el corte 398
+el nodo en que voy a cortar es 0 agrego el corte 397
+el nodo en que voy a cortar es 0 agrego el corte 396
+el nodo en que voy a cortar es 0 agrego el corte 395
+el nodo en que voy a cortar es 0 agrego el corte 394
+el nodo en que voy a cortar es 0 agrego el corte 393
+el nodo en que voy a cortar es 0 agrego el corte 392
+el nodo en que voy a cortar es 0 agrego el corte 391
+el nodo en que voy a cortar es 0 agrego el corte 390
+el nodo en que voy a cortar es 0 agrego el corte 331
+el nodo en que voy a cortar es 0 agrego el corte 343
+el nodo en que voy a cortar es 0 agrego el corte 342
+el nodo en que voy a cortar es 0 agrego el corte 340
+el nodo en que voy a cortar es 0 agrego el corte 339
+el nodo en que voy a cortar es 0 agrego el corte 338
+el nodo en que voy a cortar es 0 agrego el corte 337
+el nodo en que voy a cortar es 0 agrego el corte 336
+el nodo en que voy a cortar es 0 agrego el corte 335
+el nodo en que voy a cortar es 0 agrego el corte 334
+el nodo en que voy a cortar es 0 agrego el corte 333
+el nodo en que voy a cortar es 0 agrego el corte 332
+el nodo en que voy a cortar es 0 agrego el corte 341
+el nodo en que voy a cortar es 0 agrego el corte 330
+el nodo en que voy a cortar es 0 agrego el corte 329
+el nodo en que voy a cortar es 0 agrego el corte 328
+el nodo en que voy a cortar es 0 agrego el corte 327
+el nodo en que voy a cortar es 0 agrego el corte 326
+el nodo en que voy a cortar es 0 agrego el corte 325
+el nodo en que voy a cortar es 0 agrego el corte 324
+el nodo en que voy a cortar es 0 agrego el corte 323
+el nodo en que voy a cortar es 0 agrego el corte 322
+el nodo en que voy a cortar es 0 agrego el corte 366
+el nodo en que voy a cortar es 0 agrego el corte 356
+el nodo en que voy a cortar es 0 agrego el corte 365
+el nodo en que voy a cortar es 0 agrego el corte 364
+el nodo en que voy a cortar es 0 agrego el corte 363
+el nodo en que voy a cortar es 0 agrego el corte 362
+el nodo en que voy a cortar es 0 agrego el corte 361
+el nodo en que voy a cortar es 0 agrego el corte 360
+el nodo en que voy a cortar es 0 agrego el corte 359
+el nodo en que voy a cortar es 0 agrego el corte 358
+el nodo en que voy a cortar es 0 agrego el corte 357
+el nodo en que voy a cortar es 0 agrego el corte 344
+el nodo en que voy a cortar es 0 agrego el corte 355
+el nodo en que voy a cortar es 0 agrego el corte 354
+el nodo en que voy a cortar es 0 agrego el corte 353
+el nodo en que voy a cortar es 0 agrego el corte 352
+el nodo en que voy a cortar es 0 agrego el corte 351
+el nodo en que voy a cortar es 0 agrego el corte 350
+el nodo en que voy a cortar es 0 agrego el corte 349
+el nodo en que voy a cortar es 0 agrego el corte 348
+el nodo en que voy a cortar es 0 agrego el corte 347
+el nodo en que voy a cortar es 0 agrego el corte 346
+el nodo en que voy a cortar es 0 agrego el corte 345
+el nodo en que voy a cortar es 0 agrego el corte 439
+el nodo en que voy a cortar es 0 agrego el corte 431
+el nodo en que voy a cortar es 0 agrego el corte 438
+el nodo en que voy a cortar es 0 agrego el corte 437
+el nodo en que voy a cortar es 0 agrego el corte 436
+el nodo en que voy a cortar es 0 agrego el corte 435
+el nodo en que voy a cortar es 0 agrego el corte 434
+el nodo en que voy a cortar es 0 agrego el corte 433
+el nodo en que voy a cortar es 0 agrego el corte 432
+el nodo en que voy a cortar es 0 agrego el corte 417
+el nodo en que voy a cortar es 0 agrego el corte 440
+el nodo en que voy a cortar es 0 agrego el corte 441
+el nodo en que voy a cortar es 0 agrego el corte 442
+el nodo en que voy a cortar es 0 agrego el corte 443
+el nodo en que voy a cortar es 0 agrego el corte 444
+el nodo en que voy a cortar es 0 agrego el corte 445
+el nodo en que voy a cortar es 0 agrego el corte 446
+el nodo en que voy a cortar es 0 agrego el corte 447
+el nodo en que voy a cortar es 0 agrego el corte 448
+el nodo en que voy a cortar es 0 agrego el corte 421
+el nodo en que voy a cortar es 0 agrego el corte 430
+el nodo en que voy a cortar es 0 agrego el corte 412
+el nodo en que voy a cortar es 0 agrego el corte 413
+el nodo en que voy a cortar es 0 agrego el corte 414
+el nodo en que voy a cortar es 0 agrego el corte 415
+el nodo en que voy a cortar es 0 agrego el corte 416
+el nodo en que voy a cortar es 0 agrego el corte 418
+el nodo en que voy a cortar es 0 agrego el corte 419
+el nodo en que voy a cortar es 0 agrego el corte 420
+el nodo en que voy a cortar es 0 agrego el corte 422
+el nodo en que voy a cortar es 0 agrego el corte 423
+el nodo en que voy a cortar es 0 agrego el corte 424
+el nodo en que voy a cortar es 0 agrego el corte 425
+el nodo en que voy a cortar es 0 agrego el corte 426
+el nodo en que voy a cortar es 0 agrego el corte 427
+el nodo en que voy a cortar es 0 agrego el corte 428
+el nodo en que voy a cortar es 0 agrego el corte 429
+el nodo en que voy a cortar es 0 agrego el corte 462
+el nodo en que voy a cortar es 0 agrego el corte 461
+el nodo en que voy a cortar es 0 agrego el corte 459
+el nodo en que voy a cortar es 0 agrego el corte 460
+el nodo en que voy a cortar es 0 agrego el corte 467
+el nodo en que voy a cortar es 0 agrego el corte 463
+el nodo en que voy a cortar es 0 agrego el corte 464
+el nodo en que voy a cortar es 0 agrego el corte 465
+el nodo en que voy a cortar es 0 agrego el corte 466
+el nodo en que voy a cortar es 0 agrego el corte 458
+el nodo en que voy a cortar es 0 agrego el corte 457
+el nodo en que voy a cortar es 0 agrego el corte 456
+el nodo en que voy a cortar es 0 agrego el corte 455
+el nodo en que voy a cortar es 0 agrego el corte 454
+el nodo en que voy a cortar es 0 agrego el corte 453
+el nodo en que voy a cortar es 0 agrego el corte 452
+el nodo en que voy a cortar es 0 agrego el corte 451
+el nodo en que voy a cortar es 0 agrego el corte 450
+el nodo en que voy a cortar es 0 agrego el corte 449
+      0     0      165.2500   333               UserPurge1: 433     1572         
+      0     2      165.2500   333                    165.1667     1572         
+Elapsed real time =   2.64 sec. (tree size =  0.01 MB, solutions = 0)
+      1     3      136.7500   274                    165.1667     2157         
+      3     5       95.8333   191                    165.1667     2843         
+      5     7       67.2500   126                    165.1667     3160         
+      8    10       38.0000    60                    165.1667     3439         
+*    12    12      integral     0       21.0000      165.1667     3631  686.51%
+*    14    11      integral     0       22.0000      165.1667     3638  650.76%
+     23    12       25.5000    32       22.0000      165.1667     3731  650.76%
+*    30    10      integral     0       23.0000      165.1667     3799  618.12%
+     35    11       24.5000    30       23.0000      165.1667     3847  618.12%
+     58    11       28.5000    39       23.0000      165.1667     4295  618.12%
+Elapsed real time =  10.63 sec. (tree size =  0.65 MB, solutions = 3)
+     80    11       31.5000    45       23.0000      165.1667     4759  618.12%
+    107    11       30.0000    42       23.0000      165.1667     5084  618.12%
+    133    11       24.5000    32       23.0000      165.1667     5489  618.12%
+    158    11       31.0000    44       23.0000      165.1667     5828  618.12%
+    187    11       24.0000    24       23.0000      165.1667     6098  618.12%
+    218    10       25.0000    33       23.0000      165.1667     6468  618.12%
+    242    11       24.5000    28       23.0000      165.1667     6967  618.12%
+    267    11       25.5000    32       23.0000      165.1667     7273  618.12%
+    297    11       25.5000    27       23.0000      165.1667     7669  618.12%
+    321    11       25.5000    28       23.0000      165.1667     7991  618.12%
+Elapsed real time =  24.50 sec. (tree size =  0.65 MB, solutions = 3)
+    343    10       25.0000    33       23.0000      165.1667     8287  618.12%
+    367    11       24.5000    30       23.0000      165.1667     8608  618.12%
+    394    11       26.0000    29       23.0000      165.1667     9019  618.12%
+    419    11       27.0000    32       23.0000      165.1667     9374  618.12%
+    443    11       27.0000    35       23.0000      165.1667     9662  618.12%
+    472    11       27.5000    37       23.0000      165.1667    10022  618.12%
+    496    11       25.0000    29       23.0000      165.1667    10404  618.12%
+    525    11       28.0000    36       23.0000      165.1667    10786  618.12%
+*   543    10      integral     0       24.0000      165.1667    10952  588.19%
+    572    11       27.5000    37       24.0000      165.1667    11323  588.19%
+Elapsed real time =  39.49 sec. (tree size =  0.65 MB, solutions = 4)
+    602    11       25.5000    30       24.0000      165.1667    11710  588.19%
+    633    10       27.5000    37       24.0000      165.1667    12138  588.19%
+    661    10       28.0000    40       24.0000      165.1667    12557  588.19%
+    690    10       29.0000    40       24.0000      165.1667    13186  588.19%
+    714    11       30.0000    42       24.0000      165.1667    13556  588.19%
+    738    11       29.5000    41       24.0000      165.1667    13950  588.19%
+    761    11       30.0000    40       24.0000      165.1667    14288  588.19%
+    785    11       29.5000    41       24.0000      165.1667    14641  588.19%
+    810    11       31.0000    44       24.0000      165.1667    14956  588.19%
+    833    11       27.5000    35       24.0000      165.1667    15235  588.19%
+Elapsed real time =  55.16 sec. (tree size =  0.65 MB, solutions = 4)
+    856    11       29.0000    38       24.0000      165.1667    15559  588.19%
+    881    11       28.0000    38       24.0000      165.1667    15912  588.19%
+    904    10       25.5000    34       24.0000      165.1667    16192  588.19%
+    932    10       28.5000    39       24.0000      165.1667    16527  588.19%
+    958    11       28.0000    38       24.0000      165.1667    16868  588.19%
+    982     9       26.7500    38       24.0000      165.1667    17134  588.19%
+   1005    11       26.0000    31       24.0000      165.1667    17521  588.19%
+   1029    11       26.5000    34       24.0000      165.1667    17821  588.19%
+   1053    10       28.0000    36       24.0000      165.1667    18151  588.19%
+   1077    11       25.5000    32       24.0000      165.1667    18460  588.19%
+Elapsed real time =  67.74 sec. (tree size =  0.65 MB, solutions = 4)
+   1104    10       31.0000    42       24.0000      165.1667    18743  588.19%
+   1130    10       35.0000    54       24.0000      165.1667    19096  588.19%
+   1155    11       28.0000    38       24.0000      165.1667    19543  588.19%
+   1185    11       27.5000    37       24.0000      165.1667    19963  588.19%
+   1208    11       29.0000    40       24.0000      165.1667    20285  588.19%
+   1229    11       26.0000    31       24.0000      165.1667    20578  588.19%
+   1258    10       27.5000    36       24.0000      165.1667    20962  588.19%
+   1283    10       27.0000    36       24.0000      165.1667    21233  588.19%
+   1308    10       28.0000    38       24.0000      165.1667    21473  588.19%
+   1336     9       26.0000    35       24.0000      165.1667    21843  588.19%
+Elapsed real time =  81.93 sec. (tree size =  0.65 MB, solutions = 4)
+   1358    11       26.0000    31       24.0000      165.1667    22298  588.19%
+   1385    10       25.0000    27       24.0000      165.1667    22677  588.19%
+   1411    11       31.0000    44       24.0000      165.1667    23088  588.19%
+   1434    11       26.0000    29       24.0000      165.1667    23459  588.19%
+   1459    11       31.0000    44       24.0000      165.1667    23910  588.19%
+   1491    10       36.0000    56       24.0000      165.1667    24320  588.19%
+   1519    11       27.0000    36       24.0000      165.1667    24862  588.19%
+   1546    10       26.0000    38       24.0000      165.1667    25351  588.19%
+   1578    10       26.0000    38       24.0000      165.1667    25957  588.19%
+   1602    11       25.5000    32       24.0000      165.1667    26438  588.19%
+Elapsed real time =  98.26 sec. (tree size =  0.65 MB, solutions = 4)
+   1629    11       28.0000    38       24.0000      165.1667    26864  588.19%
+   1653    11       28.5000    39       24.0000      165.1667    27136  588.19%
+   1682    10       26.0000    35       24.0000      165.1667    27684  588.19%
+   1704    11       28.5000    40       24.0000      165.1667    28094  588.19%
+   1725    10       28.0000    38       24.0000      165.1667    28488  588.19%
+   1747    10       25.5000    28       24.0000      165.1667    28878  588.19%
+   1770    11       25.7500    34       24.0000      165.1667    29271  588.19%
+   1798    11       26.0000    31       24.0000      165.1667    29807  588.19%
+   1825    11       31.0000    44       24.0000      165.1667    30137  588.19%
+   1847    10       27.0000    35       24.0000      165.1667    30552  588.19%
+Elapsed real time = 114.98 sec. (tree size =  0.65 MB, solutions = 4)
+   1871    10       26.5000    32       24.0000      165.1667    31094  588.19%
+   1900    11       30.5000    43       24.0000      165.1667    31747  588.19%
+   1923    10       25.5000    28       24.0000      165.1667    32073  588.19%
+   1947    11       25.5000    28       24.0000      165.1667    32626  588.19%
+   1974    10       25.0000    33       24.0000      165.1667    32982  588.19%
+   1997    11       29.5000    41       24.0000      165.1667    33474  588.19%
+   2022    10       26.0000    35       24.0000      165.1667    33953  588.19%
+   2046    10       28.5000    41       24.0000      165.1667    34465  588.19%
+   2071    11       26.0000    33       24.0000      165.1667    35083  588.19%
+   2097    10       26.5000    36       24.0000      165.1667    35388  588.19%
+Elapsed real time = 131.95 sec. (tree size =  0.65 MB, solutions = 4)
+   2120    11       28.0000    34       24.0000      165.1667    35697  588.19%
+*  2132     9      integral     0       25.0000      165.1667    35918  560.67%
+   2160    10       26.0000    32       25.0000      165.1667    36363  560.67%
+   2189    10       27.8000    39       25.0000      165.1667    36830  560.67%
+   2211    10       31.5000    47       25.0000      165.1667    37099  560.67%
+   2234    10       28.5000    41       25.0000      165.1667    37452  560.67%
+   2257    11       31.0000    44       25.0000      165.1667    37999  560.67%
+   2281    10       28.5000    36       25.0000      165.1667    38405  560.67%
+   2301    10       30.0000    41       25.0000      165.1667    38701  560.67%
+   2398    10       33.0000    48       25.0000      165.1667    40355  560.67%
+Elapsed real time = 151.74 sec. (tree size =  0.65 MB, solutions = 5)
+   2482    10       26.5000    36       25.0000      165.1667    41974  560.67%
+   2570    10       27.0000    31       25.0000      165.1667    43858  560.67%
+   2665    11       27.5000    34       25.0000      165.1667    45499  560.67%
+   2757    10       31.5000    47       25.0000      165.1667    47421  560.67%
+   2847    10       31.0000    42       25.0000      165.1667    49370  560.67%
+   2944    10       29.0000    41       25.0000      165.1667    51081  560.67%
+   3037    11       31.0000    44       25.0000      165.1667    52806  560.67%
+   3135     9       29.5000    46       25.0000      165.1667    54685  560.67%
+   3236    10       31.0000    44       25.0000      165.1667    56282  560.67%
+   3329    10       27.5000    38       25.0000      165.1667    57793  560.67%
+Elapsed real time = 199.61 sec. (tree size =  0.65 MB, solutions = 5)
+   3423    11       27.5000    39       25.0000      165.1667    59353  560.67%
+   3511    10       28.0000    35       25.0000      165.1667    61079  560.67%
+   3601    10       27.5000    36       25.0000      165.1667    62921  560.67%
+   3698     9       28.5000    44       25.0000      165.1667    65100  560.67%
+   3787     9       45.0000    76       25.0000      165.1667    67041  560.67%
+   3872    10       27.0000    39       25.0000      165.1667    69008  560.67%
+   3977    11       29.0000    40       25.0000      165.1667    70930  560.67%
+   4072    10       31.0000    46       25.0000      165.1667    72516  560.67%
+   4169    11       28.5000    35       25.0000      165.1667    74146  560.67%
+*  4202    10      integral     0       26.0000      165.1667    74600  535.26%
+Elapsed real time = 239.50 sec. (tree size =  0.44 MB, solutions = 6)
+   4300    10       28.5000    40       26.0000      165.1667    76338  535.26%
+   4397    10       30.0000    43       26.0000      165.1667    78229  535.26%
+   4489    10       30.0000    43       26.0000      165.1667    79926  535.26%
+   4580    10       29.5000    38       26.0000      165.1667    81760  535.26%
+   4673    10       30.0000    42       26.0000      165.1667    83722  535.26%
+   4772    10       28.5000    40       26.0000      165.1667    85689  535.26%
+   4879    11       31.5000    45       26.0000      165.1667    87611  535.26%
+   4982    10       33.0000    50       26.0000      165.1667    89823  535.26%
+   5078    10       29.5000    40       26.0000      165.1667    91779  535.26%
+   5172    10       27.5000    34       26.0000      165.1667    93677  535.26%
+Elapsed real time = 282.26 sec. (tree size =  0.44 MB, solutions = 6)
+   5262    10       30.5000    43       26.0000      165.1667    95776  535.26%
+   5354     9       29.5000    44       26.0000      165.1667    97747  535.26%
+   5446    11       30.0000    42       26.0000      165.1667    99703  535.26%
+   5531    10       30.5000    44       26.0000      165.1667   101212  535.26%
+   5625    10       29.5000    41       26.0000      165.1667   102985  535.26%
+   5719    11       31.5000    47       26.0000      165.1667   104621  535.26%
+   5816    10       28.0000    37       26.0000      165.1667   106634  535.26%
+   5903    11       28.0000    39       26.0000      165.1667   108805  535.26%
+   5998    11       29.0000    39       26.0000      165.1667   110428  535.26%
+   6087    11       33.5000    49       26.0000      165.1667   111917  535.26%
+Elapsed real time = 326.25 sec. (tree size =  0.44 MB, solutions = 6)
+   6180    11       28.8333    44       26.0000      165.1667   113795  535.26%
+   6276    11       31.6667    46       26.0000      165.1667   115515  535.26%
+   6367    10       29.0000    42       26.0000      165.1667   116976  535.26%
+   6458    11       31.5000    45       26.0000      165.1667   118642  535.26%
+   6552    11       29.5000    39       26.0000      165.1667   119978  535.26%
+   6646    11       31.5000    45       26.0000      165.1667   121662  535.26%
+   6739    10       36.5000    57       26.0000      165.1667   123183  535.26%
+   6836    11       29.0000    40       26.0000      165.1667   124721  535.26%
+   6928     9       28.5000    39       26.0000      165.1667   126056  535.26%
+   7021    11       29.5000    41       26.0000      165.1667   127611  535.26%
+Elapsed real time = 368.65 sec. (tree size =  0.45 MB, solutions = 6)
+   7109    11       29.0000    37       26.0000      165.1667   129075  535.26%
+   7202    10       29.3333    43       26.0000      165.1667   130613  535.26%
+   7289    10       27.0000    31       26.0000      165.1667   132021  535.26%
+   7387     9       29.0000    43       26.0000      165.1667   133683  535.26%
+   7486    10       28.0000    41       26.0000      165.1667   135489  535.26%
+   7580    10       33.5000    52       26.0000      165.1667   137151  535.26%
+   7676    11       31.5000    45       26.0000      165.1667   138647  535.26%
+   7777    10       27.5000    36       26.0000      165.1667   139964  535.26%
+   7873    11       32.5000    47       26.0000      165.1667   141391  535.26%
+   7966    11       27.5000    40       26.0000      165.1667   142968  535.26%
+Elapsed real time = 411.08 sec. (tree size =  0.45 MB, solutions = 6)
+   8062    10       33.5000    51       26.0000      165.1667   144712  535.26%
+   8153    11       32.0000    46       26.0000      165.1667   146422  535.26%
+   8240    10       29.0000    41       26.0000      165.1667   147930  535.26%
+   8338    11       32.0000    45       26.0000      165.1667   149919  535.26%
+   8430    11       27.5000    26       26.0000      165.1667   151430  535.26%
+   8525    11       30.5000    43       26.0000      165.1667   153167  535.26%
+   8611    10       32.0000    48       26.0000      165.1667   154527  535.26%
+   8698    11       30.5000    41       26.0000      165.1667   156184  535.26%
+   8781    11       30.0000    42       26.0000      165.1667   157427  535.26%
+   8870     9       29.0000    43       26.0000      165.1667   158906  535.26%
+Elapsed real time = 453.97 sec. (tree size =  0.44 MB, solutions = 6)
+   8957    10       31.5000    47       26.0000      165.1667   160427  535.26%
+   9041    10       31.5000    45       26.0000      165.1667   161941  535.26%
+   9131    10       31.7500    50       26.0000      165.1667   163605  535.26%
+   9222    11       27.5000    34       26.0000      165.1667   165430  535.26%
+   9316    11       31.0000    42       26.0000      165.1667   166753  535.26%
+   9412    10       28.0000    40       26.0000      165.1667   168473  535.26%
+   9505    10       27.5000    38       26.0000      165.1667   170108  535.26%
+   9609    10       29.0000    41       26.0000      165.1667   171897  535.26%
+   9704    10       33.0000    50       26.0000      165.1667   173070  535.26%
+   9800    10       35.5000    55       26.0000      165.1667   174341  535.26%
+Elapsed real time = 497.03 sec. (tree size =  0.44 MB, solutions = 6)
+   9892     9       27.5000    38       26.0000      165.1667   175892  535.26%
+   9991    11       29.5000    41       26.0000      165.1667   177641  535.26%
+  10081    10       33.0000    50       26.0000      165.1667   179122  535.26%
+  10176    10       28.0000    37       26.0000      165.1667   180751  535.26%
+  10269    10       32.0000    48       26.0000      165.1667   182096  535.26%
+  10353    10       32.7500    49       26.0000      165.1667   183436  535.26%
+  10447    10        cutoff             26.0000      165.1667   185277  535.26%
+  10533    10       27.5000    36       26.0000      165.1667   186716  535.26%
+  10628    10       31.0000    44       26.0000      165.1667   188501  535.26%
+  10727    11       29.0000    40       26.0000      165.1667   190297  535.26%
+Elapsed real time = 549.80 sec. (tree size =  0.44 MB, solutions = 6)
+  10820     9       30.0000    46       26.0000      165.1667   191893  535.26%
+  10903    10       29.0000    43       26.0000      165.1667   193430  535.26%
+  10993    10       34.0000    54       26.0000      165.1667   194841  535.26%
+  11088    10       34.0000    52       26.0000      165.1667   196350  535.26%
+  11177    10       31.0000    46       26.0000      165.1667   197869  535.26%
+  11260    10       29.0000    43       26.0000      165.1667   199221  535.26%
+  11360     9       29.0000    43       26.0000      165.1667   200632  535.26%
+  11456     9       32.0000    48       26.0000      165.1667   202247  535.26%
+  11545     9       33.0000    52       26.0000      165.1667   203501  535.26%
+  11636    10       29.0000    41       26.0000      165.1667   205619  535.26%
+Elapsed real time = 601.80 sec. (tree size =  0.44 MB, solutions = 6)
+  11726    10       36.0000    56       26.0000      165.1667   207091  535.26%
+  11810    10       31.5000    47       26.0000      165.1667   208778  535.26%
+  11904    10       29.0000    41       26.0000      165.1667   210390  535.26%
+  11992    10       28.0000    39       26.0000      165.1667   212326  535.26%
+  12084    10       30.5000    45       26.0000      165.1667   214155  535.26%
+  12173    10       28.5000    40       26.0000      165.1667   215835  535.26%
+  12263     9       34.5000    55       26.0000      165.1667   217616  535.26%
+  12354    10       31.5000    47       26.0000      165.1667   219750  535.26%
+  12453     9       38.0000    62       26.0000      165.1667   221992  535.26%
+  12548     9       35.0000    56       26.0000      165.1667   223837  535.26%
+Elapsed real time = 668.42 sec. (tree size =  0.44 MB, solutions = 6)
+  12638    10       27.5000    36       26.0000      165.1667   225637  535.26%
+  12732    11       31.0000    44       26.0000      165.1667   227506  535.26%
+  12814    10       28.0000    39       26.0000      165.1667   228853  535.26%
+  12908    10       28.5000    40       26.0000      165.1667   230689  535.26%
+  13008    10       33.0000    50       26.0000      165.1667   232091  535.26%
+  13094    10       28.0000    39       26.0000      165.1667   233582  535.26%
+  13191    10       27.5000    40       26.0000      165.1667   235738  535.26%
+  13284     9       30.2500    47       26.0000      165.1667   237630  535.26%
+  13370    10       27.5000    38       26.0000      165.1667   239816  535.26%
+  13463    11       30.0000    42       26.0000      165.1667   241524  535.26%
+Elapsed real time = 734.00 sec. (tree size =  0.44 MB, solutions = 6)
+  13553     9       29.0000    43       26.0000      165.1667   243086  535.26%
+  13652    11       30.0000    44       26.0000      165.1667   245215  535.26%
+  13743    11       29.5000    42       26.0000      165.1667   247042  535.26%
+  13833     9       29.7500    44       26.0000      165.1667   248650  535.26%
+  13927    10       31.5000    47       26.0000      165.1667   250734  535.26%
+  14019    10       28.1667    41       26.0000      165.1667   252634  535.26%
+  14112    10       29.5000    47       26.0000      165.1667   254497  535.26%
+  14213    10       34.0000    52       26.0000      165.1667   256502  535.26%
+  14303    10       29.0000    41       26.0000      165.1667   257914  535.26%
+  14401    10       27.5000    38       26.0000      165.1667   259675  535.26%
+Elapsed real time = 799.83 sec. (tree size =  0.44 MB, solutions = 6)
+  14486    10       32.5000    47       26.0000      165.1667   261257  535.26%
+  14574    11       27.5000    38       26.0000      165.1667   262899  535.26%
+  14669    11       28.0000    37       26.0000      165.1667   264556  535.26%
+  14761    11       29.0000    40       26.0000      165.1667   266016  535.26%
+  14850    10       33.0000    50       26.0000      165.1667   267582  535.26%
+  14957     9       30.0000    46       26.0000      165.1667   269728  535.26%
+  15055    10       29.0000    40       26.0000      165.1667   271424  535.26%
+  15153     9       28.0000    40       26.0000      165.1667   272774  535.26%
+  15246    10       33.5000    49       26.0000      165.1667   274274  535.26%
+  15341    10       30.0000    43       26.0000      165.1667   275511  535.26%
+Elapsed real time = 863.20 sec. (tree size =  0.44 MB, solutions = 6)
+  15434    10       27.5000    38       26.0000      165.1667   276949  535.26%
+  15530    10       31.0000    46       26.0000      165.1667   278239  535.26%
+  15620    10       27.5000    38       26.0000      165.1667   279705  535.26%
+  15714    10       34.0000    50       26.0000      165.1667   281141  535.26%
+  15820    10       28.5000    39       26.0000      165.1667   282775  535.26%
+  15912     9       32.5000    51       26.0000      165.1667   284104  535.26%
+  16001    10       31.0000    46       26.0000      165.1667   285959  535.26%
+  16094     9       29.0000    45       26.0000      165.1667   287795  535.26%
+  16186    10       33.5000    53       26.0000      165.1667   289693  535.26%
+  16276    10       32.5000    51       26.0000      165.1667   291559  535.26%
+Elapsed real time = 927.44 sec. (tree size =  0.44 MB, solutions = 6)
+  16374     9       36.0000    60       26.0000      165.1667   293506  535.26%
+  16463     9       28.5000    42       26.0000      165.1667   295265  535.26%
+  16551    11       30.5000    43       26.0000      165.1667   296907  535.26%
+  16643    10       28.1667    42       26.0000      165.1667   298655  535.26%
+  16742    10       28.5000    42       26.0000      165.1667   300123  535.26%
+  16828    10       28.0000    39       26.0000      165.1667   301618  535.26%
+  16920     9       27.2500    38       26.0000      165.1667   303400  535.26%
+  17011     8       30.5000    47       26.0000      165.1667   304920  535.26%
+  17096    10       29.0000    41       26.0000      165.1667   307007  535.26%
+  17188    10       33.0000    50       26.0000      165.1667   308880  535.26%
+Elapsed real time = 993.87 sec. (tree size =  0.44 MB, solutions = 6)
+  17278    10       31.0000    46       26.0000      165.1667   310875  535.26%
+  17372    10       30.0000    44       26.0000      165.1667   312826  535.26%
+  17468     9       29.5000    43       26.0000      165.1667   314448  535.26%
+  17557     9       39.1667    66       26.0000      165.1667   315983  535.26%
+  17644     9       28.0000    39       26.0000      165.1667   317643  535.26%
+  17733     9       28.5000    42       26.0000      165.1667   319325  535.26%
+  17820    10       28.5000    40       26.0000      165.1667   321306  535.26%
+  17910    10       29.5000    38       26.0000      165.1667   322904  535.26%
+  18006    10       28.0000    37       26.0000      165.1667   324900  535.26%
+  18104    10       27.7500    39       26.0000      165.1667   326967  535.26%
+Elapsed real time = 1060.88 sec. (tree size =  0.44 MB, solutions = 6)
+  18193    10       32.0000    46       26.0000      165.1667   328981  535.26%
+  18280    10       31.0000    46       26.0000      165.1667   330726  535.26%
+  18378     9       28.5000    42       26.0000      165.1667   332659  535.26%
+  18474    10       30.0000    44       26.0000      165.1667   334355  535.26%
+  18576     9       32.5000    52       26.0000      165.1667   336159  535.26%
+  18670     9       37.5000    65       26.0000      165.1667   338228  535.26%
+  18757    10       30.5000    47       26.0000      165.1667   339848  535.26%
+  18854     9       30.0000    45       26.0000      165.1667   342071  535.26%
+  18945     9       36.0000    60       26.0000      165.1667   344199  535.26%
+  19039    10       30.5000    47       26.0000      165.1667   346200  535.26%
+Elapsed real time = 1129.23 sec. (tree size =  0.44 MB, solutions = 6)
+  19126     9       28.6667    47       26.0000      165.1667   348399  535.26%
+  19215    10       32.2500    50       26.0000      165.1667   350197  535.26%
+  19307    10       30.5000    47       26.0000      165.1667   352359  535.26%
+  19396    10       31.5000    50       26.0000      165.1667   354496  535.26%
+  19489    10       27.5000    38       26.0000      165.1667   356297  535.26%
+  19582     9       28.0000    41       26.0000      165.1667   358227  535.26%
+  19669     9       35.0000    56       26.0000      165.1667   359887  535.26%
+  19753     9       28.5000    42       26.0000      165.1667   361413  535.26%
+  19844    10       29.5000    43       26.0000      165.1667   363073  535.26%
+  19926     9       27.5000    40       26.0000      165.1667   364674  535.26%
+Elapsed real time = 1198.46 sec. (tree size =  0.44 MB, solutions = 6)
+  20003     9       35.0000    61       26.0000      165.1667   366575  535.26%
+  20091    10       30.1250    50       26.0000      165.1667   368460  535.26%
+  20179     9       28.6667    48       26.0000      165.1667   370096  535.26%
+  20270     9       29.5000    45       26.0000      165.1667   372349  535.26%
+  20365     9       31.0000    46       26.0000      165.1667   373817  535.26%
+  20458     8       28.0000    52       26.0000      165.1667   375745  535.26%
+  20550     8       30.0000    46       26.0000      165.1667   377398  535.26%
+  20652     9       30.0000    45       26.0000      165.1667   379083  535.26%
+  20747    10       30.0000    45       26.0000      165.1667   380673  535.26%
+  20841     8       35.5000    59       26.0000      165.1667   382683  535.26%
+Elapsed real time = 1265.75 sec. (tree size =  0.44 MB, solutions = 6)
+  20936     9       32.5000    51       26.0000      165.1667   384582  535.26%
+  21038     8       29.5000    45       26.0000      165.1667   386403  535.26%
+  21120    10       29.5000    42       26.0000      165.1667   388450  535.26%
+  21213    10       30.0000    42       26.0000      165.1667   390372  535.26%
+  21306    10       28.5000    42       26.0000      165.1667   392080  535.26%
+  21392    11       32.5000    47       26.0000      165.1667   393646  535.26%
+  21482    10       28.0000    39       26.0000      165.1667   395606  535.26%
+  21576    10       37.0000    58       26.0000      165.1667   397243  535.26%
+  21661    10       29.0000    41       26.0000      165.1667   399007  535.26%
+  21747    10       32.0000    48       26.0000      165.1667   400814  535.26%
+Elapsed real time = 1337.26 sec. (tree size =  0.23 MB, solutions = 6)
+  21847    11       31.5000    45       26.0000      165.1667   402411  535.26%
+  21936    10       29.0000    40       26.0000      165.1667   403828  535.26%
+  22027    11       32.0000    46       26.0000      165.1667   405790  535.26%
+  22113    10       30.5000    43       26.0000      165.1667   407335  535.26%
+  22194    11       27.5000    36       26.0000      165.1667   408779  535.26%
+  22274     9       30.0000    45       26.0000      165.1667   410038  535.26%
+  22364    10       28.5000    40       26.0000      165.1667   411964  535.26%
+  22460    10       28.5000    41       26.0000      165.1667   414246  535.26%
+  22541    10       29.5000    43       26.0000      165.1667   415626  535.26%
+  22635    10       28.0000    39       26.0000      165.1667   417205  535.26%
+Elapsed real time = 1393.42 sec. (tree size =  0.24 MB, solutions = 6)
+  22725    10       28.1667    43       26.0000      165.1667   418832  535.26%
+  22816     9       29.5000    43       26.0000      165.1667   420863  535.26%
+  22909    10       32.0000    48       26.0000      165.1667   422730  535.26%
+  23005    10       30.5000    45       26.0000      165.1667   424241  535.26%
+  23096     9       29.0000    45       26.0000      165.1667   425839  535.26%
+  23191    10       28.0000    39       26.0000      165.1667   427741  535.26%
+  23292     9       31.5000    47       26.0000      165.1667   429769  535.26%
+  23391    10       31.0000    49       26.0000      165.1667   431630  535.26%
+  23485     9       33.5000    53       26.0000      165.1667   433349  535.26%
+  23581    10       30.0000    43       26.0000      165.1667   435089  535.26%
+Elapsed real time = 1442.59 sec. (tree size =  0.24 MB, solutions = 6)
+  23670    11       33.0000    48       26.0000      165.1667   436395  535.26%
+  23769    10       34.2500    54       26.0000      165.1667   437693  535.26%
+  23869    12       30.0000    38       26.0000      165.1667   439231  535.26%
+  23960    11       31.0000    44       26.0000      165.1667   440473  535.26%
+  24057    11       29.5000    41       26.0000      165.1667   441897  535.26%
+  24156    10       34.0000    52       26.0000      165.1667   443452  535.26%
+  24244    11       27.7500    38       26.0000      165.1667   444895  535.26%
+  24333    10       31.5000    43       26.0000      165.1667   446423  535.26%
+  24430    11       27.7500    38       26.0000      165.1667   447948  535.26%
+  24521     9       31.0000    46       26.0000      165.1667   449160  535.26%
+Elapsed real time = 1491.35 sec. (tree size =  0.23 MB, solutions = 6)
+  24618    10       32.0000    47       26.0000      165.1667   450551  535.26%
+  24711    10       32.2500    48       26.0000      165.1667   452184  535.26%
+  24810    10       28.5000    43       26.0000      165.1667   453805  535.26%
+  24918    11       27.5000    36       26.0000      165.1667   455450  535.26%
+  25016    10       29.5000    42       26.0000      165.1667   456970  535.26%
+  25113    10       33.7500    53       26.0000      165.1667   458427  535.26%
+  25204    11       27.5000    36       26.0000      165.1667   459989  535.26%
+  25297    10       35.5000    55       26.0000      165.1667   461518  535.26%
+  25390    11       28.0000    37       26.0000      165.1667   462923  535.26%
+  25489    11       27.5000    36       26.0000      165.1667   464348  535.26%
+Elapsed real time = 1536.51 sec. (tree size =  0.24 MB, solutions = 6)
+  25598    10       29.7500    44       26.0000      165.1667   466295  535.26%
+  25692    10       34.0000    52       26.0000      165.1667   467691  535.26%
+  25786    10       35.4167    57       26.0000      165.1667   469235  535.26%
+  25890    10       28.0000    37       26.0000      165.1667   470527  535.26%
+  25985    10       30.7500    51       26.0000      165.1667   471845  535.26%
+  26077    10       32.0000    46       26.0000      165.1667   473555  535.26%
+  26175    10        cutoff             26.0000      165.1667   475189  535.26%
+  26276    10       28.5000    41       26.0000      165.1667   476735  535.26%
+  26378    10       30.5000    45       26.0000      165.1667   478392  535.26%
+  26468    10       28.5000    40       26.0000      165.1667   479901  535.26%
+Elapsed real time = 1581.20 sec. (tree size =  0.24 MB, solutions = 6)
+  26572     9       29.5000    43       26.0000      165.1667   481510  535.26%
+  26666    11       31.2500    46       26.0000      165.1667   483168  535.26%
+  26760    11       32.0000    46       26.0000      165.1667   484694  535.26%
+  26850    10       32.2500    50       26.0000      165.1667   486344  535.26%
+  26944    11       28.0000    37       26.0000      165.1667   487961  535.26%
+  27045    10        cutoff             26.0000      165.1667   489461  535.26%
+  27147    10       33.5000    51       26.0000      165.1667   490798  535.26%
+  27242    11       32.0000    46       26.0000      165.1667   492535  535.26%
+  27335    10       28.5000    40       26.0000      165.1667   494046  535.26%
+  27426    11       28.0000    37       26.0000      165.1667   495570  535.26%
+Elapsed real time = 1625.54 sec. (tree size =  0.24 MB, solutions = 6)
+  27518    10       30.0000    43       26.0000      165.1667   497195  535.26%
+  27612    11       31.5000    45       26.0000      165.1667   498670  535.26%
+  27716    11       29.5000    41       26.0000      165.1667   500131  535.26%
+  27809    10       28.5000    40       26.0000      165.1667   501506  535.26%
+  27902    11       27.5000    36       26.0000      165.1667   503171  535.26%
+  27990    10       27.5000    38       26.0000      165.1667   504643  535.26%
+  28080    10       29.7500    44       26.0000      165.1667   506272  535.26%
+  28179    10       30.5000    44       26.0000      165.1667   507962  535.26%
+  28281    10       29.5000    42       26.0000      165.1667   509654  535.26%
+  28377    11       28.5000    39       26.0000      165.1667   511094  535.26%
+Elapsed real time = 1670.86 sec. (tree size =  0.24 MB, solutions = 6)
+  28476    10       28.5000    40       26.0000      165.1667   512440  535.26%
+  28582    11       28.5000    38       26.0000      165.1667   514188  535.26%
+  28674    10       28.5000    40       26.0000      165.1667   515695  535.26%
+  28769    10       29.0000    43       26.0000      165.1667   517299  535.26%
+  28853    11       27.5000    36       26.0000      165.1667   518877  535.26%
+  28938    10       29.0000    41       26.0000      165.1667   520173  535.26%
+  29028    10       30.0000    43       26.0000      165.1667   521653  535.26%
+  29113    10       32.0000    48       26.0000      165.1667   523261  535.26%
+  29201     9       36.0000    58       26.0000      165.1667   524829  535.26%
+  29292    10       28.0000    39       26.0000      165.1667   526194  535.26%
+Elapsed real time = 1716.91 sec. (tree size =  0.24 MB, solutions = 6)
+  29376    10       28.5000    38       26.0000      165.1667   527613  535.26%
+  29464    11       27.5000    36       26.0000      165.1667   528951  535.26%
+  29567    11       32.0000    46       26.0000      165.1667   530407  535.26%
+  29681    11       29.5000    39       26.0000      165.1667   532029  535.26%
+  29784    10       31.0000    44       26.0000      165.1667   533837  535.26%
+  29883    10       28.5000    40       26.0000      165.1667   535402  535.26%
+  29983    10        cutoff             26.0000      165.1667   537250  535.26%
+  30078    11       27.3333    35       26.0000      165.1667   538937  535.26%
+  30178    11       29.5000    41       26.0000      165.1667   540518  535.26%
+  30279    10       27.5000    38       26.0000      165.1667   542411  535.26%
+Elapsed real time = 1762.65 sec. (tree size =  0.24 MB, solutions = 6)
+  30373    11       29.5000    39       26.0000      165.1667   543951  535.26%
+  30468    10       28.0000    39       26.0000      165.1667   545688  535.26%
+  30563    10       28.2500    44       26.0000      165.1667   547418  535.26%
+  30657    10       27.5000    38       26.0000      165.1667   549288  535.26%
+  30752    10       31.5000    47       26.0000      165.1667   550838  535.26%
+  30849    10       27.5000    37       26.0000      165.1667   552749  535.26%
+  30947     9       30.0000    40       26.0000      165.1667   554659  535.26%
+  31041     9       28.9000    42       26.0000      165.1667   556547  535.26%
+  31144    11       32.0000    46       26.0000      165.1667   558738  535.26%
+  31257    10       28.5000    38       26.0000      165.1667   560802  535.26%
+Elapsed real time = 1808.88 sec. (tree size =  0.24 MB, solutions = 6)
+  31357    10       28.5000    41       26.0000      165.1667   562500  535.26%
+  31448    10       30.0000    42       26.0000      165.1667   563788  535.26%
+  31552    11       31.0000    44       26.0000      165.1667   565464  535.26%
+  31647    10       28.0000    37       26.0000      165.1667   567059  535.26%
+  31757    11       30.5000    42       26.0000      165.1667   568797  535.26%
+  31862    11       34.0000    50       26.0000      165.1667   570215  535.26%
+  31967    11       30.5000    40       26.0000      165.1667   571948  535.26%
+  32070    11       28.5000    38       26.0000      165.1667   573451  535.26%
+  32171    11       30.0000    42       26.0000      165.1667   574832  535.26%
+  32272    11       29.5000    37       26.0000      165.1667   576472  535.26%
+Elapsed real time = 1853.36 sec. (tree size =  0.24 MB, solutions = 6)
+  32375    11       33.5000    49       26.0000      165.1667   578598  535.26%
+  32478    11       33.0000    48       26.0000      165.1667   580350  535.26%
+  32579    10       28.5000    40       26.0000      165.1667   581731  535.26%
+  32678    10       27.5000    38       26.0000      165.1667   583178  535.26%
+  32771    11       31.0000    44       26.0000      165.1667   584765  535.26%
+  32866    11       32.0000    46       26.0000      165.1667   586402  535.26%
+  32963    11       27.5000    36       26.0000      165.1667   588109  535.26%
+  33060    11       29.0000    39       26.0000      165.1667   589789  535.26%
+  33162    10       30.0000    43       26.0000      165.1667   591295  535.26%
+  33260    10       29.0000    41       26.0000      165.1667   592729  535.26%
+Elapsed real time = 1897.92 sec. (tree size =  0.24 MB, solutions = 6)
+  33356    11       32.5000    47       26.0000      165.1667   594437  535.26%
+  33454    10       29.5000    39       26.0000      165.1667   595970  535.26%
+  33548    11       28.5000    38       26.0000      165.1667   597459  535.26%
+  33648    11       28.0000    37       26.0000      165.1667   598989  535.26%
+  33746    10       32.0000    48       26.0000      165.1667   600661  535.26%
+  33843    11       28.5000    38       26.0000      165.1667   602247  535.26%
+  33931    11       27.5000    36       26.0000      165.1667   603733  535.26%
+  34016    11       28.5000    38       26.0000      165.1667   605481  535.26%
+  34110    10       33.5000    51       26.0000      165.1667   607230  535.26%
+  34206    11       28.5000    38       26.0000      165.1667   609102  535.26%
+Elapsed real time = 1942.92 sec. (tree size =  0.24 MB, solutions = 6)
+  34301    10       29.5000    41       26.0000      165.1667   610639  535.26%
+  34396    10       33.0000    50       26.0000      165.1667   612206  535.26%
+  34494    10       28.5000    40       26.0000      165.1667   613849  535.26%
+  34597     9       31.0000    47       26.0000      165.1667   615585  535.26%
+  34691     9       28.5000    42       26.0000      165.1667   617026  535.26%
+  34774    10       29.5000    42       26.0000      165.1667   618602  535.26%
+  34869    10       28.0000    39       26.0000      165.1667   620442  535.26%
+  34952     9       34.0000    57       26.0000      165.1667   621715  535.26%
+  35041     9       31.5000    49       26.0000      165.1667   623241  535.26%
+  35131    11       30.0000    42       26.0000      165.1667   625301  535.26%
+Elapsed real time = 1989.70 sec. (tree size =  0.24 MB, solutions = 6)
+  35231    10       29.0000    41       26.0000      165.1667   627022  535.26%
+  35329    11       32.0000    46       26.0000      165.1667   628850  535.26%
+  35424    11       27.5000    36       26.0000      165.1667   630311  535.26%
+  35529    10       29.5000    41       26.0000      165.1667   632031  535.26%
+  35633    11       35.5000    51       26.0000      165.1667   633998  535.26%
+  35734    10       27.0000    26       26.0000      165.1667   635221  535.26%
+  35837    10       27.5000    30       26.0000      165.1667   636537  535.26%
+  35942    11       30.5000    41       26.0000      165.1667   638139  535.26%
+  36047    11       29.5000    41       26.0000      165.1667   639813  535.26%
+  36152    10       27.5000    40       26.0000      165.1667   641453  535.26%
+Elapsed real time = 2033.94 sec. (tree size =  0.24 MB, solutions = 6)
+  36250    11       32.0000    47       26.0000      165.1667   643146  535.26%
+  36345    10       28.5000    40       26.0000      165.1667   644669  535.26%
+  36438     9       28.5000    48       26.0000      165.1667   646297  535.26%
+  36536    11       30.5000    43       26.0000      165.1667   648385  535.26%
+  36633    10       27.5000    42       26.0000      165.1667   650076  535.26%
+  36729    10       31.0000    46       26.0000      165.1667   651783  535.26%
+  36829    11       33.0000    48       26.0000      165.1667   653947  535.26%
+  36926    11       30.0000    40       26.0000      165.1667   655515  535.26%
+  37014    10       32.0000    51       26.0000      165.1667   657288  535.26%
+  37115    11       27.5000    32       26.0000      165.1667   658888  535.26%
+Elapsed real time = 2079.28 sec. (tree size =  0.24 MB, solutions = 6)
+  37216    10       33.0000    50       26.0000      165.1667   660535  535.26%
+  37303    11       28.5000    38       26.0000      165.1667   662331  535.26%
+  37405    10       30.1000    46       26.0000      165.1667   664022  535.26%
+  37500    10       28.5000    40       26.0000      165.1667   665526  535.26%
+  37590    10       30.0000    42       26.0000      165.1667   667105  535.26%
+  37673    10       34.6667    55       26.0000      165.1667   668721  535.26%
+  37774    11       30.0000    42       26.0000      165.1667   670950  535.26%
+  37872    11       28.0000    37       26.0000      165.1667   672947  535.26%
+  37974     9       28.7500    43       26.0000      165.1667   674682  535.26%
+  38061    10       32.2500    50       26.0000      165.1667   676238  535.26%
+Elapsed real time = 2125.21 sec. (tree size =  0.23 MB, solutions = 6)
+  38154    10       31.5000    47       26.0000      165.1667   677770  535.26%
+  38253     9       31.2500    50       26.0000      165.1667   679578  535.26%
+  38360    11       28.0000    35       26.0000      165.1667   681240  535.26%
+  38456    10       27.5000    38       26.0000      165.1667   682450  535.26%
+  38555    11       27.5000    36       26.0000      165.1667   683936  535.26%
+  38659    11       29.0000    39       26.0000      165.1667   685504  535.26%
+  38753    11       31.5000    45       26.0000      165.1667   686861  535.26%
+  38854    10       27.5000    38       26.0000      165.1667   688490  535.26%
+  38952    11       29.5000    41       26.0000      165.1667   690082  535.26%
+  39051     9       46.5000    79       26.0000      165.1667   691325  535.26%
+Elapsed real time = 2169.10 sec. (tree size =  0.23 MB, solutions = 6)
+  39148    12       31.0000    42       26.0000      165.1667   693001  535.26%
+  39252    11       28.5000    38       26.0000      165.1667   694334  535.26%
+  39358    11       27.5000    36       26.0000      165.1667   695610  535.26%
+  39456    11       30.0000    41       26.0000      165.1667   697085  535.26%
+  39554    11       31.5000    45       26.0000      165.1667   698328  535.26%
+  39664    10       35.5000    55       26.0000      165.1667   699873  535.26%
+  39768    10       28.0000    37       26.0000      165.1667   701503  535.26%
+  39868    11       28.2500    36       26.0000      165.1667   703073  535.26%
+  39971    10       27.6667    42       26.0000      165.1667   704179  535.26%
+  40074    11       34.0000    50       26.0000      165.1667   705652  535.26%
+Elapsed real time = 2231.73 sec. (tree size =  0.24 MB, solutions = 6)
+  40173    11       27.5000    34       26.0000      165.1667   706957  535.26%
+  40276    12       28.0000    31       26.0000      165.1667   708262  535.26%
+  40377    11       27.5000    36       26.0000      165.1667   709609  535.26%
+  40476    10       29.5000    42       26.0000      165.1667   710608  535.26%
+  40583    10        cutoff             26.0000      165.1667   711944  535.26%
+  40684    11       27.5000    36       26.0000      165.1667   713297  535.26%
+  40786    10       30.0000    43       26.0000      165.1667   714593  535.26%
+  40881     8        cutoff             26.0000      165.1667   715589  535.26%
+  40972    11       29.0000    39       26.0000      165.1667   717139  535.26%
+  41074    11       28.0000    37       26.0000      165.1667   718516  535.26%
+Elapsed real time = 2276.61 sec. (tree size =  0.24 MB, solutions = 6)
+  41179    11       34.0000    50       26.0000      165.1667   719953  535.26%
+  41278    11       27.5000    38       26.0000      165.1667   721392  535.26%
+  41379    10       29.5000    42       26.0000      165.1667   722959  535.26%
+  41467    11       34.0000    50       26.0000      165.1667   724427  535.26%
+  41565    10       29.0000    41       26.0000      165.1667   726057  535.26%
+  41655    11       27.0000    35       26.0000      165.1667   727394  535.26%
+  41761    11       30.0000    42       26.0000      165.1667   728851  535.26%
+  41854    11       32.0000    46       26.0000      165.1667   730313  535.26%
+  41950    10       29.0000    41       26.0000      165.1667   731631  535.26%
+  42041    11       31.5000    43       26.0000      165.1667   733064  535.26%
+Elapsed real time = 2319.20 sec. (tree size =  0.24 MB, solutions = 6)
+  42136    10       29.5000    41       26.0000      165.1667   734462  535.26%
+  42231    11       29.5000    40       26.0000      165.1667   735980  535.26%
+  42326    11       32.0000    46       26.0000      165.1667   737314  535.26%
+  42425    10       29.0000    40       26.0000      165.1667   738528  535.26%
+  42520    11       31.0000    44       26.0000      165.1667   739743  535.26%
+  42621     9       27.5000    40       26.0000      165.1667   740941  535.26%
+  42714    11       28.5000    38       26.0000      165.1667   742273  535.26%
+  42809    11       30.5000    43       26.0000      165.1667   743585  535.26%
+  42905    10       29.0000    41       26.0000      165.1667   744694  535.26%
+  43000    11       30.0000    42       26.0000      165.1667   745996  535.26%
+Elapsed real time = 2361.31 sec. (tree size =  0.24 MB, solutions = 6)
+  43100    11       30.5000    43       26.0000      165.1667   747238  535.26%
+  43201    10       28.5000    40       26.0000      165.1667   748539  535.26%
+  43303    10       27.5000    38       26.0000      165.1667   749910  535.26%
+  43392    10       30.2500    46       26.0000      165.1667   751388  535.26%
+  43489    11       30.5000    49       26.0000      165.1667   753208  535.26%
+  43583    11       27.5000    34       26.0000      165.1667   754522  535.26%
+  43687     9       40.0000    66       26.0000      165.1667   756230  535.26%
+  43787     9       28.5000    42       26.0000      165.1667   757637  535.26%
+  43883    11       30.0000    40       26.0000      165.1667   759402  535.26%
+  43983    10       27.5000    38       26.0000      165.1667   760724  535.26%
+Elapsed real time = 2403.57 sec. (tree size =  0.24 MB, solutions = 6)
+  44080    10       32.5000    49       26.0000      165.1667   762071  535.26%
+  44173    11       29.5000    39       26.0000      165.1667   763360  535.26%
+  44270    10       27.5000    38       26.0000      165.1667   764658  535.26%
+  44372     9       29.5000    42       26.0000      165.1667   765966  535.26%
+  44458    10       30.5000    44       26.0000      165.1667   767619  535.26%
+  44544    11       29.0000    39       26.0000      165.1667   769328  535.26%
+  44642    10       28.0000    39       26.0000      165.1667   771062  535.26%
+  44731    11       33.0000    48       26.0000      165.1667   772740  535.26%
+  44817    11       27.5000    36       26.0000      165.1667   774225  535.26%
+  44915    11       30.0000    43       26.0000      165.1667   775899  535.26%
+Elapsed real time = 2449.65 sec. (tree size =  0.24 MB, solutions = 6)
+  45007    10       34.2500    56       26.0000      165.1667   777419  535.26%
+  45093    11       27.7500    35       26.0000      165.1667   779244  535.26%
+  45177    10       33.7500    55       26.0000      165.1667   780520  535.26%
+  45261    11       32.5000    47       26.0000      165.1667   782118  535.26%
+  45356    11       27.5000    36       26.0000      165.1667   784062  535.26%
+  45441    10       33.0000    50       26.0000      165.1667   785767  535.26%
+  45530    11       28.5000    38       26.0000      165.1667   787409  535.26%
+  45629    10       29.5000    43       26.0000      165.1667   789020  535.26%
+  45722    11       30.5000    43       26.0000      165.1667   790281  535.26%
+  45813    10       29.5000    42       26.0000      165.1667   792123  535.26%
+Elapsed real time = 2493.98 sec. (tree size =  0.24 MB, solutions = 6)
+  45900    11       30.0000    45       26.0000      165.1667   793732  535.26%
+  45991    11       29.5000    44       26.0000      165.1667   795464  535.26%
+  46087    10       30.6667    49       26.0000      165.1667   797199  535.26%
+  46175    11       29.5000    42       26.0000      165.1667   798661  535.26%
+  46262     9       38.7500    65       26.0000      165.1667   800139  535.26%
+  46348    10       28.2500    39       26.0000      165.1667   801764  535.26%
+  46435    10       33.1667    53       26.0000      165.1667   803254  535.26%
+  46529     9       27.5000    42       26.0000      165.1667   805116  535.26%
+  46619    10       31.5000    47       26.0000      165.1667   806903  535.26%
+  46704     9       27.5000    40       26.0000      165.1667   808494  535.26%
+Elapsed real time = 2538.60 sec. (tree size =  0.23 MB, solutions = 6)
+  46794    10       28.5000    40       26.0000      165.1667   810537  535.26%
+  46885    10       29.5000    40       26.0000      165.1667   812202  535.26%
+  46982    11       30.0000    42       26.0000      165.1667   813605  535.26%
+  47085    11       31.0000    44       26.0000      165.1667   814896  535.26%
+  47182    10       27.0000    37       26.0000      165.1667   816219  535.26%
+  47278    10       30.0000    43       26.0000      165.1667   817634  535.26%
+  47371    11       29.5000    40       26.0000      165.1667   818993  535.26%
+  47468    11       31.5000    45       26.0000      165.1667   820156  535.26%
+  47564    10       27.5000    36       26.0000      165.1667   821571  535.26%
+  47652    10       29.5000    43       26.0000      165.1667   823031  535.26%
+Elapsed real time = 2580.77 sec. (tree size =  0.24 MB, solutions = 6)
+  47746    10       34.0000    52       26.0000      165.1667   824743  535.26%
+  47838    11       31.5000    45       26.0000      165.1667   826338  535.26%
+  47939    11       31.5000    45       26.0000      165.1667   827939  535.26%
+  48041    10       29.5000    41       26.0000      165.1667   829481  535.26%
+  48131    11       31.0000    44       26.0000      165.1667   830887  535.26%
+  48220    10       30.0000    41       26.0000      165.1667   832293  535.26%
+  48316    11       27.0000    35       26.0000      165.1667   833899  535.26%
+  48411    11       28.5000    38       26.0000      165.1667   835535  535.26%
+  48506    11       31.0000    44       26.0000      165.1667   837155  535.26%
+  48606    10       30.5000    43       26.0000      165.1667   838812  535.26%
+Elapsed real time = 2625.24 sec. (tree size =  0.24 MB, solutions = 6)
+  48706    10       30.5000    43       26.0000      165.1667   840562  535.26%
+  48810     9       31.0000    46       26.0000      165.1667   842038  535.26%
+  48896    11       29.5000    41       26.0000      165.1667   843172  535.26%
+  48995    10       28.5000    40       26.0000      165.1667   844649  535.26%
+  49078    11       30.0000    42       26.0000      165.1667   846199  535.26%
+  49173    10       27.5000    36       26.0000      165.1667   847437  535.26%
+  49273    10       29.5000    43       26.0000      165.1667   849029  535.26%
+  49372    10       34.0000    52       26.0000      165.1667   850636  535.26%
+  49469    10       32.5000    47       26.0000      165.1667   852083  535.26%
+  49567    11       29.5000    39       26.0000      165.1667   853742  535.26%
+Elapsed real time = 2669.26 sec. (tree size =  0.24 MB, solutions = 6)
+  49661     9       29.5000    44       26.0000      165.1667   855091  535.26%
+  49749     9       32.0000    50       26.0000      165.1667   856474  535.26%
+  49841    11       31.0000    44       26.0000      165.1667   857984  535.26%
+  49938    10       28.5000    40       26.0000      165.1667   859486  535.26%
+  50040    11       32.0000    46       26.0000      165.1667   861336  535.26%
+  50124    11       32.7500    49       26.0000      165.1667   862985  535.26%
+  50222    10       29.5000    40       26.0000      165.1667   864378  535.26%
+  50319    12       30.0000    40       26.0000      165.1667   865889  535.26%
+  50416    11       29.0000    39       26.0000      165.1667   867289  535.26%
+  50517    11       31.0000    44       26.0000      165.1667   868715  535.26%
+Elapsed real time = 2713.16 sec. (tree size =  0.24 MB, solutions = 6)
+  50612    11       32.0000    46       26.0000      165.1667   870180  535.26%
+  50707    11       30.0000    42       26.0000      165.1667   871874  535.26%
+  50799     9       28.5000    38       26.0000      165.1667   873366  535.26%
+  50907    11       28.5000    39       26.0000      165.1667   874981  535.26%
+  51001    11       31.0000    44       26.0000      165.1667   876168  535.26%
+  51093    10       31.1667    48       26.0000      165.1667   877588  535.26%
+  51194    10       28.5000    40       26.0000      165.1667   879061  535.26%
+  51285    11       27.5000    36       26.0000      165.1667   880440  535.26%
+  51384    10       30.0000    38       26.0000      165.1667   881899  535.26%
+  51478    10       27.5000    40       26.0000      165.1667   883300  535.26%
+Elapsed real time = 2767.13 sec. (tree size =  0.24 MB, solutions = 6)
+  51580    10       30.0000    42       26.0000      165.1667   884871  535.26%
+  51673    10       28.5000    41       26.0000      165.1667   886297  535.26%
+  51769    10       29.0000    41       26.0000      165.1667   887871  535.26%
+  51863    10       27.5000    38       26.0000      165.1667   889434  535.26%
+  51951    10       30.0000    42       26.0000      165.1667   890571  535.26%
+  52044    10       27.5000    36       26.0000      165.1667   891986  535.26%
+  52132    10       28.5000    38       26.0000      165.1667   893505  535.26%
+  52223    10       32.0000    50       26.0000      165.1667   895208  535.26%
+  52322     9       28.5000    42       26.0000      165.1667   897138  535.26%
+  52413     9       28.5000    42       26.0000      165.1667   899110  535.26%
+Elapsed real time = 2833.66 sec. (tree size =  0.23 MB, solutions = 6)
+  52505    11       28.0000    37       26.0000      165.1667   900835  535.26%
+  52612    11       30.0000    41       26.0000      165.1667   902318  535.26%
+  52707    11       32.5000    47       26.0000      165.1667   903878  535.26%
+  52800    11       29.0000    38       26.0000      165.1667   905304  535.26%
+  52890    11       29.5000    41       26.0000      165.1667   906669  535.26%
+  52974    11       28.5000    38       26.0000      165.1667   908028  535.26%
+  53068    11       28.0000    37       26.0000      165.1667   909375  535.26%
+  53154    10       31.5000    45       26.0000      165.1667   910937  535.26%
+  53245    11       28.5000    38       26.0000      165.1667   912392  535.26%
+  53335    10       31.0000    44       26.0000      165.1667   913727  535.26%
+Elapsed real time = 2900.34 sec. (tree size =  0.24 MB, solutions = 6)
+  53430    10       29.5000    42       26.0000      165.1667   915378  535.26%
+  53521    10       28.5000    40       26.0000      165.1667   917013  535.26%
+  53620    10       37.5000    59       26.0000      165.1667   918661  535.26%
+  53716    10       36.0000    56       26.0000      165.1667   919936  535.26%
+  53811    10       32.0000    46       26.0000      165.1667   921125  535.26%
+  53905     9       32.5000    49       26.0000      165.1667   922551  535.26%
+  53999    11       31.5000    45       26.0000      165.1667   924160  535.26%
+  54090    10       28.5000    40       26.0000      165.1667   925642  535.26%
+  54186    11       32.5000    47       26.0000      165.1667   927207  535.26%
+  54278    11       31.0000    44       26.0000      165.1667   928752  535.26%
+Elapsed real time = 2957.29 sec. (tree size =  0.24 MB, solutions = 6)
+  54378    11       30.0000    42       26.0000      165.1667   930655  535.26%
+  54477    10       32.5000    49       26.0000      165.1667   932549  535.26%
+  54576    11       30.0000    42       26.0000      165.1667   934218  535.26%
+  54669    10       30.0000    43       26.0000      165.1667   935869  535.26%
+  54770    11       27.5000    36       26.0000      165.1667   937670  535.26%
+  54870    10       32.0000    48       26.0000      165.1667   939198  535.26%
+  54967    10       28.5000    38       26.0000      165.1667   940685  535.26%
+  55055    10       29.0000    41       26.0000      165.1667   942135  535.26%
+  55153    10       28.5000    40       26.0000      165.1667   943730  535.26%
+  55243    10       31.0000    46       26.0000      165.1667   945277  535.26%
+Elapsed real time = 3006.90 sec. (tree size =  0.23 MB, solutions = 6)
+  55337    10       31.5000    47       26.0000      165.1667   947014  535.26%
+  55434    10       28.5000    40       26.0000      165.1667   948947  535.26%
+  55531     9       28.0000    39       26.0000      165.1667   950494  535.26%
+  55627    11       29.5000    39       26.0000      165.1667   952081  535.26%
+  55716    11       33.0000    46       26.0000      165.1667   953844  535.26%
+  55803    11       30.0000    40       26.0000      165.1667   955570  535.26%
+  55892    11       28.5000    39       26.0000      165.1667   957222  535.26%
+  55984    11       32.5000    47       26.0000      165.1667   958757  535.26%
+  56070    11       28.5000    36       26.0000      165.1667   960266  535.26%
+  56167    10       29.5000    43       26.0000      165.1667   962085  535.26%
+Elapsed real time = 3075.66 sec. (tree size =  0.23 MB, solutions = 6)
+  56259    11       29.5000    39       26.0000      165.1667   964346  535.26%
+  56355    11       28.0000    41       26.0000      165.1667   965911  535.26%
+  56444    12       29.0000    38       26.0000      165.1667   967720  535.26%
+  56536    11       27.5000    33       26.0000      165.1667   969596  535.26%
+  56622    10       28.0000    39       26.0000      165.1667   971113  535.26%
+  56721    11       27.5000    36       26.0000      165.1667   972937  535.26%
+  56820    10       29.0000    39       26.0000      165.1667   974396  535.26%
+  56918    11       27.5000    34       26.0000      165.1667   976082  535.26%
+  57008    11       29.0000    41       26.0000      165.1667   977849  535.26%
+  57105    11       29.0000    39       26.0000      165.1667   979313  535.26%
+Elapsed real time = 3144.47 sec. (tree size =  0.24 MB, solutions = 6)
+  57201    11       30.5000    43       26.0000      165.1667   980979  535.26%
+  57298    10       31.0000    48       26.0000      165.1667   983014  535.26%
+  57391    11       32.5000    47       26.0000      165.1667   984810  535.26%
+  57485    10       28.5000    38       26.0000      165.1667   986510  535.26%
+  57571    10       29.0000    40       26.0000      165.1667   987882  535.26%
+  57674    10       31.0000    46       26.0000      165.1667   989465  535.26%
+  57771    10       30.5000    44       26.0000      165.1667   991175  535.26%
+  57869     9        cutoff             26.0000      165.1667   993001  535.26%
+  57972    11       31.0000    42       26.0000      165.1667   994798  535.26%
+  58067    10       28.0000    40       26.0000      165.1667   996282  535.26%
+Elapsed real time = 3212.64 sec. (tree size =  0.24 MB, solutions = 6)
+  58163    11       31.0000    44       26.0000      165.1667   997732  535.26%
+  58262    10       34.5000    53       26.0000      165.1667   999708  535.26%
+  58358    10       28.5000    38       26.0000      165.1667  1001410  535.26%
+  58456    10       29.5000    41       26.0000      165.1667  1003298  535.26%
+  58551    10       29.5000    42       26.0000      165.1667  1005358  535.26%
+  58631    10        cutoff             26.0000      165.1667  1006826  535.26%
+  58718    10       28.7500    42       26.0000      165.1667  1008383  535.26%
+  58808    11       30.0000    42       26.0000      165.1667  1010272  535.26%
+  58896    10       32.0000    49       26.0000      165.1667  1011806  535.26%
+  58980    10       27.5000    36       26.0000      165.1667  1013616  535.26%
+Elapsed real time = 3282.48 sec. (tree size =  0.24 MB, solutions = 6)
+  59085    10       30.0000    42       26.0000      165.1667  1015520  535.26%
+  59178    11       33.5000    49       26.0000      165.1667  1017446  535.26%
+  59275    11       28.0000    35       26.0000      165.1667  1019042  535.26%
+  59362    10       29.5000    41       26.0000      165.1667  1020240  535.26%
+  59456    11       29.5000    41       26.0000      165.1667  1021916  535.26%
+  59552    10       30.0000    43       26.0000      165.1667  1023603  535.26%
+  59650    10       27.5000    43       26.0000      165.1667  1024955  535.26%
+  59739    10       28.0000    37       26.0000      165.1667  1026474  535.26%
+  59840    10       27.5000    38       26.0000      165.1667  1028135  535.26%
+  59934    10       36.8333    59       26.0000      165.1667  1029561  535.26%
+Elapsed real time = 3349.38 sec. (tree size =  0.23 MB, solutions = 6)
+  60028    10       29.6667    42       26.0000      165.1667  1031410  535.26%
+  60119     9       27.6667    38       26.0000      165.1667  1032818  535.26%
+  60216    10       36.0000    56       26.0000      165.1667  1034416  535.26%
+  60308    10       29.5000    42       26.0000      165.1667  1035739  535.26%
+  60403    10       30.0000    43       26.0000      165.1667  1037095  535.26%
+  60500    10       29.0000    41       26.0000      165.1667  1038509  535.26%
+  60593    11       31.0000    42       26.0000      165.1667  1040024  535.26%
+  60693    10       36.0000    56       26.0000      165.1667  1041691  535.26%
+  60791    10       27.0000    35       26.0000      165.1667  1043090  535.26%
+  60888    10       27.0000    37       26.0000      165.1667  1044378  535.26%
+Elapsed real time = 3415.20 sec. (tree size =  0.24 MB, solutions = 6)
+  60986    10       28.0000    37       26.0000      165.1667  1045889  535.26%
+  61080    10       28.5000    40       26.0000      165.1667  1047575  535.26%
+  61170     9       28.1000    39       26.0000      165.1667  1049014  535.26%
+  61263    10       30.5000    45       26.0000      165.1667  1050422  535.26%
+  61368     9       28.0000    33       26.0000      165.1667  1052229  535.26%
+  61457    11       28.5000    38       26.0000      165.1667  1053840  535.26%
+  61556    10       30.0000    42       26.0000      165.1667  1055686  535.26%
+  61650    10       28.0000    37       26.0000      165.1667  1057406  535.26%
+  61748    10       30.0000    42       26.0000      165.1667  1059264  535.26%
+  61850    10       29.5000    42       26.0000      165.1667  1060771  535.26%
+Elapsed real time = 3484.11 sec. (tree size =  0.24 MB, solutions = 6)
+  61944    10       36.0000    56       26.0000      165.1667  1062285  535.26%
+  62040    10       28.5000    40       26.0000      165.1667  1063706  535.26%
+  62138    10       28.5000    38       26.0000      165.1667  1065341  535.26%
+  62239    11       29.5000    46       26.0000      165.1667  1066841  535.26%
+  62347     9       29.0000    42       26.0000      165.1667  1068337  535.26%
+  62449    11       30.5000    43       26.0000      165.1667  1069888  535.26%
+  62556    10       33.5000    51       26.0000      165.1667  1071566  535.26%
+  62647    10       33.0000    50       26.0000      165.1667  1073007  535.26%
+  62742    11       30.5000    43       26.0000      165.1667  1074336  535.26%
+  62834    10       32.5000    49       26.0000      165.1667  1075656  535.26%
+Elapsed real time = 3550.22 sec. (tree size =  0.23 MB, solutions = 6)
+  62918     9       30.0000    44       26.0000      165.1667  1077136  535.26%
+  63005    10       31.0000    46       26.0000      165.1667  1078623  535.26%
+  63105    10       31.0000    48       26.0000      165.1667  1080237  535.26%
+  63196     8       28.0000    43       26.0000      165.1667  1081797  535.26%
+  63290    10       34.0000    52       26.0000      165.1667  1083507  535.26%
+  63388    10       29.0000    39       26.0000      165.1667  1085239  535.26%
+  63481    10       29.0000    41       26.0000      165.1667  1086864  535.26%
+
+User cuts applied:  183
+
+Root node processing (before b&c):
+  Real time             =    2.64
+Sequential b&c:
+  Real time             = 3597.36
+                          -------
+Total (root+branch&cut) = 3600.00 sec.
+Datos de la resolucion: 	26	3600

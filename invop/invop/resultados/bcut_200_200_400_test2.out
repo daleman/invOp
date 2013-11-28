@@ -1,0 +1,1098 @@
+el algoritmo 2
+limiteCortesClique 200
+limiteCortesCiclo 200
+limiteCortesIter 400
+la cantidad de cortes que pasaron por parametros es mayor a la cantidad total de cliques que encontre
+hago 450 cliques
+
+el conjunto independiente: 
+315
+29
+232
+397
+51
+143
+218
+430
+60
+377
+262
+127
+277
+94
+190
+405
+114
+346
+330
+442
+36
+309
+299
+77
+en total tiene 24 nodos.
+TA TODO BIEN
+hago 200 cliques
+hago 200 ciclosImpares
+Default row names c1, c2 ... being created.
+el parametro de CPX_NODESEL es dfs
+el paramtreo de brdir es 1
+son 200 cliques y 200 ciclos
+creo todos los cortes
+Clique table members: 17874.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: traditional branch-and-cut.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time =    0.09 sec.
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      225.0000   450                    225.0000      699         
+el nodo en que voy a cortar es 0
+agrego el corte 18
+el nodo en que voy a cortar es 0
+agrego el corte 22
+el nodo en que voy a cortar es 0
+agrego el corte 10
+el nodo en que voy a cortar es 0
+agrego el corte 7
+el nodo en que voy a cortar es 0
+agrego el corte 26
+el nodo en que voy a cortar es 0
+agrego el corte 16
+el nodo en que voy a cortar es 0
+agrego el corte 20
+el nodo en que voy a cortar es 0
+agrego el corte 1
+el nodo en que voy a cortar es 0
+agrego el corte 24
+el nodo en que voy a cortar es 0
+agrego el corte 12
+el nodo en que voy a cortar es 0
+agrego el corte 15
+el nodo en que voy a cortar es 0
+agrego el corte 13
+el nodo en que voy a cortar es 0
+agrego el corte 17
+el nodo en que voy a cortar es 0
+agrego el corte 4
+el nodo en que voy a cortar es 0
+agrego el corte 6
+el nodo en que voy a cortar es 0
+agrego el corte 19
+el nodo en que voy a cortar es 0
+agrego el corte 9
+el nodo en que voy a cortar es 0
+agrego el corte 21
+el nodo en que voy a cortar es 0
+agrego el corte 3
+el nodo en que voy a cortar es 0
+agrego el corte 23
+el nodo en que voy a cortar es 0
+agrego el corte 11
+el nodo en que voy a cortar es 0
+agrego el corte 25
+el nodo en que voy a cortar es 0
+agrego el corte 5
+el nodo en que voy a cortar es 0
+agrego el corte 0
+el nodo en que voy a cortar es 0
+agrego el corte 8
+el nodo en que voy a cortar es 0
+agrego el corte 2
+el nodo en que voy a cortar es 0
+agrego el corte 14
+el nodo en que voy a cortar es 0
+agrego el corte 31
+el nodo en que voy a cortar es 0
+agrego el corte 32
+el nodo en que voy a cortar es 0
+agrego el corte 33
+el nodo en que voy a cortar es 0
+agrego el corte 34
+el nodo en que voy a cortar es 0
+agrego el corte 35
+el nodo en que voy a cortar es 0
+agrego el corte 36
+el nodo en que voy a cortar es 0
+agrego el corte 37
+el nodo en que voy a cortar es 0
+agrego el corte 38
+el nodo en que voy a cortar es 0
+agrego el corte 27
+el nodo en que voy a cortar es 0
+agrego el corte 28
+el nodo en que voy a cortar es 0
+agrego el corte 29
+el nodo en que voy a cortar es 0
+agrego el corte 30
+el nodo en que voy a cortar es 0
+agrego el corte 51
+el nodo en que voy a cortar es 0
+agrego el corte 48
+el nodo en que voy a cortar es 0
+agrego el corte 50
+el nodo en que voy a cortar es 0
+agrego el corte 49
+el nodo en que voy a cortar es 0
+agrego el corte 39
+el nodo en que voy a cortar es 0
+agrego el corte 52
+el nodo en que voy a cortar es 0
+agrego el corte 53
+el nodo en que voy a cortar es 0
+agrego el corte 54
+el nodo en que voy a cortar es 0
+agrego el corte 55
+el nodo en que voy a cortar es 0
+agrego el corte 46
+el nodo en que voy a cortar es 0
+agrego el corte 45
+el nodo en que voy a cortar es 0
+agrego el corte 44
+el nodo en que voy a cortar es 0
+agrego el corte 43
+el nodo en que voy a cortar es 0
+agrego el corte 42
+el nodo en que voy a cortar es 0
+agrego el corte 41
+el nodo en que voy a cortar es 0
+agrego el corte 40
+el nodo en que voy a cortar es 0
+agrego el corte 47
+el nodo en que voy a cortar es 0
+agrego el corte 76
+el nodo en que voy a cortar es 0
+agrego el corte 68
+el nodo en que voy a cortar es 0
+agrego el corte 69
+el nodo en que voy a cortar es 0
+agrego el corte 70
+el nodo en que voy a cortar es 0
+agrego el corte 71
+el nodo en que voy a cortar es 0
+agrego el corte 72
+el nodo en que voy a cortar es 0
+agrego el corte 73
+el nodo en que voy a cortar es 0
+agrego el corte 74
+el nodo en que voy a cortar es 0
+agrego el corte 75
+el nodo en que voy a cortar es 0
+agrego el corte 63
+el nodo en que voy a cortar es 0
+agrego el corte 77
+el nodo en que voy a cortar es 0
+agrego el corte 67
+el nodo en que voy a cortar es 0
+agrego el corte 66
+el nodo en que voy a cortar es 0
+agrego el corte 65
+el nodo en que voy a cortar es 0
+agrego el corte 64
+el nodo en que voy a cortar es 0
+agrego el corte 62
+el nodo en que voy a cortar es 0
+agrego el corte 61
+el nodo en que voy a cortar es 0
+agrego el corte 60
+el nodo en que voy a cortar es 0
+agrego el corte 59
+el nodo en que voy a cortar es 0
+agrego el corte 58
+el nodo en que voy a cortar es 0
+agrego el corte 57
+el nodo en que voy a cortar es 0
+agrego el corte 56
+el nodo en que voy a cortar es 0
+agrego el corte 96
+el nodo en que voy a cortar es 0
+agrego el corte 94
+el nodo en que voy a cortar es 0
+agrego el corte 95
+el nodo en que voy a cortar es 0
+agrego el corte 91
+el nodo en que voy a cortar es 0
+agrego el corte 93
+el nodo en que voy a cortar es 0
+agrego el corte 92
+el nodo en que voy a cortar es 0
+agrego el corte 100
+el nodo en que voy a cortar es 0
+agrego el corte 97
+el nodo en que voy a cortar es 0
+agrego el corte 98
+el nodo en que voy a cortar es 0
+agrego el corte 99
+el nodo en que voy a cortar es 0
+agrego el corte 101
+el nodo en que voy a cortar es 0
+agrego el corte 102
+el nodo en que voy a cortar es 0
+agrego el corte 103
+el nodo en que voy a cortar es 0
+agrego el corte 90
+el nodo en que voy a cortar es 0
+agrego el corte 78
+el nodo en que voy a cortar es 0
+agrego el corte 79
+el nodo en que voy a cortar es 0
+agrego el corte 80
+el nodo en que voy a cortar es 0
+agrego el corte 81
+el nodo en que voy a cortar es 0
+agrego el corte 82
+el nodo en que voy a cortar es 0
+agrego el corte 83
+el nodo en que voy a cortar es 0
+agrego el corte 84
+el nodo en que voy a cortar es 0
+agrego el corte 89
+el nodo en que voy a cortar es 0
+agrego el corte 88
+el nodo en que voy a cortar es 0
+agrego el corte 87
+el nodo en que voy a cortar es 0
+agrego el corte 86
+el nodo en que voy a cortar es 0
+agrego el corte 85
+el nodo en que voy a cortar es 0
+agrego el corte 142
+el nodo en que voy a cortar es 0
+agrego el corte 130
+el nodo en que voy a cortar es 0
+agrego el corte 131
+el nodo en que voy a cortar es 0
+agrego el corte 132
+el nodo en que voy a cortar es 0
+agrego el corte 133
+el nodo en que voy a cortar es 0
+agrego el corte 134
+el nodo en que voy a cortar es 0
+agrego el corte 135
+el nodo en que voy a cortar es 0
+agrego el corte 136
+el nodo en que voy a cortar es 0
+agrego el corte 137
+el nodo en que voy a cortar es 0
+agrego el corte 138
+el nodo en que voy a cortar es 0
+agrego el corte 139
+el nodo en que voy a cortar es 0
+agrego el corte 140
+el nodo en que voy a cortar es 0
+agrego el corte 141
+el nodo en que voy a cortar es 0
+agrego el corte 104
+el nodo en que voy a cortar es 0
+agrego el corte 143
+el nodo en que voy a cortar es 0
+agrego el corte 144
+el nodo en que voy a cortar es 0
+agrego el corte 145
+el nodo en que voy a cortar es 0
+agrego el corte 146
+el nodo en que voy a cortar es 0
+agrego el corte 147
+el nodo en que voy a cortar es 0
+agrego el corte 148
+el nodo en que voy a cortar es 0
+agrego el corte 149
+el nodo en que voy a cortar es 0
+agrego el corte 150
+el nodo en que voy a cortar es 0
+agrego el corte 151
+el nodo en que voy a cortar es 0
+agrego el corte 152
+el nodo en que voy a cortar es 0
+agrego el corte 153
+el nodo en que voy a cortar es 0
+agrego el corte 111
+el nodo en que voy a cortar es 0
+agrego el corte 129
+el nodo en que voy a cortar es 0
+agrego el corte 105
+el nodo en que voy a cortar es 0
+agrego el corte 106
+el nodo en que voy a cortar es 0
+agrego el corte 107
+el nodo en que voy a cortar es 0
+agrego el corte 108
+el nodo en que voy a cortar es 0
+agrego el corte 109
+el nodo en que voy a cortar es 0
+agrego el corte 110
+el nodo en que voy a cortar es 0
+agrego el corte 112
+el nodo en que voy a cortar es 0
+agrego el corte 113
+el nodo en que voy a cortar es 0
+agrego el corte 114
+el nodo en que voy a cortar es 0
+agrego el corte 115
+el nodo en que voy a cortar es 0
+agrego el corte 116
+el nodo en que voy a cortar es 0
+agrego el corte 120
+el nodo en que voy a cortar es 0
+agrego el corte 126
+el nodo en que voy a cortar es 0
+agrego el corte 124
+el nodo en que voy a cortar es 0
+agrego el corte 123
+el nodo en que voy a cortar es 0
+agrego el corte 127
+el nodo en que voy a cortar es 0
+agrego el corte 121
+el nodo en que voy a cortar es 0
+agrego el corte 125
+el nodo en que voy a cortar es 0
+agrego el corte 119
+el nodo en que voy a cortar es 0
+agrego el corte 128
+el nodo en que voy a cortar es 0
+agrego el corte 118
+el nodo en que voy a cortar es 0
+agrego el corte 117
+el nodo en que voy a cortar es 0
+agrego el corte 122
+el nodo en que voy a cortar es 0
+agrego el corte 181
+el nodo en que voy a cortar es 0
+agrego el corte 182
+el nodo en que voy a cortar es 0
+agrego el corte 183
+el nodo en que voy a cortar es 0
+agrego el corte 184
+el nodo en que voy a cortar es 0
+agrego el corte 185
+el nodo en que voy a cortar es 0
+agrego el corte 186
+el nodo en que voy a cortar es 0
+agrego el corte 187
+el nodo en que voy a cortar es 0
+agrego el corte 188
+el nodo en que voy a cortar es 0
+agrego el corte 178
+el nodo en que voy a cortar es 0
+agrego el corte 165
+el nodo en que voy a cortar es 0
+agrego el corte 179
+el nodo en que voy a cortar es 0
+agrego el corte 180
+el nodo en que voy a cortar es 0
+agrego el corte 189
+el nodo en que voy a cortar es 0
+agrego el corte 190
+el nodo en que voy a cortar es 0
+agrego el corte 191
+el nodo en que voy a cortar es 0
+agrego el corte 192
+el nodo en que voy a cortar es 0
+agrego el corte 193
+el nodo en que voy a cortar es 0
+agrego el corte 194
+el nodo en que voy a cortar es 0
+agrego el corte 195
+el nodo en que voy a cortar es 0
+agrego el corte 196
+el nodo en que voy a cortar es 0
+agrego el corte 197
+el nodo en que voy a cortar es 0
+agrego el corte 198
+el nodo en que voy a cortar es 0
+agrego el corte 199
+el nodo en que voy a cortar es 0
+agrego el corte 177
+el nodo en que voy a cortar es 0
+agrego el corte 154
+el nodo en que voy a cortar es 0
+agrego el corte 155
+el nodo en que voy a cortar es 0
+agrego el corte 156
+el nodo en que voy a cortar es 0
+agrego el corte 157
+el nodo en que voy a cortar es 0
+agrego el corte 158
+el nodo en que voy a cortar es 0
+agrego el corte 159
+el nodo en que voy a cortar es 0
+agrego el corte 160
+el nodo en que voy a cortar es 0
+agrego el corte 161
+el nodo en que voy a cortar es 0
+agrego el corte 162
+el nodo en que voy a cortar es 0
+agrego el corte 163
+el nodo en que voy a cortar es 0
+agrego el corte 164
+el nodo en que voy a cortar es 0
+agrego el corte 166
+el nodo en que voy a cortar es 0
+agrego el corte 167
+el nodo en que voy a cortar es 0
+agrego el corte 168
+el nodo en que voy a cortar es 0
+agrego el corte 169
+el nodo en que voy a cortar es 0
+agrego el corte 170
+el nodo en que voy a cortar es 0
+agrego el corte 171
+el nodo en que voy a cortar es 0
+agrego el corte 172
+el nodo en que voy a cortar es 0
+agrego el corte 173
+el nodo en que voy a cortar es 0
+agrego el corte 174
+el nodo en que voy a cortar es 0
+agrego el corte 175
+el nodo en que voy a cortar es 0
+agrego el corte 176
+el nodo en que voy a cortar es 0
+agrego el corte 331
+el nodo en que voy a cortar es 0
+agrego el corte 333
+el nodo en que voy a cortar es 0
+agrego el corte 332
+el nodo en que voy a cortar es 0
+agrego el corte 336
+el nodo en que voy a cortar es 0
+agrego el corte 334
+el nodo en que voy a cortar es 0
+agrego el corte 335
+el nodo en que voy a cortar es 0
+agrego el corte 325
+el nodo en que voy a cortar es 0
+agrego el corte 330
+el nodo en que voy a cortar es 0
+agrego el corte 329
+el nodo en que voy a cortar es 0
+agrego el corte 328
+el nodo en que voy a cortar es 0
+agrego el corte 327
+el nodo en que voy a cortar es 0
+agrego el corte 326
+el nodo en que voy a cortar es 0
+agrego el corte 348
+el nodo en que voy a cortar es 0
+agrego el corte 337
+el nodo en que voy a cortar es 0
+agrego el corte 338
+el nodo en que voy a cortar es 0
+agrego el corte 339
+el nodo en que voy a cortar es 0
+agrego el corte 340
+el nodo en que voy a cortar es 0
+agrego el corte 341
+el nodo en que voy a cortar es 0
+agrego el corte 342
+el nodo en que voy a cortar es 0
+agrego el corte 343
+el nodo en que voy a cortar es 0
+agrego el corte 344
+el nodo en que voy a cortar es 0
+agrego el corte 345
+el nodo en que voy a cortar es 0
+agrego el corte 346
+el nodo en que voy a cortar es 0
+agrego el corte 347
+el nodo en que voy a cortar es 0
+agrego el corte 300
+el nodo en que voy a cortar es 0
+agrego el corte 312
+el nodo en que voy a cortar es 0
+agrego el corte 399
+el nodo en que voy a cortar es 0
+agrego el corte 301
+el nodo en que voy a cortar es 0
+agrego el corte 302
+el nodo en que voy a cortar es 0
+agrego el corte 303
+el nodo en que voy a cortar es 0
+agrego el corte 304
+el nodo en que voy a cortar es 0
+agrego el corte 305
+el nodo en que voy a cortar es 0
+agrego el corte 306
+el nodo en que voy a cortar es 0
+agrego el corte 307
+el nodo en que voy a cortar es 0
+agrego el corte 308
+el nodo en que voy a cortar es 0
+agrego el corte 309
+el nodo en que voy a cortar es 0
+agrego el corte 310
+el nodo en que voy a cortar es 0
+agrego el corte 311
+el nodo en que voy a cortar es 0
+agrego el corte 324
+el nodo en que voy a cortar es 0
+agrego el corte 313
+el nodo en que voy a cortar es 0
+agrego el corte 314
+el nodo en que voy a cortar es 0
+agrego el corte 315
+el nodo en que voy a cortar es 0
+agrego el corte 316
+el nodo en que voy a cortar es 0
+agrego el corte 317
+el nodo en que voy a cortar es 0
+agrego el corte 318
+el nodo en que voy a cortar es 0
+agrego el corte 319
+el nodo en que voy a cortar es 0
+agrego el corte 320
+el nodo en que voy a cortar es 0
+agrego el corte 321
+el nodo en que voy a cortar es 0
+agrego el corte 322
+el nodo en que voy a cortar es 0
+agrego el corte 323
+el nodo en que voy a cortar es 0
+agrego el corte 387
+el nodo en que voy a cortar es 0
+agrego el corte 375
+el nodo en que voy a cortar es 0
+agrego el corte 376
+el nodo en que voy a cortar es 0
+agrego el corte 377
+el nodo en que voy a cortar es 0
+agrego el corte 378
+el nodo en que voy a cortar es 0
+agrego el corte 379
+el nodo en que voy a cortar es 0
+agrego el corte 380
+el nodo en que voy a cortar es 0
+agrego el corte 381
+el nodo en que voy a cortar es 0
+agrego el corte 382
+el nodo en que voy a cortar es 0
+agrego el corte 383
+el nodo en que voy a cortar es 0
+agrego el corte 384
+el nodo en que voy a cortar es 0
+agrego el corte 385
+el nodo en que voy a cortar es 0
+agrego el corte 386
+el nodo en que voy a cortar es 0
+agrego el corte 374
+el nodo en que voy a cortar es 0
+agrego el corte 388
+el nodo en que voy a cortar es 0
+agrego el corte 389
+el nodo en que voy a cortar es 0
+agrego el corte 390
+el nodo en que voy a cortar es 0
+agrego el corte 391
+el nodo en que voy a cortar es 0
+agrego el corte 392
+el nodo en que voy a cortar es 0
+agrego el corte 393
+el nodo en que voy a cortar es 0
+agrego el corte 394
+el nodo en que voy a cortar es 0
+agrego el corte 395
+el nodo en que voy a cortar es 0
+agrego el corte 396
+el nodo en que voy a cortar es 0
+agrego el corte 397
+el nodo en que voy a cortar es 0
+agrego el corte 398
+el nodo en que voy a cortar es 0
+agrego el corte 362
+el nodo en que voy a cortar es 0
+agrego el corte 350
+el nodo en que voy a cortar es 0
+agrego el corte 351
+el nodo en que voy a cortar es 0
+agrego el corte 352
+el nodo en que voy a cortar es 0
+agrego el corte 353
+el nodo en que voy a cortar es 0
+agrego el corte 354
+el nodo en que voy a cortar es 0
+agrego el corte 355
+el nodo en que voy a cortar es 0
+agrego el corte 356
+el nodo en que voy a cortar es 0
+agrego el corte 357
+el nodo en que voy a cortar es 0
+agrego el corte 358
+el nodo en que voy a cortar es 0
+agrego el corte 359
+el nodo en que voy a cortar es 0
+agrego el corte 360
+el nodo en que voy a cortar es 0
+agrego el corte 361
+el nodo en que voy a cortar es 0
+agrego el corte 349
+el nodo en que voy a cortar es 0
+agrego el corte 363
+el nodo en que voy a cortar es 0
+agrego el corte 364
+el nodo en que voy a cortar es 0
+agrego el corte 365
+el nodo en que voy a cortar es 0
+agrego el corte 366
+el nodo en que voy a cortar es 0
+agrego el corte 367
+el nodo en que voy a cortar es 0
+agrego el corte 368
+el nodo en que voy a cortar es 0
+agrego el corte 369
+el nodo en que voy a cortar es 0
+agrego el corte 370
+el nodo en que voy a cortar es 0
+agrego el corte 371
+el nodo en que voy a cortar es 0
+agrego el corte 372
+el nodo en que voy a cortar es 0
+agrego el corte 373
+el nodo en que voy a cortar es 0
+agrego el corte 237
+el nodo en que voy a cortar es 0
+agrego el corte 225
+el nodo en que voy a cortar es 0
+agrego el corte 226
+el nodo en que voy a cortar es 0
+agrego el corte 227
+el nodo en que voy a cortar es 0
+agrego el corte 228
+el nodo en que voy a cortar es 0
+agrego el corte 229
+el nodo en que voy a cortar es 0
+agrego el corte 230
+el nodo en que voy a cortar es 0
+agrego el corte 231
+el nodo en que voy a cortar es 0
+agrego el corte 232
+el nodo en que voy a cortar es 0
+agrego el corte 233
+el nodo en que voy a cortar es 0
+agrego el corte 234
+el nodo en que voy a cortar es 0
+agrego el corte 235
+el nodo en que voy a cortar es 0
+agrego el corte 236
+el nodo en que voy a cortar es 0
+agrego el corte 224
+el nodo en que voy a cortar es 0
+agrego el corte 238
+el nodo en que voy a cortar es 0
+agrego el corte 239
+el nodo en que voy a cortar es 0
+agrego el corte 240
+el nodo en que voy a cortar es 0
+agrego el corte 241
+el nodo en que voy a cortar es 0
+agrego el corte 242
+el nodo en que voy a cortar es 0
+agrego el corte 243
+el nodo en que voy a cortar es 0
+agrego el corte 244
+el nodo en que voy a cortar es 0
+agrego el corte 245
+el nodo en que voy a cortar es 0
+agrego el corte 246
+el nodo en que voy a cortar es 0
+agrego el corte 247
+el nodo en que voy a cortar es 0
+agrego el corte 248
+el nodo en que voy a cortar es 0
+agrego el corte 212
+el nodo en que voy a cortar es 0
+agrego el corte 200
+el nodo en que voy a cortar es 0
+agrego el corte 201
+el nodo en que voy a cortar es 0
+agrego el corte 202
+el nodo en que voy a cortar es 0
+agrego el corte 203
+el nodo en que voy a cortar es 0
+agrego el corte 204
+el nodo en que voy a cortar es 0
+agrego el corte 205
+el nodo en que voy a cortar es 0
+agrego el corte 206
+el nodo en que voy a cortar es 0
+agrego el corte 207
+el nodo en que voy a cortar es 0
+agrego el corte 208
+el nodo en que voy a cortar es 0
+agrego el corte 209
+el nodo en que voy a cortar es 0
+agrego el corte 210
+el nodo en que voy a cortar es 0
+agrego el corte 211
+el nodo en que voy a cortar es 0
+agrego el corte 249
+el nodo en que voy a cortar es 0
+agrego el corte 213
+el nodo en que voy a cortar es 0
+agrego el corte 214
+el nodo en que voy a cortar es 0
+agrego el corte 215
+el nodo en que voy a cortar es 0
+agrego el corte 216
+el nodo en que voy a cortar es 0
+agrego el corte 217
+el nodo en que voy a cortar es 0
+agrego el corte 218
+el nodo en que voy a cortar es 0
+agrego el corte 219
+el nodo en que voy a cortar es 0
+agrego el corte 220
+el nodo en que voy a cortar es 0
+agrego el corte 221
+el nodo en que voy a cortar es 0
+agrego el corte 222
+el nodo en que voy a cortar es 0
+agrego el corte 223
+el nodo en que voy a cortar es 0
+agrego el corte 287
+el nodo en que voy a cortar es 0
+agrego el corte 275
+el nodo en que voy a cortar es 0
+agrego el corte 276
+el nodo en que voy a cortar es 0
+agrego el corte 277
+el nodo en que voy a cortar es 0
+agrego el corte 278
+el nodo en que voy a cortar es 0
+agrego el corte 279
+el nodo en que voy a cortar es 0
+agrego el corte 280
+el nodo en que voy a cortar es 0
+agrego el corte 281
+el nodo en que voy a cortar es 0
+agrego el corte 282
+el nodo en que voy a cortar es 0
+agrego el corte 283
+el nodo en que voy a cortar es 0
+agrego el corte 284
+el nodo en que voy a cortar es 0
+agrego el corte 285
+el nodo en que voy a cortar es 0
+agrego el corte 286
+el nodo en que voy a cortar es 0
+agrego el corte 274
+el nodo en que voy a cortar es 0
+agrego el corte 288
+el nodo en que voy a cortar es 0
+agrego el corte 289
+el nodo en que voy a cortar es 0
+agrego el corte 290
+el nodo en que voy a cortar es 0
+agrego el corte 291
+el nodo en que voy a cortar es 0
+agrego el corte 292
+el nodo en que voy a cortar es 0
+agrego el corte 293
+el nodo en que voy a cortar es 0
+agrego el corte 294
+el nodo en que voy a cortar es 0
+agrego el corte 295
+el nodo en que voy a cortar es 0
+agrego el corte 296
+el nodo en que voy a cortar es 0
+agrego el corte 297
+el nodo en que voy a cortar es 0
+agrego el corte 298
+el nodo en que voy a cortar es 0
+agrego el corte 262
+el nodo en que voy a cortar es 0
+agrego el corte 250
+el nodo en que voy a cortar es 0
+agrego el corte 251
+el nodo en que voy a cortar es 0
+agrego el corte 252
+el nodo en que voy a cortar es 0
+agrego el corte 253
+el nodo en que voy a cortar es 0
+agrego el corte 254
+el nodo en que voy a cortar es 0
+agrego el corte 255
+el nodo en que voy a cortar es 0
+agrego el corte 256
+el nodo en que voy a cortar es 0
+agrego el corte 257
+el nodo en que voy a cortar es 0
+agrego el corte 258
+el nodo en que voy a cortar es 0
+agrego el corte 259
+el nodo en que voy a cortar es 0
+agrego el corte 260
+el nodo en que voy a cortar es 0
+agrego el corte 261
+el nodo en que voy a cortar es 0
+agrego el corte 299
+el nodo en que voy a cortar es 0
+agrego el corte 263
+el nodo en que voy a cortar es 0
+agrego el corte 264
+el nodo en que voy a cortar es 0
+agrego el corte 265
+el nodo en que voy a cortar es 0
+agrego el corte 266
+el nodo en que voy a cortar es 0
+agrego el corte 267
+el nodo en que voy a cortar es 0
+agrego el corte 268
+el nodo en que voy a cortar es 0
+agrego el corte 269
+el nodo en que voy a cortar es 0
+agrego el corte 270
+el nodo en que voy a cortar es 0
+agrego el corte 271
+el nodo en que voy a cortar es 0
+agrego el corte 272
+el nodo en que voy a cortar es 0
+agrego el corte 273
+      0     0      176.0000   352               UserPurge1: 356     1246         
+      0     2      176.0000   352                    176.0000     1246         
+Elapsed real time =   2.30 sec. (tree size =  0.01 MB, solutions = 0)
+el nodo en que voy a cortar es 0x1
+agrego el corte 91
+el nodo en que voy a cortar es 0x1
+agrego el corte 180
+el nodo en que voy a cortar es 0x1
+agrego el corte 51
+el nodo en que voy a cortar es 0x1
+agrego el corte 112
+el nodo en que voy a cortar es 0x1
+agrego el corte 83
+el nodo en que voy a cortar es 0x1
+agrego el corte 68
+el nodo en que voy a cortar es 0x1
+agrego el corte 8
+el nodo en que voy a cortar es 0x1
+agrego el corte 5
+el nodo en que voy a cortar es 0x1
+agrego el corte 1
+el nodo en que voy a cortar es 0x1
+agrego el corte 2
+el nodo en que voy a cortar es 0x1
+agrego el corte 3
+el nodo en que voy a cortar es 0x1
+agrego el corte 85
+el nodo en que voy a cortar es 0x1
+agrego el corte 4
+el nodo en que voy a cortar es 0x1
+agrego el corte 0
+el nodo en que voy a cortar es 0x1
+agrego el corte 11
+el nodo en que voy a cortar es 0x1
+agrego el corte 10
+el nodo en que voy a cortar es 0x1
+agrego el corte 9
+el nodo en que voy a cortar es 0x1
+agrego el corte 7
+el nodo en que voy a cortar es 0x1
+agrego el corte 6
+el nodo en que voy a cortar es 0x1
+agrego el corte 170
+el nodo en que voy a cortar es 0x1
+agrego el corte 49
+el nodo en que voy a cortar es 0x1
+agrego el corte 58
+el nodo en que voy a cortar es 0x1
+agrego el corte 105
+      1     3      142.0000   284                    176.0000     1635         
+      2     4      121.5000   241                    176.0000     1800         
+el nodo en que voy a cortar es 0x3
+agrego el corte 130
+el nodo en que voy a cortar es 0x3
+agrego el corte 174
+el nodo en que voy a cortar es 0x3
+agrego el corte 27
+      3     5       97.0000   190                    176.0000     1975         
+el nodo en que voy a cortar es 0x4
+agrego el corte 45
+el nodo en que voy a cortar es 0x4
+agrego el corte 44
+el nodo en que voy a cortar es 0x4
+agrego el corte 99
+el nodo en que voy a cortar es 0x4
+agrego el corte 52
+el nodo en que voy a cortar es 0x4
+agrego el corte 75
+el nodo en que voy a cortar es 0x4
+agrego el corte 79
+      4     6       86.5000   167                    176.0000     2139         
+el nodo en que voy a cortar es 0x5
+agrego el corte 159
+el nodo en que voy a cortar es 0xe
+agrego el corte 102
+*    16    15      integral     0       23.0000      176.0000     2807  665.22%
+*    21    14      integral     0       24.0000      176.0000     2819  633.33%
+el nodo en que voy a cortar es 0x15
+agrego el corte 53
+     88    14        cutoff             24.0000      176.0000     3191  633.33%
+    157    15       26.0000    26       24.0000      176.0000     3653  633.33%
+    226    15       25.0000    22       24.0000      176.0000     4042  633.33%
+el nodo en que voy a cortar es 0xf
+agrego el corte 132
+    513    15       25.5000    21       24.0000      176.0000     5652  633.33%
+Elapsed real time =   6.86 sec. (tree size =  0.24 MB, solutions = 2)
+el nodo en que voy a cortar es 0x13
+agrego el corte 111
+    802    15       26.0000    27       24.0000      176.0000     7428  633.33%
+   1084    13        cutoff             24.0000      176.0000     9401  633.33%
+el nodo en que voy a cortar es 0x16
+agrego el corte 89
+el nodo en que voy a cortar es 0x16
+agrego el corte 62
+   1369    14       25.0000    24       24.0000      176.0000    11085  633.33%
+   1656    13       25.0000    26       24.0000      176.0000    13007  633.33%
+   1944    14        cutoff             24.0000      176.0000    14528  633.33%
+   2237    13       25.0000    14       24.0000      176.0000    15804  633.33%
+*  2377    14      integral     0       25.0000      176.0000    16416  604.00%
+   2677    14        cutoff             25.0000      176.0000    18250  604.00%
+el nodo en que voy a cortar es 0x1d
+agrego el corte 142
+el nodo en que voy a cortar es 0x1d
+agrego el corte 140
+el nodo en que voy a cortar es 0x1d
+agrego el corte 143
+el nodo en que voy a cortar es 0x1d
+agrego el corte 144
+el nodo en que voy a cortar es 0x1d
+agrego el corte 146
+el nodo en que voy a cortar es 0x1d
+agrego el corte 131
+el nodo en que voy a cortar es 0x1d
+agrego el corte 128
+el nodo en que voy a cortar es 0x1d
+agrego el corte 151
+   2965    13        cutoff             25.0000      176.0000    19859  604.00%
+   3256    13        cutoff             25.0000      176.0000    21797  604.00%
+Elapsed real time =  17.75 sec. (tree size =  0.24 MB, solutions = 3)
+   3553    13        cutoff             25.0000      176.0000    23684  604.00%
+   3841    14       28.0000    32       25.0000      176.0000    25527  604.00%
+   4135    14        cutoff             25.0000      176.0000    27405  604.00%
+   4426    13       26.0000    30       25.0000      176.0000    29165  604.00%
+   4722    14       26.0000    20       25.0000      176.0000    31004  604.00%
+   5021    14       26.0000    26       25.0000      176.0000    32515  604.00%
+   5320    13       27.0000    32       25.0000      176.0000    34516  604.00%
+   5603    13       26.5000    29       25.0000      176.0000    36459  604.00%
+   5894    13       31.0000    40       25.0000      176.0000    38327  604.00%
+   6181    14       26.5000    29       25.0000      176.0000    40053  604.00%
+Elapsed real time =  28.54 sec. (tree size =  0.24 MB, solutions = 3)
+   6473    14       26.5000    29       25.0000      176.0000    41747  604.00%
+   6761    13       26.0000    30       25.0000      176.0000    43758  604.00%
+   7044    15       26.3333    28       25.0000      176.0000    45695  604.00%
+el nodo en que voy a cortar es 0x1b
+agrego el corte 56
+   7329    13        cutoff             25.0000      176.0000    47479  604.00%
+   7614    14       26.5000    29       25.0000      176.0000    49388  604.00%
+   7893    13       31.5000    41       25.0000      176.0000    51514  604.00%
+   8180    14       26.5000    29       25.0000      176.0000    53661  604.00%
+   8465    14       28.5000    33       25.0000      176.0000    55503  604.00%
+   8754    13       26.5000    31       25.0000      176.0000    57492  604.00%
+   9049    13        cutoff             25.0000      176.0000    59292  604.00%
+Elapsed real time =  39.17 sec. (tree size =  0.24 MB, solutions = 3)
+   9340    13       28.0000    34       25.0000      176.0000    61179  604.00%
+   9635    13        cutoff             25.0000      176.0000    63039  604.00%
+   9931    12        cutoff             25.0000      176.0000    65091  604.00%
+  10224    14       27.0000    30       25.0000      176.0000    67103  604.00%
+  10522    14       27.0000    32       25.0000      176.0000    68742  604.00%
+  10814    13       26.0000    29       25.0000      176.0000    70381  604.00%
+  11105    13       29.0000    36       25.0000      176.0000    72169  604.00%
+  11400    12        cutoff             25.0000      176.0000    74134  604.00%
+  11693    12       30.5000    41       25.0000      176.0000    75833  604.00%
+  11985    14       28.0000    32       25.0000      176.0000    77792  604.00%
+Elapsed real time =  50.83 sec. (tree size =  0.24 MB, solutions = 3)
+  12275    12       26.0000    28       25.0000      176.0000    79891  604.00%
+  12565    13       29.5000    37       25.0000      176.0000    82005  604.00%
+  12863    13        cutoff             25.0000      176.0000    83843  604.00%
+el nodo en que voy a cortar es 0x28
+agrego el corte 35
+  13151    13       28.0000    34       25.0000      176.0000    85810  604.00%
+  13447    13       27.0000    32       25.0000      176.0000    87546  604.00%
+  13736    12       26.0000    30       25.0000      176.0000    89577  604.00%
+  14025    13       27.0000    32       25.0000      176.0000    91485  604.00%
+  14314    13       28.0000    34       25.0000      176.0000    93702  604.00%
+  14602    12        cutoff             25.0000      176.0000    95991  604.00%
+  14884    13       32.0000    42       25.0000      176.0000    98040  604.00%
+Elapsed real time =  62.43 sec. (tree size =  0.24 MB, solutions = 3)
+  15170    13       26.5000    31       25.0000      176.0000    99882  604.00%
+  15455    13       27.5000    33       25.0000      176.0000   101786  604.00%
+  15737    14       26.0000    26       25.0000      176.0000   103924  604.00%
+  16023    13       28.0000    34       25.0000      176.0000   106118  604.00%
+  16306    12       29.0000    38       25.0000      176.0000   108627  604.00%
+  16584    13       27.0000    33       25.0000      176.0000   111164  604.00%
+  16862    12        cutoff             25.0000      176.0000   113756  604.00%
+  17141    13        cutoff             25.0000      176.0000   116267  604.00%
+  17432    13       29.5000    35       25.0000      176.0000   118193  604.00%
+  17718    13        cutoff             25.0000      176.0000   120072  604.00%
+Elapsed real time =  74.02 sec. (tree size =  0.24 MB, solutions = 3)
+  18005    14       26.0000    28       25.0000      176.0000   121942  604.00%
+  18302    13       26.1667    27       25.0000      176.0000   123748  604.00%
+  18597    12       26.0000    30       25.0000      176.0000   125536  604.00%
+  18888    13       27.5000    33       25.0000      176.0000   127569  604.00%
+  19178    14       27.0000    30       25.0000      176.0000   129463  604.00%
+  19465    11        cutoff             25.0000      176.0000   131647  604.00%
+  19763    13       29.5000    39       25.0000      176.0000   133408  604.00%
+  20052    13       26.0000    28       25.0000      176.0000   135177  604.00%
+  20338    14       28.0000    32       25.0000      176.0000   136991  604.00%
+  20622    13       26.0000    26       25.0000      176.0000   139147  604.00%
+Elapsed real time =  84.85 sec. (tree size =  0.24 MB, solutions = 3)
+  20906    13       26.2500    31       25.0000      176.0000   141526  604.00%
+  21193    13       26.0000    32       25.0000      176.0000   143775  604.00%
+  21478    13       27.5000    32       25.0000      176.0000   146203  604.00%
+  21762    12        cutoff             25.0000      176.0000   148135  604.00%
+  22045    12       28.0000    36       25.0000      176.0000   150426  604.00%
+  22328    12       27.5000    35       25.0000      176.0000   152845  604.00%
+  22613    13       27.5000    33       25.0000      176.0000   155422  604.00%
+  22896    12       26.0000    30       25.0000      176.0000   157730  604.00%
+  23183    14       26.5000    29       25.0000      176.0000   159784  604.00%
+  23474    13       27.0000    32       25.0000      176.0000   161481  604.00%
+Elapsed real time =  94.33 sec. (tree size =  0.24 MB, solutions = 3)
+  23762    12        cutoff             25.0000      176.0000   163214  604.00%
+  24050    14       26.0000    26       25.0000      176.0000   165087  604.00%
+  24342    13       30.5000    39       25.0000      176.0000   166769  604.00%
+  24635    12        cutoff             25.0000      176.0000   168427  604.00%
+  24921    13       29.5000    37       25.0000      176.0000   170663  604.00%
+el nodo en que voy a cortar es 0x19
+agrego el corte 81
+  25210    15        cutoff             25.0000      176.0000   172459  604.00%
+  25505    13       26.0000    22       25.0000      176.0000   173981  604.00%
+  25796    13       26.5000    31       25.0000      176.0000   175660  604.00%
+  26086    14       27.0000    26       25.0000      176.0000   177662  604.00%
+  27227    13       27.0000    32       25.0000      176.0000   185124  604.00%
+Elapsed real time = 109.23 sec. (tree size =  0.24 MB, solutions = 3)
+  28365    13        cutoff             25.0000      176.0000   191856  604.00%
+  29493    12        cutoff             25.0000      176.0000   200065  604.00%
+  30644    15       27.0000    28       25.0000      176.0000   207780  604.00%
+  31812    15       26.0000    24       25.0000      176.0000   214948  604.00%
+  32966    14       26.5000    29       25.0000      176.0000   222341  604.00%
+  34107    14       27.0000    30       25.0000      176.0000   230067  604.00%
+  35243    11       28.5000    39       25.0000      176.0000   237711  604.00%
+  36392    14       26.5000    29       25.0000      176.0000   245167  604.00%
+  37555    13        cutoff             25.0000      176.0000   252057  604.00%
+el nodo en que voy a cortar es 0x1a
+agrego el corte 115
+  38700    12        cutoff             25.0000      176.0000   259458  604.00%
+Elapsed real time = 152.85 sec. (tree size =  0.24 MB, solutions = 3)
+  39882    12        cutoff             25.0000      176.0000   265715  604.00%
+  41039    13       26.5000    31       25.0000      176.0000   273335  604.00%
+  42186    14       27.0000    30       25.0000      176.0000   280991  604.00%
+  43339    11        cutoff             25.0000      176.0000   288944  604.00%
+  44487    11       26.0000    30       25.0000      176.0000   296562  604.00%
+  45635    14       27.0000    30       25.0000      176.0000   304781  604.00%
+el nodo en que voy a cortar es 0x17
+agrego el corte 195
+  46792    13        cutoff             25.0000      176.0000   311410  604.00%
+  47951    10       26.0000    34       25.0000      176.0000   319009  604.00%
+  49111    13       30.5000    39       25.0000      176.0000   326463  604.00%
+  50285    15       26.5000    27       25.0000      176.0000   334057  604.00%
+Elapsed real time = 193.04 sec. (tree size =  0.24 MB, solutions = 3)
+  51437    13       27.5000    31       25.0000      176.0000   341543  604.00%
+  52551    13       26.5000    31       25.0000      176.0000   351284  604.00%
+  53672    12        cutoff             25.0000      176.0000   360748  604.00%
+  54789    12        cutoff             25.0000      176.0000   370297  604.00%
+  55921    13       26.5000    31       25.0000      176.0000   379049  604.00%
+  57053    13       26.3333    26       25.0000      176.0000   388364  604.00%
+  58188    11       26.0000    28       25.0000      176.0000   396996  604.00%
+  59320    14       27.5000    31       25.0000      176.0000   405575  604.00%

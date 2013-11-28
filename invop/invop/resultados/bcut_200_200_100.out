@@ -1,0 +1,41 @@
+el algoritmo 2
+limiteCortesClique 200
+limiteCortesCiclo 200
+limiteCortesIter 10
+hago 200 cliques
+la cantidad de cortes que pasaron por parametros es mayor a la cantidad total de ciclos que encontre
+hago 163 ciclosImpares
+Default row names c1, c2 ... being created.
+son 200 cliques y 163 ciclos
+creo todos los cortes
+Clique table members: 17827.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: traditional branch-and-cut.
+Parallel mode: none, using 1 thread.
+Root relaxation solution time =    0.14 sec.
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      225.0000   450                    225.0000      719         
+agrego el corte 0
+agrego el corte 1
+agrego el corte 3
+agrego el corte 2
+agrego el corte 4
+agrego el corte 7
+agrego el corte 5
+agrego el corte 6
+agrego el corte 16
+agrego el corte 8
+      0     0      214.0000   428               UserPurge1: 10      825         
+agrego el corte 23
+agrego el corte 21
+agrego el corte 15
+agrego el corte 46
+agrego el corte 34
+agrego el corte 33
+agrego el corte 30
+agrego el corte 28
+agrego el corte 26
+agrego el corte 25

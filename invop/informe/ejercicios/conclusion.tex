@@ -1,0 +1,23 @@
+\section{Conclusiones}
+En primera instancia, la realizaci\'on del algoritmo exacto nos sirvi\'o para entender que el conjunto de soluciones
+posibles era exponencial sobre la cantidad de nodos del grafo.
+Luego comenzamos a implementar las heur\'isticas.\\
+
+La heur\'istica golosa, fue una primera aproximaci\'on a encontrar una soluci\'on,
+no necesariamente \'optima con una cantidad polinomial de operaciones. A pesar de que la idea de la heur\'istica es muy sencilla
+(agregar a la soluci\'on nodos que se conecten con la clique actual y que aporten la maxima frontera posible), pudimos obtener una cota
+inferior :\\
+La frontera siempre ser\'a mayor o igual al grado m\'aximo del grafo.\\
+
+
+Con la heur\'istica local pudimos obtener soluciones mejores que las que proporcionaba la golosa (si la vecindad era mayor que 1) con
+uan eficiencia en cuanto a cantidad de operaciones comparado con el algoritmo exacto.\\
+
+
+Finalmente con la heuristica tabu, obtuvimos soluciones que generalmente difieren
+en un \%10 de la soluci\'on \'optima ( \%5 si, el par\'ametro de vecindad es igual a 1 ). Esto es gracias a que recorre muchas soluciones
+y no para s\'olamente si la soluci\'on es m\'axima de forma local.\\
+
+
+Con el trabajo pr\'actico pudimos entender las ideas b\'asicas de las heur\'istcas que son esenciales para problemas en los que los algoritmos exactos
+conocidos son exponenciales. 
